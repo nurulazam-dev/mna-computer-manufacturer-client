@@ -1,10 +1,11 @@
 import React from 'react';
+import Portfolio from '../Components/About/Portfolio';
 
 const MyPortfolio = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Portfolio />
+        </>
     );
 };
 
