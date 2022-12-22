@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Processor",
+        "img": "https://i.ibb.co/cJFZP6d/processor.jpg",
+        "description": "Intel 9th Gen Core i5-9500 Processor (Tray)",
+        "minOrderQuantity": "10",
+        "availQuantity": "1700",
+        "price": "15800"
+    },
+    {
+        "name": "Graphics Card",
+        "img": "https://i.ibb.co/5v0y9S4/graphices.jpg",
+        "description": "Gigabyte AORUS GeForce RTX 3080 MASTER 12GB GDDR6X Graphics Card",
+        "minOrderQuantity": "5",
+        "availQuantity": "120",
+        "price": "149500"
+    },
+    {
+        "name": "Solid State Drive (SSD)",
+        "img": "https://i.ibb.co/0QjddL7/ssd.jpg",
+        "description": "GP-GSTFS31120GNTD. Gigabyte 120GB",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "1900"
+    },
+    {
+        "name": "Multimedia Keyboard",
+        "img": "https://i.ibb.co/M6ghxVY/keyboard.jpg",
+        "description": "USB type HAVIT HV-KB327 Multimedia Keyboard",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "400"
+    },
+    {
+        "name": "Optical Mouse",
+        "img": "https://i.ibb.co/KmGCCWB/mouse.jpg",
+        "description": "MotoSpeed F303 USB Optical Mouse",
+        "minOrderQuantity": "150",
+        "availQuantity": "45000",
+        "price": "275"
+    },
+    {
+        "name": "Webcam",
+        "img": "https://i.ibb.co/WBwhz6n/webcam.jpg",
+        "description": "Logitech C505 High-Definition Webcam",
+        "minOrderQuantity": "30",
+        "availQuantity": "2000",
+        "price": "5250"
+    },
+    {
+        "name": "Cable",
+        "img": "https://i.ibb.co/dgnQpPT/Cable.jpg",
+        "description": "Desktop VGA Cable 1.5M",
+        "minOrderQuantity": "500",
+        "availQuantity": "65500",
+        "price": "350"
+    },
+    {
+        "name": "Headphone",
+        "img": "https://i.ibb.co/XFCmrNQ/headphone.jpg",
+        "description": "Havit H2168d 3.5mm USB Gaming headphone",
+        "minOrderQuantity": "300",
+        "availQuantity": "50700",
+        "price": "1000"
+    }
+    
+]
