@@ -90,9 +90,6 @@ const WhyChooseUs = () => {
                                     <p className="text-[14px]">10 Days Returns</p>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

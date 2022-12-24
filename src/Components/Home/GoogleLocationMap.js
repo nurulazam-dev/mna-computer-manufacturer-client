@@ -30,5 +30,5 @@ class GoogleLocationMap extends Component {
 };
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCT9VxlQ6qaHeGSG7JyBTlVXbtwZ4rkcFM")
+    apiKey:process.env.REACT_APP_GOOGLE_MAP_APIKEY
 })(GoogleLocationMap)
