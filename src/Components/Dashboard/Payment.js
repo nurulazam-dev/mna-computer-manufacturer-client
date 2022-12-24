@@ -7,9 +7,7 @@ import Loading from "../Shared/Loading";
 import PurchaseDetail from "./PurchaseDetail";
 import CheckoutForm from "./CheckoutForm";
 
-const stripePromise = loadStripe(
-    "sk_test_51L0gmsA8JMkzEy5gC1fXxhK1Gfdhmsb5YYf8kiws4ieT0T3W4Yo2fFh8vcb5WdMamMusfZCNo2TNgA1r5RY8mKRR00oVJZL3Wc"
-);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_APIKEY);
 
 const Payment = () => {
     const { payForId } = useParams();
