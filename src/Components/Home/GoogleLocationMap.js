@@ -16,15 +16,15 @@ class GoogleLocationMap extends Component {
                 </div>
                 <div className="">
                     <Map
-                    containerStyle={containerStyle} 
-                    google={this.props.google} 
-                    zoom={14}
-                    initialCenter={
-                        {
-                            lat:22.356852,
-                            lng:91.783180
+                        containerStyle={containerStyle}
+                        google={this.props.google}
+                        zoom={14}
+                        initialCenter={
+                            {
+                                lat: 22.356852,
+                                lng: 91.783180
+                            }
                         }
-                    }
                     >
 
                         <Marker onClick={this.onMarkerClick}
@@ -40,5 +40,5 @@ class GoogleLocationMap extends Component {
 };
 
 export default GoogleApiWrapper({
-    apiKey:process.env.REACT_APP_GOOGLE_MAP_APIKEY
+    apiKey: process.env.REACT_APP_GOOGLE_MAP_APIKEY
 })(GoogleLocationMap)
