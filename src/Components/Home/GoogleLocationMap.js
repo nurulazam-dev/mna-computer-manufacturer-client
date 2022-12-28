@@ -15,7 +15,17 @@ class GoogleLocationMap extends Component {
                     <h4 className='text-2xl'>Our location is available on google map</h4>
                 </div>
                 <div className="">
-                    <Map containerStyle={containerStyle} google={this.props.google} zoom={14}>
+                    <Map
+                    containerStyle={containerStyle} 
+                    google={this.props.google} 
+                    zoom={14}
+                    initialCenter={
+                        {
+                            lat:22.356852,
+                            lng:91.783180
+                        }
+                    }
+                    >
 
                         <Marker onClick={this.onMarkerClick}
                             name={'Current location'} />
