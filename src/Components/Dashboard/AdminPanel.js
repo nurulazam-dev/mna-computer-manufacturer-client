@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import useAdmin from "../../hooks/useAdmin";
 
 const AdminPanel = ({ user, index, refetch }) => {
-    const { _id, email } = user;
+    const { _id, email,name } = user;
     const [admin] = useAdmin(user);
 
     const handleAdmin = () => {
@@ -30,6 +30,7 @@ const AdminPanel = ({ user, index, refetch }) => {
     return (
         <tr className="hover" key={index}>
             <th>{index + 1}</th>
+            <td>{name}</td>
             <td>{email}</td>
             <td>
                 {admin ? (<p className="text-success font-semibold ml-3">Admin</p>) : (

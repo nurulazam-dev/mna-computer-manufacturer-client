@@ -41,7 +41,6 @@ const ManageProducts = () => {
                             <th className='text-base'>S. No</th>
                             <th className='text-base'>Avatar</th>
                             <th className='text-base'>Product / Part</th>
-                            <th className='text-base'>Description</th>
                             <th className='text-base'>Min Order</th>
                             <th className='text-base'>Available</th>
                             <th className='text-base'>Price <span className='text-sm'>/per</span> </th>
@@ -58,8 +57,7 @@ const ManageProducts = () => {
                                             <img src={product.img} alt="" />
                                         </div>
                                     </td>
-                                    <td>{product.name}</td>
-                                    <td className='text-base'>{product.description}</td>
+                                    <td>{product.name.slice(0,20)}</td>
                                     <td className='text-center'>{product.minOrderQuantity}</td>
                                     <td className='text-center'>{product.availQuantity}</td>
                                     <td className='text-center'>{product.price}</td>

@@ -23,6 +23,7 @@ const MakeAdminPanel = () => {
                     <thead>
                         <tr>
                             <th>S. No</th>
+                            <th>Name</th>
                             <th>User</th>
                             <th>Admin</th>
                         </tr>
