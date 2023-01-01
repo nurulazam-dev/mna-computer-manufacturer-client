@@ -1,13 +1,5 @@
 [
     {
-        "name": "Processor",
-        "img": "https://i.ibb.co/cJFZP6d/processor.jpg",
-        "description": "Intel 9th Gen Core i5-9500 Processor (Tray)",
-        "minOrderQuantity": "10",
-        "availQuantity": "1700",
-        "price": "15800"
-    },
-    {
         "name": "Graphics Card",
         "img": "https://i.ibb.co/5v0y9S4/graphices.jpg",
         "description": "Gigabyte AORUS GeForce RTX 3080 MASTER 12GB GDDR6X Graphics Card",
@@ -24,12 +16,12 @@
         "price": "1900"
     },
     {
-        "name": "Multimedia Keyboard",
-        "img": "https://i.ibb.co/M6ghxVY/keyboard.jpg",
-        "description": "USB type HAVIT HV-KB327 Multimedia Keyboard",
-        "minOrderQuantity": "100",
-        "availQuantity": "12000",
-        "price": "400"
+        "name": "Headphone",
+        "img": "https://i.ibb.co/XFCmrNQ/headphone.jpg",
+        "description": "Havit H2168d 3.5mm USB Gaming headphone",
+        "minOrderQuantity": "300",
+        "availQuantity": "50700",
+        "price": "1000"
     },
     {
         "name": "Optical Mouse",
@@ -48,6 +40,326 @@
         "price": "5250"
     },
     {
+        "name": "Processor",
+        "img": "https://i.ibb.co/cJFZP6d/processor.jpg",
+        "description": "Intel 9th Gen Core i5-9500 Processor (Tray)",
+        "minOrderQuantity": "10",
+        "availQuantity": "1700",
+        "price": "15800"
+    },
+    {
+        "name": "Multimedia Keyboard",
+        "img": "https://i.ibb.co/M6ghxVY/keyboard.jpg",
+        "description": "USB type HAVIT HV-KB327 Multimedia Keyboard",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "400"
+    },
+    {
+        "name": "Motherboard",
+        "img": "https://i.ibb.co/1MmjHV7/motherboard.jpg",
+        "description": "Gigabyte H510M H 11th Gen Micro ATX Motherboard. This Gigabyte H510M H motherboard offers stability under high CPU frequencies and heavy loading with cleaner and more efficient power delivery to the CPU.",
+        "minOrderQuantity": "40",
+        "availQuantity": "10000",
+        "price": "5500"
+    },
+    {
+        "name": "Portable Hard Drive",
+        "img": "https://i.ibb.co/B2WzNGF/Portable-Hard-Drive.jpg",
+        "description": "Transcend StoreJet J25M3 1TB USB 3.0 Portable Hard Drive. Transcend StoreJet J25M3 portable hard disk drive has 1 TB capacity, USB 3.0 interface, anti-shock protection, backwards compatible with USB 2.0, connection bandwidth up to 5Gb/s.",
+        "minOrderQuantity": "20",
+        "availQuantity": "2000",
+        "price": "5650"
+    },
+    {
+        "name": "Desktop RAM",
+        "img": "https://i.ibb.co/XLnVGcy/desktop-ram.jpg",
+        "description": "Corsair Vengeance RGB Pro 8GB DDR4 Desktop RAM. Vengeance RGB PRO series DDR4 overclocked memory, mesmerizing dynamic multi-zone RGB lighting, high frequency performance on the latest Intel and AMD DDR4 motherboard, 10 ultra-bright RGB LEDs per module light system.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2000",
+        "price": "5000"
+    },
+    {
+        "name": "HDD Casing",
+        "img": "https://i.ibb.co/gWy08bK/hdd-casing.jpg",
+        "description": "This Samsung hi-speed 2.5'' HDD casing supports a max of 3TB storage capacity. It comes with high data transfer rate. USB 2.0 supports up to 5Gbps data transmission rate.",
+        "minOrderQuantity": "100",
+        "availQuantity": "50000",
+        "price": "450"
+    },
+    {
+        "name": "CD Driver",
+        "img": "https://i.ibb.co/8YkqD10/cd-driver.jpg",
+        "description": "Orico XD007-BK-BP External CD Driver. Orico XD007-BK-BP external CD driver uses USB 3.0 connectivity and its DVD partition is 5. Its CD-ROM read speed is 24x while the DVD read speed is 8x.",
+        "minOrderQuantity": "500",
+        "availQuantity": "25000",
+        "price": "2700"
+    },
+    {
+        "name": "Hard Drive",
+        "img": "https://i.ibb.co/Bjz0svN/hard-drive.jpg",
+        "description": "Western Digital WD Blue WD5000AAKX 500GB Hard Drive. Western Digital Blue WD5000AAKX internal desktop hard disk drive has 500 GB capacity, 3.5 inch form factor, quiet NoTouch ramp load technology IntelliSeek.",
+        "minOrderQuantity": "50",
+        "availQuantity": "1000",
+        "price": "3999"
+    },
+    {
+        "name": "F2088 Backlight Gaming Keyboard",
+        "img": "https://i.ibb.co/0JGJsjz/F2088-Backlight-Gaming-Keyboard.jpg",
+        "description": "Colorful backlight brings a great gaming atmosphere, aluminum alloy lighting rotary knob, multimedia key combination easy for working or gaming operation, plug and play connect to USB port, ABS plastic materials make hands to feel comfort, ultra thin floating keycap design.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "2700"
+    },
+    {
+        "name": "DVD Writer",
+        "img": "https://i.ibb.co/QkvGZty/dvd-writer.jpg",
+        "description": "ASUS SDRW-08D2S-U Eexternal Slim DVD Writer. Stylish and portable design, audio CD / video CD / CD-I / CD-extra / photo CD / CD-text / CD-ROM/XA / multi-session CD / CD-R / CD-RW / CD-ROM / DVD±R(SL/DL) / DVD±RW / DVD-ROM(SL/DL) / DVD video disc support, 280g weight, 142 x 142 x 20mm dimension.",
+        "minOrderQuantity": "400",
+        "availQuantity": "18000",
+        "price": "3500"
+    },
+    {
+        "name": "V335DW RGB Gaming Casing",
+        "img": "https://i.ibb.co/8XsxxBs/V335-DW-RGB-Gaming-Casing.jpg",
+        "description": "View One V335DW supports mid-tower gaming casing ATX / micro-ATX motherboard, and 0.45mm SPCC / SGCC material & thickness. It supports 3 x 120mm front RGB fan, 2 x 120mm dust protect top fan, 2 x 120mm power, and 1 x 120mm rear cooler fan.",
+        "minOrderQuantity": "500",
+        "availQuantity": "40000",
+        "price": "3999"
+    },
+    {
+        "name": "ARGB White Liquid CPU Cooler",
+        "img": "https://i.ibb.co/F7g3zJH/ARGB-White-Liquid-CPU-Cooler.jpg",
+        "description": "This Antec Symphony ARGB white is a brand new liquid cooler that uses EPDM+IIP high-density tubing for durability and is covered with aluminum alloy. Also, the joints of this tubing are extremely less prone to fluid leakage, so when the cooler is installed on the CPU, it will get super cool in less time.",
+        "minOrderQuantity": "600",
+        "availQuantity": "59000",
+        "price": "10200"
+    },
+    {
+        "name": "SATA Drive",
+        "img": "https://i.ibb.co/7zqp4Z1/sata-drive.jpg",
+        "description": "Asus DVD-RW 24B3ST SATA optical Drive. ",
+        "minOrderQuantity": "1000",
+        "availQuantity": "90000",
+        "price": "750"
+    },
+    {
+        "name": "Mid-Tower Gaming Casing",
+        "img": "https://i.ibb.co/TgPjGdw/Mid-Tower-Gaming-Casing.jpg",
+        "description": "View One V8012W supports mid-tower gaming casing ATX / micro-ATX motherboard. It supports 3 x 120mm front, 2 x 120mm top, 1 x 120mm rear cooler fan. Its side panel is given a full tempered glass window.",
+        "minOrderQuantity": "100",
+        "availQuantity": "70000",
+        "price": "4000"
+    },
+    {
+        "name": "Wi-Fi Dongle",
+        "img": "https://i.ibb.co/NjzZ7tp/Wi-Fi-Dongle.jpg",
+        "description": "Portable LTE 4G WIFI modem has 150Mbps speed, plug & play, USB stick with sim card slot, auto-drive & installation, built-in antenna, up to 32 GB micro SD card slot, 96 x 34 x 12.5 mm dimensions, 30 gm weight.",
+        "minOrderQuantity": "1200",
+        "availQuantity": "180000",
+        "price": "1490"
+    },
+    {
+        "name": "Logitech Group Video Conference",
+        "img": "https://i.ibb.co/7tS5mdv/Logitech-Group-Video-Conference.jpg",
+        "description": "Provides crystal clear audio and video in any conference room or classroom. Autofocus, 10X HD zoom, 90° field of view, -28dB +/ -3dB Sensitivity, Microphone 100Hz-11KHz, USB 2.0 computer interface, Two 5 meter cables included, Power adapter with regional plug, 3-meter cable mount included",
+        "minOrderQuantity": "5",
+        "availQuantity": "10000",
+        "price": "129000"
+    },
+    {
+        "name": "Computer Casing",
+        "img": "https://i.ibb.co/gmGJXmf/Computer-Casing.jpg",
+        "description": "Gigasonic computer casing has an ATX type supported mainboard, USB front port, 6-expansion slots, 1 built-in cooling fan, and 1 optional cooling fan, audio / microphone jack.",
+        "minOrderQuantity": "800",
+        "availQuantity": "60000",
+        "price": "1100"
+    },
+    {
+        "name": "PK-910P 720p HD Webcam",
+        "img": "https://i.ibb.co/d4p9b88/PK-910-P-720p-HD-Webcam.jpg",
+        "description": "This A4Tech PK-910P includes a high-performance 720p full HD camera with a high-fidelity microphone that produces great video quality. The full-rotational 360-degree design makes calling and recording easier from any angle.",
+        "minOrderQuantity": "150",
+        "availQuantity": "82000",
+        "price": "2050"
+    },
+    {
+        "name": "ARGB Liquid CPU Cooler",
+        "img": "https://i.ibb.co/NVNQHVT/ARGB-Liquid-CPU-Cooler.jpg",
+        "description": "This Antec Symphony 360 is the brand-new ARGB AIO liquid cooler that will provide a desktop cooling solution with unique ARGB lighting. Its mirror ARGB lighting bar gives a subtle and beautiful color scheme and especially uses EPDM+IIP high-density tubes and 14 thick cooling fins to provide efficient cooling to desktops.",
+        "minOrderQuantity": "50",
+        "availQuantity": "12000",
+        "price": "9600"
+    },
+    {
+        "name": "HD 1080P Web Camera",
+        "img": "https://i.ibb.co/6W0TwY8/HD-1080-P-Web-Camera.jpg",
+        "description": "Champion 2 megapixel full HD 1080P web camera comes with an automatic low light correction technology. It is a built-in noise reduction microphone. It supports high-speed USB 2.0 plug-and-play.",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "1600"
+    },
+    {
+        "name": "Mini Keyboard with Touchpad",
+        "img": "https://i.ibb.co/YNVHm9x/Mini-Keyboard-with-Touchpad.jpg",
+        "description": "Users can change the backlit color by pressing the 'FN' and 'F2' button together, usable as keyboard + touchpad mouse, wireless 2.4GHz, rechargeable, high quality engraved buttons, high-quality finish and thick cable.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "420"
+    },
+    {
+        "name": "ARGB Gaming Casing",
+        "img": "https://i.ibb.co/hL1VPvF/ARGB-Gaming-Casing.jpg",
+        "description": "alue Top Mania X3 ATX full tower ARGB gaming case compatible with E-ATX, ATX, and micro ATX motherboards. Its left side panel is made of tempered glass and has a rotary lock.",
+        "minOrderQuantity": "1500",
+        "availQuantity": "92000",
+        "price": "2850"
+    },
+    {
+        "name": "DQ850-M V2L Power Supply",
+        "img": "https://i.ibb.co/j3CrGmz/DQ850-M-V2-L-Power-Supply.jpg",
+        "description": "The DQ850-M-V2L features a fully modular 850W 80 Plus gold power supply with 100% Japanese capacitors and a high-quality switch, temperature control feature on the 120mm silent fan helps to keep noise levels down, a high-grade Japanese 105℃ PFC boost capacitor.",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "11000"
+    },
+    {
+        "name": "Gameon RGB Cooler Fan",
+        "img": "https://i.ibb.co/WvPLPZS/Gameon-RGB-Cooler-Fan.jpg",
+        "description": "View One GV-350 RGB cooler fan has 2000 RPM maximum fan speed, 45.03 airflows, a lifespan of 40000. It also has a hydraulic bearing and is connected by 4 pin power.",
+        "minOrderQuantity": "120",
+        "availQuantity": "52000",
+        "price": "1300"
+    },
+    {
+        "name": "SD 2-in-1 Card Reader",
+        "img": "https://i.ibb.co/TvY22mF/SD-2-in-1-Card-Reader.jpg",
+        "description": "Ugreen 50706 2-in-1 Card Reader delivers ultra-fast data transfer rates of up to 5Gbps through USB 3.0 interface-10x faster than USB 2.0, allowing you to transmit HD videos or files in seconds.",
+        "minOrderQuantity": "1500",
+        "availQuantity": "72000",
+        "price": "1650"
+    },
+    {
+        "name": "5-in-1 USB Hub",
+        "img": "https://i.ibb.co/r7r3yt9/5-in-1-USB-Hub.jpg",
+        "description": "This USB hub is equipped with 5 ports which generate an easy way to expand the number of available USB ports on your computer / PC / laptop. This 5-in-1 USB hub includes 1 x HDMI port, 1 x Type-C port, 1 x USB 3.0 port, and 1 x LAN port (RJ-45 connector).",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "1650"
+    },
+    {
+        "name": "ATX Gaming Casing",
+        "img": "https://i.ibb.co/t2SJyXC/ATX-Gaming-Casing.jpg",
+        "description": "Value Top VT-76-L computer casing support ATX mainboard, 200W power supply, 1 x 5.25-inch drive bay, 3 x 3.5-inch drive bay, and expansion card slots.",
+        "minOrderQuantity": "1100",
+        "availQuantity": "42000",
+        "price": "3200"
+    },
+    {
+        "name": "USB Internet Modem",
+        "img": "https://i.ibb.co/hynK0bJ/USB-Internet-Modem.jpg",
+        "description": "HSDPA USB internet modem has 7.2Mbps download speed, GSM / GPRS / EDGE 900 / 1800 / 1900 / 850 2G frequency, HSPA+ / HSUPA / HSDPA / UMTS2100 3G frequency, support up to 32 GB micro SD card slot, USB interface, windows XP / vista / windows 7 / windows 8 / Mac x 10.5 / 10.6 / 10.7 / 10.8 operating system support.",
+        "minOrderQuantity": "1000",
+        "availQuantity": "82000",
+        "price": "1450"
+    },
+    {
+        "name": "LitePower 350W Power Supply",
+        "img": "https://i.ibb.co/j5w9ZWQ/Lite-Power-350-W-Power-Supply.jpg",
+        "description": "The Revenger LitePower Power Supply features 350-watt total power output, 4A current, and 120-240V AC input voltage. This power supply has a 120 mm size fan which produces very little noise and comes with 500 RPM fan rotation power.",
+        "minOrderQuantity": "200",
+        "availQuantity": "22000",
+        "price": "1450"
+    },
+    {
+        "name": "Live Stream Webcam",
+        "img": "https://i.ibb.co/r3nbW4K/Live-Stream-Webcam.jpg",
+        "description": "The Micropack MWB-13 pro live stream black webcam has a video resolution of 1080P and a physical sensor resolution of 2 megapixels. It also has a manual rotation focus, 90-degree camera angle, Led light, driver-free plug and play driver type, 2.0 USB type interface, 145cm USB cable length.",
+        "minOrderQuantity": "50",
+        "availQuantity": "5000",
+        "price": "2650"
+    },
+    {
+        "name": "A513HVP 5-in-1 Type-C Hub Adapter",
+        "img": "https://i.ibb.co/V2yvTLW/A513-HVP-5-in-1-Type-C-Hub-Adapter.jpg",
+        "description": "The WIWU Alpha A513HVP 5-in-1 Type-C HUB adapter offers USB3.0 convert transmission and 4K HD video or image quality. The device is compatible with all-in-one data cables and has a Type-C input cable.",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "2600"
+    },
+    {
+        "name": "Desktop Casing with 3 Fan",
+        "img": "https://i.ibb.co/bNX10gv/Desktop-Casing-with-3-Fan.jpg",
+        "description": "MATREXX 70 computer casing with RGB 3 fan is a brand-new chassis produced specifically for DIY lovers. Its architecture provides convenience and versatility in PC construction by incorporating a number of novel structural designs.",
+        "minOrderQuantity": "300",
+        "availQuantity": "42000",
+        "price": "9000"
+    },
+    {
+        "name": "Recordable Blank Disk",
+        "img": "https://i.ibb.co/F6ndqZC/Recordable-Blank-Disk.jpg",
+        "description": "Verbatim CD-R media is certified & tested by leading 52X drive manufacturers. These high-grade discs provide reliable recording even at blazing drive speeds, completing a full 700MB / 80-minute recording in less than 2 minutes.",
+        "minOrderQuantity": "1500",
+        "availQuantity": "95000",
+        "price": "750"
+    },
+    {
+        "name": "Gaming Mouse Keyboard Kit",
+        "img": "https://i.ibb.co/kHvQN1g/Gaming-Mouse-Keyboard-Kit.jpg",
+        "description": "Havit HV-KB558CM is a gaming keyboard with an RGB gaming mouse. Its gaming keyboard has 104 standard keys. This gaming keyboard will automatically turn off if not used for 10 minutes and to reactivate, just press any key.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "1650"
+    },
+    {
+        "name": "4K Ultra HD Webcam",
+        "img": "https://i.ibb.co/86BdKMf/4-K-Ultra-HD-Webcam.jpg",
+        "description": "Logitech brio webcam has 4K ultra HD video calling up to 4096 x 2160 pixels, 4K streaming and recording, 5x digital zoom in full HD, 2GB RAM / Windows 7 or higher system requirements, Windows 8.1 or higher required for greater than 1080p resolutions, 90-degree field view, autofocus, dual omnidirectional mics with noise cancellation, infrared sensor technology, compatibility for Skype for business, Microsoft Cortana, windows hello, and cisco jabber.",
+        "minOrderQuantity": "10",
+        "availQuantity": "2000",
+        "price": "19500"
+    },
+    {
+        "name": "Internet Modem",
+        "img": "https://i.ibb.co/7zdH7cQ/Internet-Modem.jpg",
+        "description": "LTE-FDD B1/3/8/20 UMTS 850/1900/2100/900 MHz, EGPRS/GSM 850/900/1800/1900 MHz frequency, 150Mbps download speed, USB 2.0 interface, supported for Operating System Windows 8, 10, Vista, XP, Mac OS.",
+        "minOrderQuantity": "40",
+        "availQuantity": "11000",
+        "price": "3550"
+    },
+    {
+        "name": "Wireless Keyboard with Mouse",
+        "img": "https://i.ibb.co/61S8frd/Wireless-Keyboard-with-Mouse.jpg",
+        "description": "Easy and quick to connect wireless successfully and automatically, Ultra-slim design so you can carry it anywhere anytime, High-quality ABS key with a raised design so you can comfortable and fast typing experience, compatible with Window / iOS and Android. Its rechargeable lithium-ion battery gives 48 hours of writing time from just a single charge.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "2200"
+    },
+    {
+        "name": "ATX Mid-Tower Gaming Casing",
+        "img": "https://i.ibb.co/1zCrybf/ATX-Mid-Tower-Gaming-Casing.jpg",
+        "description": " Gigabyte C200 gaming case features a black tempered glass front panel with RGB LED switch and two USB 3.0 ports on the I/O panel. Gaming casing with 7 different colors and numerous lighting effects",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "4500"
+    },
+    {
+        "name": "RGB Liquid CPU Cooler",
+        "img": "https://i.ibb.co/hmg5s5H/RGB-Liquid-CPU-Cooler.jpg",
+        "description": "This Gamdias Chione M3 240W liquid cooler features superior air pressure, airflow, performance, and stunning visual effects. This cooler will reinvigorate your battle station with an ultra-modern powerhouse.",
+        "minOrderQuantity": "200",
+        "availQuantity": "42000",
+        "price": "7500"
+    },
+    {
+        "name": "High-Speed 3-Mini USB Hub",
+        "img": "https://i.ibb.co/pjwf5pJ/High-Speed-3-Mini-USB-Hub.jpg",
+        "description": "This is a high-speed 3-port mini USB hub that can be rotated 90-180 degrees. This USB hub is suitable for smartphones, number keyboards, hard disks, card readers, USB mini fans, USB coolers, keyboards, mice, printers, and other computer equipment.",
+        "minOrderQuantity": "1400",
+        "availQuantity": "95000",
+        "price": "450"
+    },
+    {
         "name": "Cable",
         "img": "https://i.ibb.co/dgnQpPT/Cable.jpg",
         "description": "Desktop VGA Cable 1.5M",
@@ -56,12 +368,107 @@
         "price": "350"
     },
     {
-        "name": "Headphone",
-        "img": "https://i.ibb.co/XFCmrNQ/headphone.jpg",
-        "description": "Havit H2168d 3.5mm USB Gaming headphone",
-        "minOrderQuantity": "300",
-        "availQuantity": "50700",
-        "price": "1000"
-    }
-    
+        "name": "OTG Supported Card Reader",
+        "img": "https://i.ibb.co/QN1GPVN/OTG-Supported-Card-Reader.jpg",
+        "description": "6-in-1 OTG mobile card reader supports standard USB / USB C / micro USB port and this USB adapter has OTG supported function. This card reader is built with a unique design that is powerful enough to operate multiple tasks.",
+        "minOrderQuantity": "1800",
+        "availQuantity": "76000",
+        "price": "499"
+    },
+    {
+        "name": "256GB OTG Flash Drive",
+        "img": "https://i.ibb.co/Jdm19Mc/256-GB-OTG-Flash-Drive.jpg",
+        "description": "Transcend OTG flash drive comes with 256GB capacity. Due to an Android port, a Type-C connection, an iPhone port, and a plug-in-play, this pen drive works with iPhone, Android, Windows, and Type-C devices. The write speed is 4 to 6MB/s, while the read speed ranges from 15 to 25MB/s.",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "2150"
+    },
+    {
+        "name": "64GB USB 3.1 Pendrive",
+        "img": "https://i.ibb.co/wBnckzx/64-GB-USB-3-1-Pendrive.jpg",
+        "description": "Capacity 64GB, high speed 20GB high-resolution video will only take less than 7 minutes, 11gm weight, supported OS Windows 2000 / XP / Vista / Win 7 / Mac OS 10.4 or later / Linux Kernel 2.4 or later, 55 x 17 x 9.1mm dimension.",
+        "minOrderQuantity": "400",
+        "availQuantity": "42000",
+        "price": "850"
+    },
+    {
+        "name": "64GB USB 3.2 Flash Drive",
+        "img": "https://i.ibb.co/YDzpfx5/64-GB-USB-3-2-Flash-Drive.jpg",
+        "description": "This PNY Turbo Attache R flash drive comes with 64GB capacity and has a USB 3.2 Gen 1 interface which can transfer data almost 10 times faster than USB 2.0. So users can easily store and transfer videos, photos, music, and documents, and more quickly, and easily.",
+        "minOrderQuantity": "600",
+        "availQuantity": "19000",
+        "price": "750"
+    },
+    {
+        "name": "Card Reader",
+        "img": "https://i.ibb.co/nBY3MMd/Card-Reader.jpg",
+        "description": "This card reader hub is equipped with a transmission interface that is compatible with Type-C devices for both smartphone and Notebook, 5 ports for connecting memory card / HDD / USB and other storage media, stable reading data and the first transmission speed.",
+        "minOrderQuantity": "100",
+        "availQuantity": "12000",
+        "price": "1400"
+    },
+    {
+        "name": "Gaming Keyboard and Mouse Combo",
+        "img": "https://i.ibb.co/RvY68tW/Gaming-Keyboard-and-Mouse-Combo.jpg",
+        "description": "Sky-Touch G21 keyboard and mouse combo appear with RGB lighting which makes it perfect for use for gaming purposes. This combo is specifically designed to work with PCs, laptops, and smart TVs for flexible use. Additionally, a quick-response mouse with a 3D anti-sleep wheel.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "899"
+    },
+    {
+        "name": "Key Ring Style USB Pen Drive",
+        "img": "https://i.ibb.co/XXrxGmM/Key-Ring-Style-USB-Pen-Drive.jpg",
+        "description": "32GB storage capacity, USB 3.0 connectivity, high speed pen drive, easy and portable, 20g net weight.",
+        "minOrderQuantity": "1400",
+        "availQuantity": "72000",
+        "price": "600"
+    },
+    {
+        "name": "ARH-10 USB 10 Port Hub",
+        "img": "https://i.ibb.co/4s1NN9s/ARH-10-USB-10-Port-Hub.jpg",
+        "description": "ARH 10 is a standard hub that supports 10 port 2.0 for desktops. It features over-current detection and safety. This hub is a great choice for using an extra USB port. Each device has a very small number of ports, but having 10 ports makes it easy to do urgent tasks in a short time.",
+        "minOrderQuantity": "1200",
+        "availQuantity": "52000",
+        "price": "799"
+    },
+    {
+        "name": "VB-700W Switching Power Supply",
+        "img": "https://i.ibb.co/KDV6rTb/VB-700-W-Switching-Power-Supply.jpg",
+        "description": "View One VB-700W has a 350-watt power supply, 120 mm supper silent cooling fan, 4A/8A current, and 50-60 Hz frequency, voltage 220VA-240VA, 140 x 150 x 86cm dimension, made in China.",
+        "minOrderQuantity": "1300",
+        "availQuantity": "85000",
+        "price": "1200"
+    },
+    {
+        "name": "16X Recordable Disc",
+        "img": "https://i.ibb.co/VJT3f2B/16-X-Recordable-Disc.jpg",
+        "description": "Verbatim DVD-R offers 4.7GB or 120 minutes of write-once storage capacity, superior recording quality, and compatibility with 1X to 16X DVD-R writers. The Verbatim 16X DVD-R Disc allows users to record an entire 4.7GB / 120Min disc in approximately 5 minutes.",
+        "minOrderQuantity": "2100",
+        "availQuantity": "89050",
+        "price": "750"
+    },
+    {
+        "name": "Audio Sound Card Adapter",
+        "img": "https://i.ibb.co/4sQ30hm/Audio-Sound-Card-Adapter.jpg",
+        "description": "LED indicator, highly flexible audio interface used either with desktop or notebook system, plug and play for instant audio play back, USB2.0 480Mbps maximum speed.",
+        "minOrderQuantity": "1600",
+        "availQuantity": "88000",
+        "price": "199"
+    },
+    {
+        "name": "E1a 4-in-1 Gaming Combo",
+        "img": "https://i.ibb.co/6BRhtxb/E1a-4-in-1-Gaming-Combo.jpg",
+        "description": "KWG Draco E1a comes with a 4-in-1 combo that is a multi-color gaming keyboard, headphones, mouse, and mouse pad. This gaming keyboard features 7 multimedia keys, over 50 million switch lifecycle, and an all-key lock function with a 19-key rollover.",
+        "minOrderQuantity": "50",
+        "availQuantity": "2500",
+        "price": "360"
+    },
+    {
+        "name": "DVD Blank Disk",
+        "img": "https://i.ibb.co/jDR3j74/DVD-Blank-Disk.jpg",
+        "description": "This YDD is a blank DVD disk that can store various data for computer use. It has a 4.7GB/120 min disk capacity and a recording speed of up to 1-16x. It is excellently compatible with DVD writers, video players, and DVD-ROM drivers.",
+        "minOrderQuantity": "1100",
+        "availQuantity": "42000",
+        "price": "450"
+    } 
 ]

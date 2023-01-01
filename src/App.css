@@ -6,10 +6,18 @@
   align-items: center;
   justify-content: space-around;
 }
+.video_frame{
+  width: 650px;
+  height: 380px;
+}
 
 @media (max-width: 767px) {
   .flex_block{
     display: block;
     justify-content: center;
+  }
+  .video_frame{
+    width: 460px;
+    height: 320px;
   }
 }

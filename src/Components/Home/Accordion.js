@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style/Accordion.css';
 
-const Accordion = ({ title, active, setActive }) => {
+const Accordion = ({ id, title, ans, active, setActive }) => {
 
     return (
         <section className=''>
@@ -9,14 +9,15 @@ const Accordion = ({ title, active, setActive }) => {
                 <div className="accordionHeading">
                     <div className="containerBox">
                         <p>{title}</p>
-                        <span onClick={() => setActive(title)}>
-                            {active===title? "X": "|||"}
+                        <span onClick={() => setActive(id)}>
+                            {active===id? "X": "|||"}
                         </span>
                     </div>
                 </div>
-                <div className={(active === title ? "show" : "") + "accordionContent"}>
+                <div className={(active === id ? "show" : "") + " accordionContent"}>
+                {/* <div className={`${active === title ? "show" : ""} accordionContent`}> */}
                     <div className="containerBox">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nam animi repellendus omnis molestias, necessitatibus pariatur natus iusto alias minima recusandae! Voluptatum debitis animi nihil, officiis et quo dolorum quas?</p>
+                        <p>{ans}</p>
                     </div>
                 </div>
             </div>
