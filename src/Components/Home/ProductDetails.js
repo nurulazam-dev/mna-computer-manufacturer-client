@@ -73,7 +73,7 @@ const ProductDetails = () => {
     };
 
     return (
-        <section>
+        <section className='py-16'>
             <div className='flex justify-center'>
                 {/* ===================================
             product details Section/Card

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { toast } from "react-toastify";
 
-const CheckoutForm = ({ payForProduct }) => {
+const CheckoutForm = ({ payForTool }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
@@ -11,8 +11,7 @@ const CheckoutForm = ({ payForProduct }) => {
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  //   console.log("inside checkoutForm", payForProduct);
-  const { _id, shouldPay, customerName, customer } = payForProduct || "";
+  const { _id, shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
     fetch("https://mna-computer-manufacturer.onrender.com/create-payment-intent", {
@@ -33,13 +32,16 @@ const CheckoutForm = ({ payForProduct }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!stripe || !elements) {
       return;
     }
+
     const card = elements.getElement(CardElement);
     if (card == null) {
       return;
     }
+
     const { error } = await stripe.createPaymentMethod({
       type: "card",
       card,
@@ -78,7 +80,7 @@ const CheckoutForm = ({ payForProduct }) => {
       customerName: customerName,
     };
 
-    fetch(`https://mna-computer-manufacturer.onrender.com/orders/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/orders/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -98,15 +100,28 @@ const CheckoutForm = ({ payForProduct }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <CardElement options={{
-          style: {
-            base: { fontSize: "16px", color: "#424770", "::placeholder": { color: "#aab7c4" } },
-            invalid: { color: "#9e2146" },
-          },
-        }}
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
+              },
+            },
+          }}
         />
         <button
-          className="btn btn-primary btn-sm text-white my-4" type="submit" disabled={!stripe || !clientSecret || success}>Pay
+          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
+          type="submit"
+          disabled={!stripe || !clientSecret || success}
+        >
+          Pay
         </button>
       </form>
       {processing && (
@@ -122,7 +137,10 @@ const CheckoutForm = ({ payForProduct }) => {
       {success && (
         <div>
           <p className="text-success">{success}</p>
-          <p>TransactionId :{" "} <span className="font-semibold text-primary">{transactionId}</span></p>
+          <p>
+            TransactionId :{" "}
+            <span className="font-semibold text-primary">{transactionId}</span>
+          </p>
         </div>
       )}
     </div>

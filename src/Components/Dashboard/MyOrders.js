@@ -29,7 +29,7 @@ const MyOrders = () => {
                     navigate("/");
                     toast.error("Access Token expire");
                 }
-                return res.json();
+                return res;
             })
         );
     // console.log(orders);
@@ -47,7 +47,6 @@ const MyOrders = () => {
                     <thead>
                         <tr className='text-center'>
                             <th className='text-base'>S. No</th>
-                            <th className='text-base'>Avatar</th>
                             <th className='text-base'>Product / Part</th>
                             <th className='text-base'>Quantity</th>
                             <th className='text-base'>TransactionId</th>
@@ -57,37 +56,32 @@ const MyOrders = () => {
 
                      <tbody>
                         {
-                            orders.map((order, index) => (
+                            orders?.map((o, index) => (
                                 <tr key={index}>
                                     <th>{index + 1}</th>
-                                    <td className='avatar'>
-                                        <div class="w-16 rounded-xl">
-                                            <img src={order?.img} alt="" />
-                                        </div>
-                                    </td>
-                                    <td>{order?.productName}</td>
-                                    <td className='text-center'>{order?.quantity}</td>
+                                    <td>{o?.productName}</td>
+                                    <td className='text-center'>{o?.quantity}</td>
                                     <td className="text-center">
-                                        {!order.paid && (
+                                        {!o?.paid && (
                                             <div className="tooltip tooltip-secondary" data-tip="Complete Payment" >
-                                                <button className="btn btn-secondary btn-sm text-white" onClick={() => navigate(`/dashboard/payment/${order._id}`)
+                                                <button className="btn btn-secondary btn-sm text-white" onClick={() => navigate(`/dashboard/payment/${o?._id}`)
                                                 } >pay</button>
                                             </div>
                                         )}
-                                        {order.paid && (
+                                        {o?.paid && (
                                             <>
                                                 <p className="text-primary">Paid</p>
                                                 <div className="tooltip tooltip-secondary" data-tip="Transaction Id" >
-                                                    <p className="text-gray-700 font-semibold"> {order.transactionId} </p>
+                                                    <p className="text-gray-700 font-semibold"> {o?.transactionId} </p>
                                                 </div>
                                             </>
                                         )}
                                     </td>
                                     <td>
-                                        {!order.paid ? (
+                                        {!o?.paid ? (
                                             <div className="tooltip tooltip-primary" data-tip="Cancel This Order" >
                                                 <label htmlFor="delete-my-order-modal" className="btn modal-button btn-primary btn-sm text-white "
-                                                    onClick={() => setDeleteOrder(order)} > 
+                                                    onClick={() => setDeleteOrder(o)} > 
                                                     <FontAwesomeIcon className='' icon={faTrashAlt}></FontAwesomeIcon>
                                                     Delete </label>
                                             </div>
