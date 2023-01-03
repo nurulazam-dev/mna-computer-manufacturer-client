@@ -28,7 +28,7 @@ const Payment = () => {
         <section>
             <h2 className="text-3xl font-semibold text-primary my-4 text-center">Payment Details</h2>
             <div className="flex justify-around">
-                <div className="order-details border ">
+                <div className="order-details">
                     <PurchaseDetail
                         key={payForProduct._id}
                         payForProduct={payForProduct}
@@ -46,10 +46,42 @@ const Payment = () => {
                     <div className="mt-6">
                         <p className="text-red-600 text-center">Card Details</p>
                         <div className="text-sm px-5">
-                            <p><strong>Card number: </strong>4242 4242 4242 4242</p>
-                            <p><strong>MM / YY: </strong>12 / 25</p>
-                            <p><strong>CVC: </strong>123</p>
-                            <p><strong>ZIP: </strong>12456</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span className="font-bold">Card number</span>
+                                        </td>
+                                        <td>
+                                            <span>: 4242 4242 4242 4242</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className="font-bold">MM / YY</span>
+                                        </td>
+                                        <td>
+                                            <span>: 12 / 25</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className="font-bold">CVC</span>
+                                        </td>
+                                        <td>
+                                            <span>: 258</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className="font-bold">ZIP</span>
+                                        </td>
+                                        <td>
+                                            <span>: 12458</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
