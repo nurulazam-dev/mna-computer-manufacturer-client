@@ -49,22 +49,26 @@ const MyOrders = () => {
                             <th className='text-base'>S. No</th>
                             <th className='text-base'>Product / Part</th>
                             <th className='text-base'>Quantity</th>
+                            <th className='text-base'>Price</th>
+                            <th className='text-base'>Total Price</th>
                             <th className='text-base'>TransactionId</th>
                             <th className='text-base'>Delete</th>
                         </tr>
                     </thead>
 
-                     <tbody>
+                     <tbody className='text-sm'>
                         {
                             orders?.map((o, index) => (
                                 <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td>{o?.productName}</td>
                                     <td className='text-center'>{o?.quantity}</td>
+                                    <td className='text-center'>{o?.price}</td>
+                                    <td className='text-center'>{o?.shouldPay}</td>
                                     <td className="text-center">
                                         {!o?.paid && (
-                                            <div className="tooltip tooltip-secondary" data-tip="Complete Payment" >
-                                                <button className="btn btn-secondary btn-sm text-white" onClick={() => navigate(`/dashboard/payment/${o?._id}`)
+                                            <div className="tooltip tooltip-info" data-tip="Complete Payment" >
+                                                <button className="btn btn-info btn-sm text-white" onClick={() => navigate(`/dashboard/payment/${o?._id}`)
                                                 } >pay</button>
                                             </div>
                                         )}
@@ -79,10 +83,10 @@ const MyOrders = () => {
                                     </td>
                                     <td>
                                         {!o?.paid ? (
-                                            <div className="tooltip tooltip-primary" data-tip="Cancel This Order" >
-                                                <label htmlFor="delete-my-order-modal" className="btn modal-button btn-primary btn-sm text-white "
+                                            <div className="tooltip tooltip-error" data-tip="Cancel This Order" >
+                                                <label htmlFor="delete-my-order-modal" className="btn modal-button btn-error btn-sm text-white "
                                                     onClick={() => setDeleteOrder(o)} > 
-                                                    <FontAwesomeIcon className='' icon={faTrashAlt}></FontAwesomeIcon>
+                                                    <FontAwesomeIcon className='mr-2' icon={faTrashAlt}></FontAwesomeIcon>
                                                     Delete </label>
                                             </div>
                                         ) : (

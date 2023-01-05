@@ -8,7 +8,12 @@ import Loading from '../Shared/Loading';
 
 const AddAReview = () => {
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const value ={
+        defaultValues:{
+            name:user?.name
+        }
+    }
+    const { register, formState: { errors }, handleSubmit, reset } = useForm({value});
 
     const { isLoading } = useQuery('reviews', () => { fetch('https://mna-computer-manufacturer.onrender.com/reviews').then(res => res.json()) })
 
@@ -28,7 +33,7 @@ const AddAReview = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const reviewData = {
-                        name: user?.displayName,
+                        name: data.name,
                         ratings: data.ratings,
                         review: data.review,
                         img: img
@@ -69,10 +74,18 @@ const AddAReview = () => {
                         <div className="form-control w-full max-w-xs my-4">
                             <label className="input-group">
                                 <span>Name</span>
-                                <input type="text" name="name" disabled defaultValue={user?.displayName} className="input input-bordered w-full max-w-xs" />
+                                <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs"
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide your Name'
+                                        }
+                                    })} />
+                            </label>
+                            <label>
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-700">{errors.name.message}</span>}
                             </label>
                         </div>
-
                         <div className="form-control w-full max-w-xs my-4">
                             <label className="input-group">
                                 <span>Review</span>

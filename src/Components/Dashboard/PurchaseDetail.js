@@ -4,41 +4,34 @@ const PurchaseDetail = ({ payForProduct }) => {
   const { address, contact, customer, customerName, productName, quantity, price, shouldPay } = payForProduct;
 
   return (
-    <section className="mt-8">
-          <h2 className="text-3xl text-center">Order Details</h2>
-      <div className="card max-w-sm md:max-w-lg bg-base-100 p-4 hover:shadow-lg">
+    <section>
+      <div className="card max-w-sm md:max-w-lg bg-base-100 hover:shadow-lg">
         <div>
-          <table>
+          <h3 className="text-2xl text-green-600 font-bold text-center">Order Details</h3>
+          <table className="text-sm table">
             <tbody>
               <tr>
                 <td>
-                  <span className="font-bold text-primary">
-                    Customer Details
-                  </span>
+                  <span className="font-bold">Customer's Name</span>
+                </td>
+                <td>
+                  <span>: {customerName}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Name</span>
+                  <span className="font-bold">Email</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {customerName}</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="text-sm font-bold">Email</span>
-                </td>
-                <td>
-                  <span className="text-sm">: {customer}</span>
+                  <span>: {customer}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Contact No</span>
+                  <span className="font-bold">Contact No</span>
                 </td>
                 <td>
-                  <span className="text-sm">
+                  <span>
                     : {contact ? contact : "Not Provided"}
                   </span>
                 </td>
@@ -46,48 +39,43 @@ const PurchaseDetail = ({ payForProduct }) => {
               <tr>
                 <td>
                   <span className="text-sm font-bold">
-                    Delivery Address
+                    Address
                   </span>
                 </td>
                 <td>
-                  <span className="text-sm">: {address}</span>
-                </td>
-              </tr>
-              <tr>
-                <td className="pt-8">
-                  <span className="font-bold text-primary">Order Details</span>
+                  <span>: {address}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Name</span>
+                  <span className="font-bold">Product's Name</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {productName}</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="text-sm font-bold">Quantity</span>
-                </td>
-                <td>
-                  <span className="text-sm">: {quantity}</span>
+                  <span>: {productName}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Price/per unit</span>
+                  <span className="font-bold">Quantity</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {price}</span>
+                  <span>: {quantity}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Please Pay</span>
+                  <span className="font-bold">Price/per unit</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {shouldPay}</span>
+                  <span>: $ {price}</span>
+                </td>
+              </tr>
+              <tr className="font-bold text-blue-800">
+                <td>
+                  <span>Total Pay</span>
+                </td>
+                <td>
+                  <span>: $ {shouldPay}</span>
                 </td>
               </tr>
             </tbody>

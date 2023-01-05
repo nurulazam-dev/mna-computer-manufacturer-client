@@ -51,9 +51,8 @@ const CheckoutForm = ({ payForTool }) => {
     setSuccess("");
     setProcessing(true);
 
-    // confirm car payment
-    const { paymentIntent, error: intentError } =
-      await stripe.confirmCardPayment(clientSecret, {
+    // confirm card payment
+    const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: card,
           billing_details: {
@@ -116,11 +115,8 @@ const CheckoutForm = ({ payForTool }) => {
             },
           }}
         />
-        <button
-          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
-          type="submit"
-          disabled={!stripe || !clientSecret || success}
-        >
+        <button type="submit" disabled={!stripe || !clientSecret || success}
+          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4" >
           Pay
         </button>
       </form>

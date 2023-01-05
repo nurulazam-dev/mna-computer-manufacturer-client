@@ -19,7 +19,7 @@ const Payment = () => {
             },
         }).then((res) => res.json())
     );
-    console.log(payForProduct);
+    // console.log(payForProduct);
     if (isLoading) {
         return <Loading />;
     }
@@ -34,8 +34,8 @@ const Payment = () => {
                         payForProduct={payForProduct}
                     ></PurchaseDetail>
                 </div>
-                <div className="payment-stripe py-12 w-[320px]">
-                    <p className="text-green-600 text-center mb-4">Give your info in Card and Pay</p>
+                <div className="payment-stripe pb-12 w-[320px]">
+                    <h2 className="text-xl text-green-600 font-bold text-center mb-4">Give your info in Card for Pay</h2>
                     <div className="card bg-base-100 border shadow-xl">
                         <div className="card-body">
                             <Elements stripe={stripePromise}>
@@ -44,9 +44,9 @@ const Payment = () => {
                         </div>
                     </div>
                     <div className="mt-6">
-                        <p className="text-red-600 text-center">Card Details</p>
+                        <p className="text-red-600 text-center border-2">Pay Card Details Demo</p>
                         <div className="text-sm px-5">
-                            <table>
+                            <table className="table">
                                 <tbody>
                                     <tr>
                                         <td>
