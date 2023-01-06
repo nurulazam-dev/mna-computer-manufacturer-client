@@ -11,10 +11,12 @@ import Products from '../Components/Home/Products';
 import Review from '../Components/Home/Review';
 import Subscribe from '../Components/Home/Subscribe';
 import WhyChooseUs from '../Components/Home/WhyChooseUs';
+import PageTitle from '../Components/Shared/PageTitle';
 
 const Home = () => {
     return (
         <div className='mt-8 pt-8'>
+            <PageTitle title='Home'></PageTitle>
             <Banner />
             <Products />
             <BusinessSummary />

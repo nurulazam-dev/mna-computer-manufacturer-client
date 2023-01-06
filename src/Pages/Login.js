@@ -7,6 +7,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Components/Shared/Loading';
 import useToken from '../hooks/useToken';
 import { toast } from "react-toastify";
+import PageTitle from '../Components/Shared/PageTitle';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -40,6 +41,7 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center h-screen mt-12'>
+        <PageTitle title='Login'></PageTitle>
             <div className="mockup-phone border-primary">
                 <div className="camera"></div>
                 <div className="display">
