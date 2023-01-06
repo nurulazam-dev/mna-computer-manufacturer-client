@@ -16,7 +16,7 @@ import Footer from './Components/Shared/Footer';
 import Home from './Pages/Home';
 import Navbar from './Components/Shared/Navbar';
 import AllProduct from './Pages/AllProduct';
-// import Dashboard from './Pages/Dashboard';
+import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Blogs from './Pages/Blogs';
@@ -24,7 +24,6 @@ import NotFound from './Pages/NotFound';
 import MyOrders from './Components/Dashboard/MyOrders';
 import MyProfile from './Components/Dashboard/MyProfile';
 import BarChart from './Components/Dashboard/BarChart';
-import DashboardDemo from './Components/Shared/DashboardDemo';
 
 function App() {
   return (
@@ -35,8 +34,7 @@ function App() {
           <Route path='home' element={<Home />} />
           <Route path='/products' element={<AllProduct />} />
           <Route path='product/purchase/:purchaseId' element={<RequireAuth><ProductDetails /></RequireAuth>} />
-          {/* <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} > */}
-          <Route path='dashboard' element={<RequireAuth><DashboardDemo /></RequireAuth>} >
+          <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
             <Route index element={<MyProfile />} />
             <Route path='addReview' element={<AddAReview/>} />
             <Route path='analysis' element={<BarChart/>} />

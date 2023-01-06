@@ -9,12 +9,14 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation"
+import { HelmetProvider } from 'react-helmet-async';
 
 // Create a client
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <HelmetProvider>
   <BrowserRouter>
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
@@ -22,6 +24,7 @@ root.render(
       </QueryClientProvider>
     </React.StrictMode>
   </BrowserRouter>
+  </HelmetProvider>
 );
 
 reportWebVitals();
