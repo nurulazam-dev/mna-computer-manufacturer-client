@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Accordion from './Accordion';
 import VideoFrame from './VideoFrame';
-import faqs from '../Shared/FaqData';
+import {faqsData} from '../Shared/Datas';
 
 const Frequescy = () => {
     const [active, setActive] = useState(1)
@@ -18,7 +18,7 @@ const Frequescy = () => {
                 </div>
                 <div className='' >
                     {
-                        faqs.map(faq=>(
+                        faqsData.map(faq=>(
                             <Accordion 
                             key={faq.id} id={faq.id} 
                             title={faq.title} ans={faq.ans} 

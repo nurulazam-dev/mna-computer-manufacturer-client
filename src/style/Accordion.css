@@ -15,11 +15,12 @@
     width: 535px;
     /* max-width: 480px; */
     margin: 18px auto;
-    color: #fff;
+    color: black;
 }
 .accordionHeading{
-    background: #19223a;
+    background: #090216;
     padding: 14px 0;
+    color: white;
 }
 .accordionHeading .containerBox{
     display: flex;
@@ -35,8 +36,9 @@
     cursor: pointer;
 }
 .accordionContent{
-    background: #2f3272;
+    background-image: linear-gradient(to right, rgb(255, 166, 2) , rgb(245, 235, 235));
     height: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 0;
     display: flex;
     overflow: hidden;

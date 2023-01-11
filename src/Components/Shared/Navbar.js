@@ -32,7 +32,6 @@ const Navbar = () => {
             <ul className={`bg-[#19223a] md:pl-10 pr-28 md:static fixed duration-500 ease-linear top-0 md:h-auto h-screen z-10 ${!open ? 'right-[-100%] ' : 'right-0'}`}>
 
                 <li className={liClass}><NavLink to='/' className={navLinkClass}>Home</NavLink></li>
-                <li className={liClass}><NavLink to='/products' className={navLinkClass}>Products</NavLink></li>
                 <li className={liClass}><NavLink to='/dashboard' className={navLinkClass}>Dashboard</NavLink></li>
                 <li className={liClass}><NavLink to='/myPortfolio' className={navLinkClass}>Portfolio</NavLink></li>
                 <li className={liClass}><NavLink to='/blogs' className={navLinkClass}>Blogs</NavLink></li>

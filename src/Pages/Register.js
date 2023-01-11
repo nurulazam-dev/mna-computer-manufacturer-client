@@ -44,7 +44,6 @@ const Register = () => {
     };
     console.log(user);
 
-
     return (
         <div className='flex justify-center items-center h-screen mt-12'>
             <PageTitle title='Register'></PageTitle>

@@ -9,7 +9,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 const Products = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useQuery("products", () =>
-    fetch("https://mna-computer-manufacturer.onrender.com/products").then((res) => res.json())
+    fetch(`https://mna-computer-manufacturer.onrender.com/products`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
@@ -21,8 +21,7 @@ const Products = () => {
         <h4 className='text-2xl'>Our available computer manufacturer parts / products</h4>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
-
-        {products.slice(0, 10).map((product) => (
+        {products.slice(0,10).map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}
       </div>
