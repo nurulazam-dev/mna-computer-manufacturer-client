@@ -33,12 +33,12 @@ const ManageAllOrders = () => {
         <table className="table w-full border rounded">
           <thead>
             <tr className="text-[17px] text-white">
-              <th className="">S. No</th>
-              <th className="">Customer Name</th>
-              <th className="">Customer</th>
-              <th className="">Product / Part</th>
-              <th className="">Status</th>
-              <th className="">Update Status</th>
+              <th>S. No</th>
+              <th>Customer Name</th>
+              <th>Customer</th>
+              <th>Product / Part</th>
+              <th>Status</th>
+              <th>Update Status</th>
             </tr>
           </thead>
           <tbody>

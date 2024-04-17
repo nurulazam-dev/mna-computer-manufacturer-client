@@ -1,80 +1,94 @@
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const ManageProducts = () => {
-    const { data: products, isLoading } = useQuery("products", () =>
-        fetch("https://mna-computer-manufacturer.onrender.com/products").then((res) => res.json())
-    );
-    if (isLoading) {
-        return <Loading />;
-    }
+  const { data: products, isLoading } = useQuery("products", () =>
+    fetch("https://mna-computer-manufacturer.onrender.com/products").then(
+      (res) => res.json()
+    )
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
 
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure to Delete this product')
-        if (proceed) {
-            const url = `https://mna-computer-manufacturer.onrender.com/products/${id}`;
-            fetch(url, {
-                method: "DELETE",
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    // const remaining = products.filter(product => product._id !== id);
-                    // setProducts(remaining)
-                })
-        }
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure to Delete this product");
+    if (proceed) {
+      const url = `https://mna-computer-manufacturer.onrender.com/products/${id}`;
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // const remaining = products.filter(product => product._id !== id);
+          // setProducts(remaining)
+        });
     }
+  };
 
-    return (
-        <div>
-            <h2 className="text-center text-green-500 text-4xl font-semibold">Manage Products </h2>
-            <h2 className="text-center text-xl">Total Products: {products?.length} </h2>
-            <div className="overflow-x-auto p-4">
-                <table className="table w-full">
-                    <thead>
-                        <tr className='text-center'>
-                            <th className='text-base'>S. No</th>
-                            <th className='text-base'>Avatar</th>
-                            <th className='text-base'>Product / Part</th>
-                            <th className='text-base'>Min Order</th>
-                            <th className='text-base'>Available</th>
-                            <th className='text-base'>Price <span className='text-sm'>/per</span> </th>
-                            <th className='text-base'>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            products.map((product, index) => <>
-                                <tr>
-                                    <th>{index + 1}</th>
-                                    <td className='avatar'>
-                                        <div class="w-16 rounded-xl">
-                                            <img src={product.img} alt="" />
-                                        </div>
-                                    </td>
-                                    <td>{product.name.slice(0,20)}</td>
-                                    <td className='text-center'>{product.minOrderQuantity}</td>
-                                    <td className='text-center'>{product.availQuantity}</td>
-                                    <td className='text-center'>{product.price}</td>
-                                    <td className='text-center'>
-                                        <button
-                                            onClick={() => handleDelete(product._id)} className='btn bg-red-500 border-0 h-5'>
-                                            <FontAwesomeIcon className='' icon={faTrashAlt}></FontAwesomeIcon>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </>)
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    );
+  return (
+    <section className="border border-green-600 rounded mx-4">
+      <div className="bg-green-600">
+        <h2 className="text-white text-center p-1 text-2xl font-semibold">
+          Manage Products
+        </h2>
+      </div>
+      <h2 className="text-center text-xl mt-3">
+        Total Products: {products?.length}
+      </h2>
+
+      <div className="overflow-x-auto p-4">
+        <table className="table w-full border rounded">
+          <thead>
+            <tr className="text-[17px] text-white">
+              <th>S. No</th>
+              <th>Avatar</th>
+              <th>Product / Part</th>
+              <th>Min Order</th>
+              <th>Available</th>
+              <th>
+                Price <span className="text-sm">/per</span>
+              </th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product, index) => (
+              <>
+                <tr className="text-[16px]">
+                  <th className="bg-white">{index + 1}</th>
+                  <td className="avatar bg-white w-20">
+                    <img src={product.img} alt="" />
+                  </td>
+                  <td className="bg-white">{product.name.slice(0, 20)}</td>
+                  <td className="bg-white">{product.minOrderQuantity}</td>
+                  <td className="bg-white">{product.availQuantity}</td>
+                  <td className="bg-white">{product.price}</td>
+                  <td className="bg-white">
+                    <button
+                      onClick={() => handleDelete(product._id)}
+                      className="btn bg-red-600 border-0 h-5"
+                    >
+                      <FontAwesomeIcon
+                        className="text-white"
+                        icon={faTrashAlt}
+                      ></FontAwesomeIcon>
+                    </button>
+                  </td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
 };
 
 export default ManageProducts;
