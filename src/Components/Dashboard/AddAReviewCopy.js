@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
 
-const AddAReview = () => {
+const AddAReviewCopy = () => {
   const [user] = useAuthState(auth);
   const value = {
     defaultValues: {
@@ -216,4 +216,4 @@ const AddAReview = () => {
   );
 };
 
-export default AddAReview;
+export default AddAReviewCopy;
