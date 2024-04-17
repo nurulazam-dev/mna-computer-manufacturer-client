@@ -1,60 +1,64 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-.containerBox{
-    width: 100%;
-    max-width: 530px;
-    margin: auto;
-    padding: 0px 20px;
+.containerBox {
+  width: 100%;
+  max-width: 530px;
+  margin: auto;
+  padding: 0px 10px;
 }
-.accordion{
-    /* width: 100%; */
-    width: 535px;
-    /* max-width: 480px; */
-    margin: 18px auto;
-    color: black;
+.accordion {
+  /* width: 100%; */
+  width: 535px;
+  /* max-width: 480px; */
+  margin: 5px auto;
+  color: black;
 }
-.accordionHeading{
-    background: #090216;
-    padding: 14px 0;
-    color: white;
+.accordionHeading {
+  background: #090216;
+  padding: 14px 0;
+  color: white;
 }
-.accordionHeading .containerBox{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 15px;
+.accordionHeading .containerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
 }
-.accordionHeading p{
-    letter-spacing: 1.2px;
-    font-weight: 400;
+.accordionHeading p {
+  letter-spacing: 1.2px;
+  font-weight: 400;
 }
-.accordionHeading span{
-    cursor: pointer;
+.accordionHeading span {
+  cursor: pointer;
 }
-.accordionContent{
-    background-image: linear-gradient(to right, rgb(255, 166, 2) , rgb(245, 235, 235));
-    height: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    opacity: 0;
-    display: flex;
-    overflow: hidden;
-    transition: all 600ms ease-in-out;
+.accordionContent {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 166, 2),
+    rgb(245, 235, 235)
+  );
+  height: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0;
+  display: flex;
+  overflow: hidden;
+  transition: all 600ms ease-in-out;
 }
-.accordionContent.show{
-    height: 135px;
-    opacity: 1;
+.accordionContent.show {
+  height: 135px;
+  opacity: 1;
 }
-.accordionContent p{
-    font-size: 15px;
-    line-height: 1.6;
+.accordionContent p {
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 @media (max-width: 767px) {
-    .accordion{
-        width: 460px;
-    }
+  .accordion {
+    width: 460px;
   }
+}
