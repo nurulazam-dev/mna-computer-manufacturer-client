@@ -7,7 +7,6 @@ import Frequescy from "../Components/Home/Frequescy";
 import GoogleLocationMap from "../Components/Home/GoogleLocationMap";
 import InfoFooter from "../Components/Home/InfoFooter";
 import OfferDateline from "../Components/Home/OfferDateline";
-import OurStock from "../Components/Home/OurStock";
 import Products from "../Components/Home/Products";
 import Review from "../Components/Home/Review";
 import Subscribe from "../Components/Home/Subscribe";
@@ -25,7 +24,6 @@ const Home = () => {
       <WhyChooseUs />
       <OfferDateline />
       <Frequescy />
-      <OurStock />
       <Blog />
       <ContactUs />
       <Subscribe />
