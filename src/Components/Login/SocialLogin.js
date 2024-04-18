@@ -28,7 +28,7 @@ const SocialLogin = ({ children }) => {
   console.log(googleUser || githubLoading);
   useEffect(() => {
     if (token) {
-      toast.success("Social Login successfull");
+      toast.success("Social Login successful");
       navigate(from, { replace: true });
     }
   }, [token, from, navigate]);
@@ -45,11 +45,13 @@ const SocialLogin = ({ children }) => {
 
   return (
     <div>
-      <div className="divider my-2">OR</div>
-      <div className="flex justify-center gap-3">
+      <div className="divider my-2 text-[14px] text-slate-400">
+        Or Sign Up With
+      </div>
+      <div className="flex justify-center gap-3 w-full">
         <button
           onClick={() => signInWithGoogle()}
-          className="btn btn-outline border-green-600 rounded-xl p-2 w-[40px]"
+          className="btn btn-outline border-green-600 rounded-xl w-1/2 hover:bg-orange-500 hover:border-black"
         >
           <img
             className="w-50 h-50"
@@ -61,7 +63,7 @@ const SocialLogin = ({ children }) => {
         {errorElement}
         <button
           onClick={() => signInWithGithub()}
-          className="btn btn-outline border-green-600 rounded-xl p-2"
+          className="btn btn-outline border-green-600 rounded-xl w-1/2 hover:bg-orange-500 hover:border-black"
         >
           <img
             className="w-50 h-50"
