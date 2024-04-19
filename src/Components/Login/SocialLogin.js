@@ -51,11 +51,11 @@ const SocialLogin = ({ children }) => {
       <div className="flex justify-center gap-3 w-full">
         <button
           onClick={() => signInWithGoogle()}
-          className="btn btn-outline border-green-600 rounded-xl w-1/2 hover:bg-orange-500 hover:border-black"
+          className="rounded-full p-[5px] border border-green-600 hover:bg-orange-500 hover:border-black"
         >
           <img
-            className="w-50 h-50"
-            src="https://i.ibb.co/JqhBJYJ/google.png"
+            className="w-[35px] h-[35px]"
+            src="https://i.ibb.co/WsNgDYN/google-logo.png"
             alt=""
           />
           {children}
@@ -63,11 +63,11 @@ const SocialLogin = ({ children }) => {
         {errorElement}
         <button
           onClick={() => signInWithGithub()}
-          className="btn btn-outline border-green-600 rounded-xl w-1/2 hover:bg-orange-500 hover:border-black"
+          className="rounded-full p-[5px] border border-green-600 hover:bg-orange-500 hover:border-black"
         >
           <img
-            className="w-50 h-50"
-            src="https://i.ibb.co/3Wjh3wv/github.png"
+            className="w-[35px] h-[35px]"
+            src="https://i.ibb.co/1f1WyV3/git-Hub-logo.png"
             alt=""
           />
           {children}

@@ -20,7 +20,8 @@ import AllProduct from "./Pages/AllProduct";
 import Blogs from "./Pages/Blogs";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
-import Login from "./Pages/Login";
+// import Login from "./Pages/Login";
+import LoginCopy from "./Pages/LoginCopy";
 import NotFound from "./Pages/NotFound";
 import Register from "./Pages/Register";
 
@@ -86,7 +87,8 @@ function App() {
             }
           />
         </Route>
-        <Route path="login" element={<Login />} />
+        {/* <Route path="login" element={<Login />} /> */}
+        <Route path="login" element={<LoginCopy />} />
         <Route path="register" element={<Register />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="*" element={<NotFound />} />
