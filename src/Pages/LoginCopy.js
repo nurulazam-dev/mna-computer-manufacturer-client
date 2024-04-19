@@ -48,9 +48,9 @@ const LoginCopy = () => {
     <div className="h-screen mt-12 py-12">
       <PageTitle title="Login"></PageTitle>
       <div className="flex justify-center items-center">
-        <div className="flex justify-center items-center border border-green-600 p-5 rounded shadow-lg">
+        <div className="lg:flex justify-center items-center border border-green-600 p-5 rounded shadow-lg">
           {/* info side */}
-          <div className="w-96 bg-white px-4 py-2 border">
+          <div className="w-96 bg-white px-4 py-2">
             <div className="w-full mb-4">
               <img
                 src="https://i.ibb.co/dK4hBS7/app-login-security-4897468-4077880.webp"
@@ -71,6 +71,9 @@ const LoginCopy = () => {
               </div>
             </div>
           </div>
+          {/* divider */}
+          <div className=" border w-[1px] mx-2 h-[400px]"></div>
+
           {/* login form side */}
           <div className="w-96 bg-white p-4">
             <div className="">

@@ -69,6 +69,11 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className={liClass}>
+          <NavLink to="/products" className={navLinkClass}>
+            Products
+          </NavLink>
+        </li>
+        <li className={liClass}>
           <NavLink to="/dashboard" className={navLinkClass}>
             Dashboard
           </NavLink>
@@ -78,13 +83,6 @@ const Navbar = () => {
             Blogs
           </NavLink>
         </li>
-        {!user && (
-          <li className={liClass}>
-            <Link to={"/register"} className={navLinkClass}>
-              Register
-            </Link>
-          </li>
-        )}
         <li className={liClass}>
           {user ? (
             <button className={navLinkClass} onClick={handleSignOut}>
