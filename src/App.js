@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import AddAProduct from "./Components/Dashboard/AddAProduct";
 import AddAReview from "./Components/Dashboard/AddAReview";
-import BarChart from "./Components/Dashboard/BarChart";
+import AnalysisDashboard from "./Components/Dashboard/AnalysisDashboard";
 import MakeAdminPanel from "./Components/Dashboard/MakeAdminPanel";
 import ManageAllOrders from "./Components/Dashboard/ManageAllOrders";
 import ManageProducts from "./Components/Dashboard/ManageProducts";
@@ -20,8 +20,7 @@ import AllProduct from "./Pages/AllProduct";
 import Blogs from "./Pages/Blogs";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
-// import Login from "./Pages/Login";
-import LoginCopy from "./Pages/LoginCopy";
+import Login from "./Pages/Login";
 import NotFound from "./Pages/NotFound";
 import Register from "./Pages/Register";
 
@@ -49,11 +48,19 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyProfile />} />
+          <Route path="myProfile" element={<MyProfile />} />
           <Route path="addReview" element={<AddAReview />} />
-          <Route path="analysis" element={<BarChart />} />
           <Route path="myOrders" element={<MyOrders />} />
           <Route path="payment/:payForId" element={<Payment />}></Route>
+
+          <Route
+            index
+            element={
+              <RequireAdmin>
+                <AnalysisDashboard />
+              </RequireAdmin>
+            }
+          />
           <Route
             path="makeAdminPanel"
             element={
@@ -87,8 +94,7 @@ function App() {
             }
           />
         </Route>
-        {/* <Route path="login" element={<Login />} /> */}
-        <Route path="login" element={<LoginCopy />} />
+        <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="*" element={<NotFound />} />

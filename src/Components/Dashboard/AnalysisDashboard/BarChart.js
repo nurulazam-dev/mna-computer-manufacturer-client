@@ -8,7 +8,6 @@ import {
 } from "chart.js";
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import Calender from "../Home/Calender";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -43,16 +42,8 @@ const BarChart = () => {
   const options = {};
 
   return (
-    <section className="mx-5 px-5 ">
-      <h4 className="text-3xl text-center">Product stock & price</h4>
-      <div className="lg:flex w-full">
-        <div className="lg:w-1/3">
-          <Calender />
-        </div>
-        <div className="lg:w-2/3 ">
-          <Bar options={options} data={data} />
-        </div>
-      </div>
+    <section className="">
+      <Bar options={options} data={data} />
     </section>
   );
 };

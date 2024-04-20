@@ -74,15 +74,16 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className={liClass}>
-          <NavLink to="/dashboard" className={navLinkClass}>
-            Dashboard
-          </NavLink>
-        </li>
-        <li className={liClass}>
           <NavLink to="/blogs" className={navLinkClass}>
             Blogs
           </NavLink>
         </li>
+        <li className={liClass}>
+          <NavLink to="/dashboard" className={navLinkClass}>
+            Dashboard
+          </NavLink>
+        </li>
+
         <li className={liClass}>
           {user ? (
             <button className={navLinkClass} onClick={handleSignOut}>

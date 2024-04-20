@@ -9,31 +9,28 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   return (
-    <div className="drawer drawer-end drawer-mobile my-10 px-5 pt-8">
+    <div className="drawer drawer-end drawer-mobile my-10 pl-5 ">
       <PageTitle title="Dashboard"></PageTitle>
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
+      <div className="drawer-content pt-8 pr-5">
         <h2 className="text-3xl font-bold text-center text-blue-500 my-2 py-2">
           Dashboard
         </h2>
         <Outlet />
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side border pt-4">
         <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-47 bg-white text-base-content">
-          <li>
-            <Link to="/dashboard">My Profile</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/analysis">Product Analysis</Link>
-          </li>
+        <ul className="menu p-4 overflow-y-auto w-47 bg-white text-black text-[18px] shadow-lg">
           {admin ? (
             <>
               <li>
-                <Link to="/dashboard/manageOrders">Manage All Orders</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <Link to="/dashboard/addProduct">Add a Product</Link>
+                <Link to="/dashboard/manageOrders">Manage Orders</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addProduct">Add Product</Link>
               </li>
               <li>
                 <Link to="/dashboard/manageProducts">Manage Products</Link>
@@ -52,6 +49,9 @@ const Dashboard = () => {
               </li>
             </>
           )}
+          <li>
+            <Link to="/dashboard/myProfile">My Profile</Link>
+          </li>
         </ul>
       </div>
     </div>

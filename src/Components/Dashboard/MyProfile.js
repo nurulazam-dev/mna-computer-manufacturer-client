@@ -200,6 +200,7 @@ const MyProfile = () => {
                 <input
                   type="number"
                   name="contact"
+                  required
                   placeholder="Provide your Contact Number"
                   className="bg-white input text-[16px] border border-black w-full "
                   defaultValue={contact}
@@ -214,6 +215,7 @@ const MyProfile = () => {
                   type="text"
                   placeholder="Educational Qualification"
                   name="education"
+                  required
                   className="bg-white input text-[16px] border border-black w-full"
                   defaultValue={education}
                 />
@@ -227,6 +229,7 @@ const MyProfile = () => {
                   type="text"
                   name="address"
                   placeholder="Your Address"
+                  required
                   className="bg-white input text-[16px] border border-black w-full"
                   defaultValue={address}
                 />
@@ -244,6 +247,7 @@ const MyProfile = () => {
                     type="text"
                     name="portfolio"
                     placeholder="Portfolio Website Link"
+                    required
                     className="bg-white input text-[16px] border border-black w-full"
                     defaultValue={portfolio}
                   />
@@ -257,6 +261,7 @@ const MyProfile = () => {
                     type="text"
                     name="linkedIn"
                     placeholder="LinkedIn Account Link"
+                    required
                     className="bg-white input text-[16px] border border-black w-full"
                     defaultValue={linkedIn}
                   />
