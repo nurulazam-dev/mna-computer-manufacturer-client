@@ -44,7 +44,7 @@ const MakeAdminPanel = () => {
             {users?.map((user, index) => (
               <>
                 <AdminPanel
-                  key={index}
+                  key={user?._id}
                   index={index}
                   user={user}
                   refetch={refetch}

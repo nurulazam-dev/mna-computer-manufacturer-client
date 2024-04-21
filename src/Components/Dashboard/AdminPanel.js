@@ -30,7 +30,7 @@ const AdminPanel = ({ user, index, refetch }) => {
   };
 
   return (
-    <tr className="text-[16px]" key={index}>
+    <tr className="text-[16px]" key={_id}>
       <th className="bg-white">{index + 1}</th>
       <td className="bg-white">{name}</td>
       <td className="bg-white">{email}</td>
