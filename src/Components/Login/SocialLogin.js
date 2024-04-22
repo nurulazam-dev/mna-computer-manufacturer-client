@@ -25,7 +25,7 @@ const SocialLogin = ({ children }) => {
   if (googleLoading || githubLoading) {
     <Loading />;
   }
-  console.log(googleUser || githubLoading);
+  // console.log(googleUser || githubLoading);
   useEffect(() => {
     if (token) {
       toast.success("Social Login successful");
