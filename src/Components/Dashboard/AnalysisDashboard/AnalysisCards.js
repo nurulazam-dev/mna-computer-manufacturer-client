@@ -59,7 +59,7 @@ const AnalysisCards = () => {
         {/* card-2 */}
         <div className="border rounded bg-orange-600 text-white px-3 py-4">
           <div className="flex justify-between mb-5 text-[22px]">
-            <h4>Total Users</h4>
+            <h4>Registered Users</h4>
             <FontAwesomeIcon icon={faUsers} />
           </div>
           <h3 className="font-bold text-[24px]">{users?.length} +</h3>
