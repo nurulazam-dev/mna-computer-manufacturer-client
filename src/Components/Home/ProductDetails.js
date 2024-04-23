@@ -91,39 +91,45 @@ const ProductDetails = () => {
 
   return (
     <section className="py-16">
-      <div className="flex justify-center">
+      <div className="lg:flex md:flex justify-center w-full px-4 py-6">
         {/* ===================================
             product details Section/Card
             ==================================== */}
-        <div className="card w-2/5 bg-white shadow-xl">
-          <div className="card-body">
-            <h2 className="text-center text-fuchsia-600 text-4xl font-semibold">
+        <div className="card rounded-none lg:w-4/6 md:w-3/4 w-full bg-white shadow-xl border border-green-600">
+          <div className="bg-green-600">
+            <h2 className="text-white text-center p-1 text-2xl font-semibold">
               Product Details
             </h2>
-            <div className="card w-80 md:w-9/12 bg-white mx-auto">
-              <figure>
+          </div>
+
+          <div className="">
+            <div className=" w-full bg-white mx-auto">
+              <figure className="my-3">
                 {" "}
-                <img src={img} alt="tool" />{" "}
+                <img src={img} alt="tool" className="w-[50%]" />{" "}
               </figure>
-              <div className="card-body">
-                <h2 className="text-3xl text-center font-bold text-primary">
+              <div className="">
+                <h2 className="text-xl text-center font-bold text-slate-500">
                   {name}
                 </h2>
-                <p className="">
-                  <span className="font-bold text-2xl">$ {price} </span> /per
+                <p className="text-center my-2 text-[15px]">
+                  <span className="font-bold text-xl">$ {price} </span> / per
                   unit price
                 </p>
-                <p className="">
-                  <span className="font-semibold">Details:</span> {description}
-                </p>
-                <p className="">
-                  <span className="font-semibold">Available Product:</span>{" "}
-                  {availQuantity} piece
-                </p>
-                <p className="">
-                  <span className="font-semibold">Minimum Order:</span>{" "}
-                  {minOrderQuantity} piece
-                </p>
+                <div className="px-3">
+                  <div className="text-[16px] flex justify-between mb-2">
+                    <p className="">
+                      <span className="font-semibold">Available Product:</span>{" "}
+                      {availQuantity} piece
+                    </p>
+                    <p className="">
+                      <span className="font-semibold">Minimum Order:</span>{" "}
+                      {minOrderQuantity} piece
+                    </p>
+                  </div>
+
+                  <p className="text-[15px] text-slate-600">{description}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -132,86 +138,103 @@ const ProductDetails = () => {
         {/* ===================================
             purchase profile section/card
             ==================================== */}
-        <div className="card w-2/6 bg-white shadow-xl mx-7">
-          <div className="card-body">
-            <h2 className="text-center text-orange-500 text-4xl font-semibold">
-              Purchase Profile
+        <div className="card lg:w-2/6 md:w-3/4 w-full bg-white shadow-xl mx-7 border border-green-600 rounded-none">
+          <div className="bg-green-600">
+            <h2 className="text-white text-center p-1 text-2xl font-semibold">
+              Product Details
             </h2>
+          </div>
+          <div className="card-body py-2">
             <form onSubmit={handleSubmit}>
-              <label className="label">
-                <span className="label-text font-semibold pl-3">Name</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-                defaultValue={displayName}
-                disabled
-              />
-              <label className="label">
-                {" "}
-                <span className="label-text font-semibold pl-3">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-                defaultValue={email}
-                disabled
-              />
-              <label className="label">
-                <span className="label-text font-semibold pl-3">
-                  {" "}
-                  Product Name{" "}
-                </span>
-              </label>
-              <input
-                type="text"
-                name="productName"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-                defaultValue={name}
-                disabled
-              />
-              <label className="label">
-                {" "}
-                <span className="label-text font-semibold pl-3">
-                  Address
-                </span>{" "}
-              </label>
-              <input
-                type="text"
-                name="address"
-                placeholder="Your Address"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-                required
-              />
-              <label className="label">
-                {" "}
-                <span className="label-text font-semibold pl-3">
-                  {" "}
-                  Contact No{" "}
-                </span>{" "}
-              </label>
-              <input
-                type="number"
-                name="contact"
-                placeholder="Your Contact No"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              />
-              <label className="label">
-                <span className="label-text font-semibold pl-3">Quantity</span>
-              </label>
-              <input
-                type="number"
-                name="quantity"
-                placeholder="Order Quantity"
-                className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-                defaultValue={minOrderQuantity}
-                required
-                onChange={(e) => {
-                  setQuantity(e.target.value);
-                }}
-              />
+              {/* name field */}
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  defaultValue={displayName}
+                  disabled
+                  className="p-2 bg-slate-100 text-slate-700 px-4 text-[16px] border rounded-none border-black w-full "
+                />
+              </div>
+              {/* email field */}
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  defaultValue={email}
+                  disabled
+                  className="bg-slate-100 text-slate-700 p-2 px-4 text-[16px] border rounded-none border-black w-full "
+                />
+              </div>
+              {/* product name field */}
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">
+                    Product Name
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="productName"
+                  defaultValue={name}
+                  disabled
+                  className="bg-slate-100 text-slate-700 p-2 px-4 text-[16px] border rounded-none border-black w-full "
+                />
+              </div>
+              {/* address field */}
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">
+                    Address
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Your Address"
+                  required
+                  className="bg-white input text-[16px] border rounded-none border-black w-full "
+                />
+              </div>
+              {/* contact field */}
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">
+                    Contact
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="contact"
+                  placeholder="Your Contact Number"
+                  required
+                  className="bg-white input text-[16px] border rounded-none border-black w-full "
+                />
+              </div>
+              <div className="form-control w-full mb-3">
+                <label className="label p-0">
+                  <span className="text-[17px] mb-[3px] label-text">
+                    Quantity
+                  </span>
+                </label>
+                <input
+                  className="bg-white input text-[16px] border rounded-none border-black w-full "
+                  type="number"
+                  name="quantity"
+                  placeholder="Order Quantity"
+                  defaultValue={minOrderQuantity}
+                  required
+                  onChange={(e) => {
+                    setQuantity(e.target.value);
+                  }}
+                />
+              </div>
               <label className="label">
                 <span className="label-text-alt text-red-500">
                   {" "}
@@ -219,7 +242,7 @@ const ProductDetails = () => {
                 </span>
               </label>
               <input
-                className="btn btn-primary w-full max-w-xs block my-4"
+                className="btn bg-blue-600 text-white border-blue-900 hover:text-orange-500 lg:mt-0 w-full my-4"
                 type="submit"
                 value="Order Now"
                 disabled={
