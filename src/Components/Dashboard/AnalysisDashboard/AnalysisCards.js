@@ -51,7 +51,7 @@ const AnalysisCards = () => {
         {/* card-1 */}
         <div className="border rounded bg-blue-700 text-white px-3 py-4">
           <div className="flex justify-between mb-5 text-[22px]">
-            <h4>Total Products</h4>
+            <h4 className="text-[20px]">Total Products</h4>
             <FontAwesomeIcon icon={faComputer} />
           </div>
           <h3 className="font-bold text-[24px]">{products?.length} +</h3>
@@ -59,7 +59,7 @@ const AnalysisCards = () => {
         {/* card-2 */}
         <div className="border rounded bg-orange-600 text-white px-3 py-4">
           <div className="flex justify-between mb-5 text-[22px]">
-            <h4>Registered Users</h4>
+            <h4 className="text-[20px]">Registered Users</h4>
             <FontAwesomeIcon icon={faUsers} />
           </div>
           <h3 className="font-bold text-[24px]">{users?.length} +</h3>
@@ -67,7 +67,7 @@ const AnalysisCards = () => {
         {/* card-3 */}
         <div className="border rounded bg-violet-600 text-white px-3 py-4">
           <div className="flex justify-between mb-5 text-[22px]">
-            <h4>Total Orders</h4>
+            <h4 className="text-[20px]">Total Orders</h4>
             <FontAwesomeIcon icon={faClipboardUser} />
           </div>
           <h3 className="font-bold text-[24px]">{orders?.length} +</h3>
@@ -75,7 +75,7 @@ const AnalysisCards = () => {
         {/* card-4 */}
         <div className="border rounded bg-sky-700 text-white px-3 py-4">
           <div className="flex justify-between mb-5 text-[22px]">
-            <h4>Total Reviews</h4>
+            <h4 className="text-[20px]">Total Reviews</h4>
             <FontAwesomeIcon icon={faComments} />
           </div>
           <h3 className="font-bold text-[24px]">{reviews?.length} +</h3>

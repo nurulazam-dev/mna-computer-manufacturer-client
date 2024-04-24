@@ -18,9 +18,9 @@ import Footer from "./Components/Shared/Footer";
 import Navbar from "./Components/Shared/Navbar";
 import AllProduct from "./Pages/AllProduct";
 import Blogs from "./Pages/Blogs";
-import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import LoginCopy from "./Pages/LoginCopy";
 import NotFound from "./Pages/NotFound";
 import Register from "./Pages/Register";
 
@@ -44,7 +44,8 @@ function App() {
           path="dashboard"
           element={
             <RequireAuth>
-              <Dashboard />
+              {/* <Dashboard /> */}
+              <LoginCopy />
             </RequireAuth>
           }
         >

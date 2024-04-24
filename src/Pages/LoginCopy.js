@@ -1,260 +1,132 @@
+import {
+  faCartPlus,
+  faCartShopping,
+  faChartLine,
+  faComment,
+  faPeopleRoof,
+  faSquarePlus,
+  faTableList,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
-import { toast } from "react-toastify";
-import Loading from "../Components/Shared/Loading";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, Outlet } from "react-router-dom";
+import PageTitle from "../Components/Shared/PageTitle";
+import auth from "../Firebase/firebase.init";
+import brandLogo from "../assets/brandLogo.png";
+import useAdmin from "../hooks/useAdmin";
 
 const LoginCopy = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm();
-  const { isLoading } = useQuery("products", () => {
-    fetch("https://mna-computer-manufacturer.onrender.com/products").then(
-      (res) => res.json()
-    );
-  });
-
-  const imgStorageKey = process.env.REACT_APP_IMGSTORE_API;
-
-  const onSubmit = async (data) => {
-    const image = data.image[0];
-    const formData = new FormData();
-    formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.success) {
-          const img = result.data.url;
-          const product = {
-            name: data.name,
-            description: data.description,
-            minOrderQuantity: data.minOrderQuantity,
-            availQuantity: data.availQuantity,
-            price: data.price,
-            img: img,
-          };
-          // send data to database
-          fetch("https://mna-computer-manufacturer.onrender.com/products", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-            body: JSON.stringify(product),
-          })
-            .then((res) => res.json())
-            .then((inserted) => {
-              if (inserted.insertedId) {
-                toast.success("Product added successfully");
-                reset();
-              } else {
-                toast.error("Product added fail. Please try again");
-              }
-            });
-        }
-      });
-  };
-
-  if (isLoading) {
-    return <Loading />;
-  }
-
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
-    <section className="border border-green-600 rounded mx-4">
-      <div className="bg-green-600">
-        <h2 className="text-white text-center p-1 text-2xl font-semibold">
-          Add A Product
+    // <div className="drawer drawer-end drawer-mobile my-10 pl-5 ">
+    <div className="my-10 pl-5 flex w-full">
+      <PageTitle title="Dashboard"></PageTitle>
+      {/* <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" /> */}
+
+      <div className="drawer-content pt-8 pr-5 lg:w-4/5 md:w-4/6 w-10/12">
+        <h2 className="text-3xl font-bold text-center text-blue-500 my-2 py-2">
+          Dashboard
         </h2>
+        <Outlet />
       </div>
-      <div className="px-4 py-2">
-        {/* form part */}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {/* <form> */}
-          {/* ===================================
-                            1st line
-          =================================== */}
-          <div className="lg:flex md:flex justify-evenly w-full gap-3">
-            {/* Product Name field */}
-            <div className="form-control ld:w-2/3 md:w-3/4 w-full">
-              <label className="label p-0">
-                <span className="text-[18px] mb-[2px]">Product Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Product Name"
-                className="bg-white input text-[16px] border border-black w-full "
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Provide the product name",
-                  },
-                })}
+      {/* <div className="drawer-side border pt-4"> */}
+      <div className="border-l bg-slate-50 pt-4 lg:w-1/5 md:w-1/6 w-1/12 h-screen">
+        {/* <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label> */}
+        <ul className="menu p-4 text-black text-[18px]">
+          <div className="lg:block md:block hidden">
+            <div className="flex justify-center mb-3">
+              <img
+                src={brandLogo}
+                alt=""
+                className="lg:w-[180px] md:w-[130px] w-[100px]"
               />
-              <label className="label">
-                {errors.name?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.name.message}
-                  </span>
-                )}
-              </label>
             </div>
-            {/* Product img field */}
-            <div className="form-control ld:w-1/3 md:w-1/4 w-full">
-              <label className="label p-0">
-                <span className="text-[18px] mb-[2px]">Product Image</span>
-              </label>
-              <div className="form-control">
-                <label htmlFor="image" className="btn btn-outline btn-accent">
-                  Upload Image
-                </label>
-                <input
-                  type="file"
-                  name=""
-                  id="image"
-                  className=" input-bordered hidden"
-                  {...register("img", {
-                    required: {
-                      value: true,
-                      message: "Product Image is Required",
-                    },
-                  })}
-                />
-                <label className="label">
-                  {errors.img?.type === "required" && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.img.message}
-                    </span>
-                  )}
-                </label>
-              </div>
-            </div>
+            <hr className="mb-2" />
           </div>
-          {/* ===================================
-                            2nd line
-          =================================== */}
-          <div className="lg:flex md:flex justify-evenly gap-3 mb-2">
-            {/* Price field */}
-            <div className="form-control w-full">
-              <label className="label p-0">
-                <span className="text-[18px] mb-[2px]">Price</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Per Unit Product Price"
-                className="bg-white input text-[16px] border border-black w-full "
-                {...register("price", {
-                  required: {
-                    value: true,
-                    message: "Provide the Per Unit Product Price",
-                  },
-                })}
-              />
-              <label>
-                {errors.price?.type === "required" && (
-                  <span className="label-text-alt text-red-700">
-                    {errors.price.message}
-                  </span>
-                )}
-              </label>
-            </div>
-            {/* available field */}
-            <div className="form-control w-full">
-              <label className="label p-0">
-                <span className="text-[18px] mb-[2px]">Available Product</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Available Product"
-                className="bg-white input text-[16px] border border-black w-full"
-                {...register("availQuantity", {
-                  required: {
-                    value: true,
-                    message: "Provide Available Product Quantity",
-                  },
-                })}
-              />
-              <label>
-                {errors.availQuantity?.type === "required" && (
-                  <span className="label-text-alt text-red-700">
-                    {errors.availQuantity.message}
-                  </span>
-                )}
-              </label>
-            </div>
-            {/* Minimum Order field */}
-            <div className="form-control w-full">
-              <label className="label p-0">
-                <span className="text-[18px] mb-[2px]">Minimum Order</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Minimum Order Quantity"
-                className="bg-white input text-[16px] border border-black w-full"
-                {...register("minOrderQuantity", {
-                  required: {
-                    value: true,
-                    message: "Provide the Minimum Product order number",
-                  },
-                })}
-              />
-              <label>
-                {errors.minOrderQuantity?.type === "required" && (
-                  <span className="label-text-alt text-red-700">
-                    {errors.minOrderQuantity.message}
-                  </span>
-                )}
-              </label>
-            </div>
-          </div>
-          {/* ===================================
-                            3rd line
-          =================================== */}
-          {/* description */}
-          <div className="w-full">
-            <label className="label p-0">
-              <span className="text-[18px] mb-[2px]">Description</span>
-            </label>
-            <textarea
-              type="text"
-              className="bg-white text-[16px] border border-black w-full p-4 rounded"
-              placeholder="Product Description"
-              rows={4}
-              {...register("description", {
-                required: {
-                  value: true,
-                  message: "Provide Product Description",
-                },
-              })}
-            ></textarea>
-            <label className="label">
-              {errors.description?.type === "required" && (
-                <span className="label-text-alt text-red-500">
-                  {errors.description.message}
-                </span>
-              )}
-            </label>
 
-            <div className="flex justify-center items-center">
-              <div className="w-64">
-                <input
-                  className="btn bg-blue-600 text-white border-blue-900 w-full hover:text-orange-500 lg:mt-0 mt-2"
-                  type="submit"
-                  value="Add Product"
-                />
-              </div>
-            </div>
-          </div>
-        </form>
+          {admin ? (
+            <>
+              <li>
+                <Link to="/dashboard">
+                  <FontAwesomeIcon
+                    icon={faChartLine}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Dashboard</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/manageOrders">
+                  <FontAwesomeIcon
+                    icon={faCartShopping}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Manage Orders</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addProduct">
+                  <FontAwesomeIcon
+                    icon={faSquarePlus}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Add Product</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/manageProducts">
+                  <FontAwesomeIcon
+                    icon={faTableList}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Manage Products</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/makeAdminPanel">
+                  <FontAwesomeIcon
+                    icon={faPeopleRoof}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Make Admin</span>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/dashboard/myOrders">
+                  <FontAwesomeIcon
+                    icon={faCartPlus}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">My Orders</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addReview">
+                  <FontAwesomeIcon
+                    icon={faComment}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Add A Review</span>
+                </Link>
+              </li>
+            </>
+          )}
+          <li>
+            <Link to="/dashboard/myProfile">
+              <FontAwesomeIcon icon={faUser} className="lg:mr-3 md:mr-2 mr-0" />
+              <span className="lg:block hidden">My Profile</span>
+            </Link>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div>
   );
 };
 
