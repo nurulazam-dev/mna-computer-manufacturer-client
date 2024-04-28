@@ -20,7 +20,7 @@ const Products = () => {
     <section className="m-2 p-3">
       <div className="text-center mb-6">
         <h2 className="text-4xl mb-2 text-orange-500 font-bold">
-          Our available Products
+          Our Products
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

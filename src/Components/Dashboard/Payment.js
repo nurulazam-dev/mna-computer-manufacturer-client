@@ -62,34 +62,34 @@ const Payment = () => {
               <table className="table">
                 <tbody>
                   <tr>
-                    <td>
+                    <td className="bg-white">
                       <span className="font-bold">Card number</span>
                     </td>
-                    <td>
+                    <td className="bg-white">
                       <span>: 4242 4242 4242 4242</span>
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td className="bg-white">
                       <span className="font-bold">MM / YY</span>
                     </td>
-                    <td>
+                    <td className="bg-white">
                       <span>: 12 / 25</span>
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td className="bg-white">
                       <span className="font-bold">CVC</span>
                     </td>
-                    <td>
+                    <td className="bg-white">
                       <span>: 258</span>
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td className="bg-white">
                       <span className="font-bold">ZIP</span>
                     </td>
-                    <td>
+                    <td className="bg-white">
                       <span>: 12458</span>
                     </td>
                   </tr>

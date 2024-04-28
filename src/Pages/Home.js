@@ -3,7 +3,7 @@ import Blog from "../Components/Blogs/Blog";
 import Banner from "../Components/Home/Banner";
 import BusinessSummary from "../Components/Home/BusinessSummary";
 import ContactUs from "../Components/Home/ContactUs";
-import Frequency from "../Components/Home/Frequency";
+import Frequency from "../Components/Home/Frequescy";
 import GoogleLocationMap from "../Components/Home/GoogleLocationMap";
 import InfoFooter from "../Components/Home/InfoFooter";
 import OfferDateline from "../Components/Home/OfferDateline";
