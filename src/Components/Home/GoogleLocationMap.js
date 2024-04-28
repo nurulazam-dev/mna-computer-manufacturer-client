@@ -9,7 +9,7 @@ const containerStyle = {
 class GoogleLocationMap extends Component {
   render() {
     return (
-      <section className="pb-[460px]">
+      <section className="pb-[380px]">
         <div className="text-center mb-6">
           <h2 className="text-4xl mb-2 text-orange-500 font-bold">
             Our Location

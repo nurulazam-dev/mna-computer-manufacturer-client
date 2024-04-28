@@ -1,7 +1,9 @@
-import customersP from "../../assets/BusinessSummary/customers.png";
-import partsP from "../../assets/BusinessSummary/parts.png";
-import revenueP from "../../assets/BusinessSummary/revenue.png";
-import reviewsP from "../../assets/BusinessSummary/reviews.png";
+import {
+  faAward,
+  faComments,
+  faSackDollar,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import blog2 from "../../assets/blogs-img/demand_web_development.jpeg";
 import blog3 from "../../assets/blogs-img/different_web_&_software_developer.jfif";
 import blog1 from "../../assets/blogs-img/learn_react.jpeg";
@@ -27,11 +29,11 @@ const faqsData = [
 
 // export default faqsData;
 
-const summarydata = [
-  { id: 1, img: customersP, count: "10K", title: "Served Customers" },
-  { id: 2, img: revenueP, count: "150M", title: "Annual Revenue" },
-  { id: 3, img: partsP, count: "50K", title: "Parts/Tools" },
-  { id: 4, img: reviewsP, count: "80K", title: "Reviews" },
+const summaryData = [
+  { id: 1, icon: faUsers, count: "2634", title: "Happy Clients" },
+  { id: 2, icon: faSackDollar, count: "150M", title: "Annual Revenue" },
+  { id: 3, icon: faAward, count: "27", title: "Awards Winning" },
+  { id: 4, icon: faComments, count: "982", title: "Reviews" },
 ];
 const blogData = [
   {
@@ -62,4 +64,4 @@ const blogData = [
       "Mobile Apps Development or Web Development!! Which should be learned?",
   },
 ];
-export { blogData, faqsData, summarydata };
+export { blogData, faqsData, summaryData };

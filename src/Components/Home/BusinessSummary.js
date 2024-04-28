@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { summarydata } from "../Shared/Datas";
+import { summaryData } from "../Shared/AllData";
 
 const BusinessSummary = () => {
   return (
@@ -9,21 +10,23 @@ const BusinessSummary = () => {
           Business Summary
         </h2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-8">
-        {summarydata.map((data) => (
-          <div key={data.id} className="card lg:max-w-lg bg-white">
-            <div className="card-body">
-              <img className="h-44" src={data.img} alt="" />
-              <div className="text-center">
-                <div>
-                  <h3 className="text-3xl text-blue-600 font-bold">
-                    {data.count} +
-                  </h3>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-semibold mt-2 ">{data.title}</h2>
-                </div>
-              </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-8 bg-slate-100 py-3 rounded shadow-lg">
+        {summaryData.map((data) => (
+          <div key={data.id} className="">
+            <div className="w-full flex justify-center mb-2 ">
+              <FontAwesomeIcon
+                icon={data?.icon}
+                className="text-[50px] text-black"
+              />
+            </div>
+            <div className="text-center">
+              <h2 className="lg:text-3xl md:text-2xl text-xl text-blue-600 font-bold">
+                {data.count} +
+              </h2>
+
+              <h3 className="lg:text-2xl md:text-xl text-[17px] font-semibold mt-[2px] ">
+                {data.title}
+              </h3>
             </div>
           </div>
         ))}

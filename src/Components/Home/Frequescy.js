@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { faqsData } from "../Shared/Datas";
+import { faqsData } from "../Shared/AllData";
 import Accordion from "./Accordion";
 import VideoFrame from "./VideoFrame";
 
-const Frequescy = () => {
+const Frequency = () => {
   const [active, setActive] = useState(1);
   return (
     <section className="">
@@ -31,4 +31,4 @@ const Frequescy = () => {
   );
 };
 
-export default Frequescy;
+export default Frequency;

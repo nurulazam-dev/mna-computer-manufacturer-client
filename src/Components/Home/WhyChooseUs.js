@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
               </div>
             </div>
             {/* card */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
               <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
                 <div className="mr-3">
                   <FontAwesomeIcon
