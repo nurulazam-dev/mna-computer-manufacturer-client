@@ -32,10 +32,13 @@ const Payment = () => {
   }
 
   return (
-    <section>
-      <h2 className="text-3xl font-semibold text-primary my-4 text-center">
-        Payment Details
-      </h2>
+    <section className="border border-green-600 rounded mx-4">
+      <div className="bg-green-600">
+        <h2 className="text-white text-center p-1 text-2xl font-semibold">
+          Payment Details
+        </h2>
+      </div>
+
       <div className="flex justify-around">
         <div className="order-details">
           <PurchaseDetail
@@ -43,54 +46,47 @@ const Payment = () => {
             payForProduct={payForProduct}
           ></PurchaseDetail>
         </div>
-        <div className="payment-stripe pb-12 w-[320px]">
-          <h2 className="text-xl text-green-600 font-bold text-center mb-4">
-            Give your info in Card for Pay
-          </h2>
-          <div className="card bg-white border shadow-xl">
-            <div className="card-body">
-              <Elements stripe={stripePromise}>
-                <CheckoutForm payForProduct={payForProduct} />
-              </Elements>
+        <div className="payment-stripe mt-5 pb-12 w-[360px]">
+          <div className="border border-green-600 rounded">
+            <div className="bg-green-600">
+              <h2 className="text-white text-center p-1 text-[17px] font-semibold">
+                Give your info in Card for Pay
+              </h2>
+            </div>
+
+            <div className="card bg-white border shadow-xl rounded-none">
+              <div className="card-body">
+                <Elements stripe={stripePromise}>
+                  <CheckoutForm payForProduct={payForProduct} />
+                </Elements>
+              </div>
             </div>
           </div>
-          <div className="mt-6">
-            <p className="text-red-600 text-center border-2">
-              Pay Card Details Demo
+
+          <div className="mt-6 border border-orange-600 rounded">
+            <p className="bg-slate-800 text-center text-white py-1">
+              Pay Card Details - Demo
             </p>
-            <div className="text-sm px-5">
-              <table className="table">
+            <div className="text-[16px] px-1">
+              <table className="table w-full">
                 <tbody>
                   <tr>
                     <td className="bg-white">
-                      <span className="font-bold">Card number</span>
-                    </td>
-                    <td className="bg-white">
-                      <span>: 4242 4242 4242 4242</span>
+                      <span className="font-bold">Card number :</span>
+                      <span className="ml-4"> 4242 4242 4242 4242</span>
                     </td>
                   </tr>
                   <tr>
                     <td className="bg-white">
-                      <span className="font-bold">MM / YY</span>
-                    </td>
-                    <td className="bg-white">
-                      <span>: 12 / 25</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="bg-white">
-                      <span className="font-bold">CVC</span>
-                    </td>
-                    <td className="bg-white">
-                      <span>: 258</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="bg-white">
-                      <span className="font-bold">ZIP</span>
-                    </td>
-                    <td className="bg-white">
-                      <span>: 12458</span>
+                      <span>
+                        <strong>MM / YY :</strong> 12 / 25
+                      </span>
+                      <span className="ml-5">
+                        <strong>CVC :</strong> 258
+                      </span>
+                      <span className="ml-5">
+                        <strong>ZIP :</strong> 12458
+                      </span>
                     </td>
                   </tr>
                 </tbody>

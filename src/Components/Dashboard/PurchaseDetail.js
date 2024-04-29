@@ -13,12 +13,15 @@ const PurchaseDetail = ({ payForProduct }) => {
   } = payForProduct;
 
   return (
-    <section>
+    <section className="border border-green-600 rounded mx-4 my-5">
       <div className="card max-w-sm md:max-w-lg bg-white hover:shadow-lg">
         <div>
-          <h3 className="text-2xl text-green-600 font-bold text-center">
-            Order Details
-          </h3>
+          <div className="bg-green-600">
+            <h2 className="text-white text-center p-1 text-2xl font-semibold">
+              Order Details
+            </h2>
+          </div>
+
           <table className="text-sm table">
             <tbody>
               <tr>
