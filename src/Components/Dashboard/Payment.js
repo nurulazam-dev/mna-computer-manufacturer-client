@@ -65,7 +65,7 @@ const Payment = () => {
 
           <div className="mt-6 border border-orange-600 rounded">
             <p className="bg-slate-800 text-center text-white py-1">
-              Pay Card Details - Demo
+              Pay Demo Card Details
             </p>
             <div className="text-[16px] px-1">
               <table className="table w-full">
