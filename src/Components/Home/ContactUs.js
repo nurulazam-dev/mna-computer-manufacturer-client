@@ -7,7 +7,7 @@ const ContactUs = () => {
   return (
     <section className="my-8 px-10">
       <div className="text-center mb-6">
-        <h2 className="text-4xl mb-2 text-orange-500 font-bold">Contact Us</h2>
+        <h2 className="text-4xl mb-2 text-green-600 font-bold">Contact Us</h2>
       </div>
       <div className="w-full flex_block gap-4">
         <div className="w-full md:w-2/5 lg:w-4/6">

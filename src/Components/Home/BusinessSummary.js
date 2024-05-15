@@ -6,7 +6,7 @@ const BusinessSummary = () => {
   return (
     <section className="my-8">
       <div className="mb-5">
-        <h2 className="text-4xl text-center text-orange-500 font-bold">
+        <h2 className="text-4xl text-center text-green-600 font-bold">
           Our Company's
         </h2>
       </div>
@@ -20,7 +20,7 @@ const BusinessSummary = () => {
               />
             </div>
             <div className="text-center">
-              <h2 className="lg:text-3xl md:text-2xl text-xl text-green-600 font-bold">
+              <h2 className="lg:text-3xl md:text-2xl text-xl text-blue-600 font-bold">
                 {data.count} +
               </h2>
 

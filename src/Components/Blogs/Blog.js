@@ -7,7 +7,7 @@ const Blog = () => {
   return (
     <section className="my-10 px-5 pt-8 container mx-auto ">
       <div className="mb-5">
-        <h2 className="text-3xl text-center text-orange-500 font-bold">
+        <h2 className="text-3xl text-center text-green-600 font-bold">
           Our Latest Blogs
         </h2>
       </div>

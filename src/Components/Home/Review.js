@@ -21,7 +21,7 @@ const Review = () => {
   return (
     <section className="my-8 mx-2">
       <div className="mb-2">
-        <h2 className="text-4xl text-center text-orange-500 font-bold">
+        <h2 className="text-4xl text-center text-green-600 font-bold">
           Reviews
         </h2>
       </div>
@@ -57,13 +57,10 @@ const Review = () => {
                   </div>
                 </div>
                 <div className="mx-3 pb-3 text-[16px]">
-                  <h2 className="text-xl mx-2 font-semibold text-violet-500">
-                    {review.name}
-                  </h2>
+                  <h2 className="text-xl mx-2 font-semibold">{review.name}</h2>
 
                   <p className="mb-2">
-                    <span className="mx-2">Ratings:</span>
-                    <small className="text-yellow-500">
+                    <small className="text-yellow-500 mx-2">
                       <FontAwesomeIcon
                         className="icon"
                         icon={faStarHalfStroke}

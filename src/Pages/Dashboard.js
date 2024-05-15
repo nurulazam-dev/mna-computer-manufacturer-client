@@ -21,87 +21,104 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   return (
-    <div className="drawer drawer-end drawer-mobile my-10 pl-5 ">
+    <div className="my-10 pl-5 flex w-full">
       <PageTitle title="Dashboard"></PageTitle>
-      <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content pt-8 pr-5">
-        <h2 className="text-3xl font-bold text-center text-blue-500 my-2 py-2">
+
+      <div className="drawer-content pt-8 pr-5 lg:w-4/5 md:w-4/6 w-10/12">
+        <h2 className="text-3xl font-bold text-center text-green-600 my-2 py-2">
           Dashboard
         </h2>
         <Outlet />
       </div>
-      <div className="drawer-side border pt-4">
-        <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-47 bg-white text-black text-[18px] shadow-lg">
-          <div className="flex justify-center mb-3">
-            <img
-              src={brandLogo}
-              alt=""
-              className="lg:w-[180px] md:w-[130px] w-[100px]"
-            />
+
+      <div className="border-l bg-slate-50 pt-4 lg:w-1/5 md:w-1/6 w-1/12 h-screen">
+        <ul className="menu p-4 text-black text-[18px]">
+          <div className="lg:block md:block hidden">
+            <div className="flex justify-center mb-3">
+              <img
+                src={brandLogo}
+                alt=""
+                className="lg:w-[180px] md:w-[130px] w-[100px]"
+              />
+            </div>
+            <hr className="mb-2" />
           </div>
-          <hr className="mb-2" />
+          <li>
+            <Link to="/dashboard">
+              <FontAwesomeIcon icon={faUser} className="lg:mr-3 md:mr-2 mr-0" />
+              <span className="lg:block hidden">My Profile</span>
+            </Link>
+          </li>
           {admin ? (
             <>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faChartLine} className="mr-3" />
-                  <Link to="/dashboard">Dashboard</Link>
-                </div>
-              </li>
-              <li>
-                <Link to="/dashboard">
-                  <FontAwesomeIcon icon={faChartLine} className="mr-3" />
-                  <span className="lg:block hidden">Demo</span>
+                <Link to="/dashboard/analysisDashboard">
+                  <FontAwesomeIcon
+                    icon={faChartLine}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Dashboard</span>
                 </Link>
               </li>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faCartShopping} className="mr-3" />
-                  <Link to="/dashboard/manageOrders">Manage Orders</Link>
-                </div>
+                <Link to="/dashboard/manageOrders">
+                  <FontAwesomeIcon
+                    icon={faCartShopping}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Manage Orders</span>
+                </Link>
               </li>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faSquarePlus} className="mr-3" />
-                  <Link to="/dashboard/addProduct">Add Product</Link>
-                </div>
+                <Link to="/dashboard/addProduct">
+                  <FontAwesomeIcon
+                    icon={faSquarePlus}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Add Product</span>
+                </Link>
               </li>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faTableList} className="mr-3" />
-                  <Link to="/dashboard/manageProducts">Manage Products</Link>
-                </div>
+                <Link to="/dashboard/manageProducts">
+                  <FontAwesomeIcon
+                    icon={faTableList}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Manage Products</span>
+                </Link>
               </li>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faPeopleRoof} className="mr-3" />
-                  <Link to="/dashboard/makeAdminPanel">Make Admin</Link>
-                </div>
+                <Link to="/dashboard/makeAdminPanel">
+                  <FontAwesomeIcon
+                    icon={faPeopleRoof}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Make Admin</span>
+                </Link>
               </li>
             </>
           ) : (
             <>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faCartPlus} className="mr-3" />
-                  <Link to="/dashboard/myOrders">My Orders</Link>
-                </div>
+                <Link to="/dashboard/myOrders">
+                  <FontAwesomeIcon
+                    icon={faCartPlus}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">My Orders</span>
+                </Link>
               </li>
               <li>
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faComment} className="mr-3" />
-                  <Link to="/dashboard/addReview">Add A Review</Link>
-                </div>
+                <Link to="/dashboard/addReview">
+                  <FontAwesomeIcon
+                    icon={faComment}
+                    className="lg:mr-3 md:mr-2 mr-0"
+                  />
+                  <span className="lg:block hidden">Add A Review</span>
+                </Link>
               </li>
             </>
           )}
-          <li>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faUser} className="mr-3" />
-              <Link to="/dashboard/myProfile">My Profile</Link>
-            </div>
-          </li>
         </ul>
       </div>
     </div>

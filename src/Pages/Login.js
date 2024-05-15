@@ -76,7 +76,7 @@ const Login = () => {
           {/* login form side */}
           <div className="w-96 bg-white p-4">
             <div className="">
-              <h2 className=" text-blue-600 text-4xl font-bold mb-4">Login</h2>
+              <h2 className=" text-green-600 text-4xl font-bold mb-4">Login</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="border border-black px-3 py-2 rounded flex items-center mb-4">
                   <svg

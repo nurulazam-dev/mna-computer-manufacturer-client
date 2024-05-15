@@ -11,7 +11,7 @@ class GoogleLocationMap extends Component {
     return (
       <section className="pb-[380px]">
         <div className="text-center mb-6">
-          <h2 className="text-4xl mb-2 text-orange-500 font-bold">
+          <h2 className="text-4xl mb-2 text-green-600 font-bold">
             Our Location
           </h2>
         </div>

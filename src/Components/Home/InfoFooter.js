@@ -94,7 +94,7 @@ const InfoFooter = () => {
           </a>
           <a href="https://www.github.com//nurulazam-dev">
             <img
-              className="mx-3 bg-white"
+              className="mx-3 bg-white rounded-lg"
               style={{ height: "40px", width: "40px" }}
               src="https://i.ibb.co/3Wjh3wv/github.png"
               alt=""

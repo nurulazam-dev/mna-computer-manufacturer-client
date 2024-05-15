@@ -8,7 +8,7 @@ const Frequency = () => {
   return (
     <section className="">
       <div className="text-center mb-6">
-        <h2 className="text-4xl mb-2 text-orange-500 font-bold">Frequency</h2>
+        <h2 className="text-4xl mb-2 text-green-600 font-bold">Frequency</h2>
       </div>
       <div className="flex_block">
         <div className="">

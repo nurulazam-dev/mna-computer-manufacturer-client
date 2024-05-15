@@ -14,7 +14,7 @@ import chooseImg from "../../assets/why_choose_us.webp";
 const WhyChooseUs = () => {
   return (
     <section className="mb-12">
-      <h2 className="text-center text-4xl mb-2 text-orange-500 font-bold">
+      <h2 className="text-center text-4xl mb-2 text-green-600 font-bold">
         Why We're Best?
       </h2>
       <div className="hero">

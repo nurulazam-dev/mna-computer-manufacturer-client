@@ -77,7 +77,7 @@ const Register = () => {
           {/* Register form side */}
           <div className="w-96 bg-white px-4">
             <div className="">
-              <h2 className=" text-blue-600 text-4xl font-bold mb-4">
+              <h2 className=" text-green-600 text-4xl font-bold mb-4">
                 Register
               </h2>
               <form onSubmit={handleSubmit(onSubmit)}>
