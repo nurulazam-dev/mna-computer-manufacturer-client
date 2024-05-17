@@ -60,7 +60,7 @@ const MyOrders = () => {
               <th>S. No</th>
               <th>Product / Part</th>
               <th>Quantity</th>
-              <th>Price</th>
+              <th>Price/per</th>
               <th>Total Price</th>
               <th>TransactionId</th>
               <th>Delete</th>
@@ -131,11 +131,6 @@ const MyOrders = () => {
                     </div>
                   )}
                 </td>
-                {/* <td className='text-center'><button
-                                        onClick={() => handleDelete(order?._id)}
-                                        className='btn bg-red-500 border-0 h-5'>
-                                        <FontAwesomeIcon className='' icon={faTrashAlt}></FontAwesomeIcon>
-                                    </button></td> */}
               </tr>
             ))}
           </tbody>

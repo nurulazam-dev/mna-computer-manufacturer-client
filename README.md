@@ -30,4 +30,3 @@
 
 - Admin===mna@admin.com(Admin92)
 - User====web@programming.com(Web123)
-- User====test@gmail.com(Test123)

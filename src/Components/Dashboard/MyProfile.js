@@ -81,7 +81,7 @@ const MyProfile = () => {
                 <h3>{displayName}</h3>
               </div>
             ) : (
-              <div class="avatar card items-center w-full justify-center">
+              <div className="avatar card items-center w-full justify-center">
                 <div className="w-36 rounded ring ring-primary ring-offset-base-100 ring-offset-2 m-2">
                   <FontAwesomeIcon
                     className="pt-2 mx-26 text-[8em]"

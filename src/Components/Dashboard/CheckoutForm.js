@@ -1,8 +1,8 @@
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { toast } from "react-toastify";
 
-const CheckoutForm = ({ payForTool }) => {
+const CheckoutForm = ({ payForProduct }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
@@ -11,17 +11,20 @@ const CheckoutForm = ({ payForTool }) => {
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  const { _id, shouldPay, customerName, customer } = payForTool || "";
+  const { _id, shouldPay, customerName, customer } = payForProduct || "";
 
   useEffect(() => {
-    fetch("https://mna-computer-manufacturer.onrender.com/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({ shouldPay }),
-    })
+    fetch(
+      "https://mna-computer-manufacturer.onrender.com/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({ shouldPay }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
@@ -52,7 +55,8 @@ const CheckoutForm = ({ payForTool }) => {
     setProcessing(true);
 
     // confirm card payment
-    const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(clientSecret, {
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: card,
           billing_details: {
@@ -115,14 +119,17 @@ const CheckoutForm = ({ payForTool }) => {
             },
           }}
         />
-        <button type="submit" disabled={!stripe || !clientSecret || success}
-          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4" >
+        <button
+          type="submit"
+          disabled={!stripe || !clientSecret || success}
+          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
+        >
           Pay
         </button>
       </form>
       {processing && (
-        <div className="text-center">
-          <div className="w-16 h-16 border-t-4 border-b-4 border-accent rounded-full animate-spin"></div>
+        <div className="text-center flex justify-center mt-2">
+          <div className="w-12 h-12 border-t-4 border-b-4 border-accent rounded-full animate-spin"></div>
         </div>
       )}
       {cardError && (

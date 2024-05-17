@@ -22,15 +22,36 @@ const OrderDeleteModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
 
   return (
     <div>
-      <input type="checkbox" id="delete-my-order-modal" className="modal-toggle" />
+      <input
+        type="checkbox"
+        id="delete-my-order-modal"
+        className="modal-toggle"
+      />
       <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          <h3 className="font-bold text-success text-lg"> Hello! {customerName} </h3>
-          <p className="py-4"> Are You sure you want to delete {productName} 
-          <br /> product?</p>
-          <div className="modal-action">
-            <label htmlFor="delete-my-order-modal" className="btn hover:bg-red-600 border-0" onClick={handleConfirm}>Confirm</label>
-            <label htmlFor="delete-my-order-modal" className="btn">Cancel</label>
+        <div className="modal-box bg-white">
+          <h3 className="font-bold text-success text-lg">
+            {" "}
+            Hello! {customerName}{" "}
+          </h3>
+          <p className="py-4">
+            {" "}
+            Are You sure you want to delete {productName}
+            <br /> product?
+          </p>
+          <div className="modal-action ">
+            <label
+              htmlFor="delete-my-order-modal"
+              className="btn hover:bg-red-600 border-0 text-white"
+              onClick={handleConfirm}
+            >
+              Confirm
+            </label>
+            <label
+              htmlFor="delete-my-order-modal"
+              className="btn hover:bg-green-600 border-0 text-white"
+            >
+              Cancel
+            </label>
           </div>
         </div>
       </div>
