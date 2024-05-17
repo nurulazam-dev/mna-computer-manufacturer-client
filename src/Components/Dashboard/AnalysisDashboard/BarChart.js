@@ -13,27 +13,26 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const BarChart = () => {
   const data = {
-    labels: [
-      "Processor",
-      "Graphics C",
-      "Headphone",
-      "Mouse",
-      "SSD",
-      "Keyboard",
-      "Webcam",
-    ],
+    labels: ["February", "March", "April", "May"],
     datasets: [
       {
-        label: "Product Stock",
-        data: [1700, 120, 50700, 45000, 2500, 12000, 2000, 65500],
+        label: "Register",
+        data: [10, 7, 10, 15],
         backgroundColor: "aqua",
         borderColor: "black",
         borderWidth: 1,
       },
       {
-        label: "Price",
-        data: [15800, 14950, 1000, 275, 1900, 400, 5250, 350],
+        label: "Orders",
+        data: [5, 10, 7, 9],
         backgroundColor: "green",
+        borderColor: "black",
+        borderWidth: 1,
+      },
+      {
+        label: "Reviews",
+        data: [3, 8, 5, 10],
+        backgroundColor: "blue",
         borderColor: "black",
         borderWidth: 1,
       },
