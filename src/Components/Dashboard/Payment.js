@@ -26,7 +26,6 @@ const Payment = () => {
         }
       ).then((res) => res.json())
   );
-  // console.log(payForProduct);
   if (isLoading) {
     return <Loading />;
   }

@@ -21,8 +21,9 @@ import Blogs from "./Pages/Blogs";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import LoginCopy from "./Pages/LoginCopy";
 import NotFound from "./Pages/NotFound";
-import Register from "./Pages/Register";
+// import Register from "./Pages/Register";
 
 function App() {
   return (
@@ -95,7 +96,8 @@ function App() {
           />
         </Route>
         <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
+        {/* <Route path="register" element={<Register />} /> */}
+        <Route path="register" element={<LoginCopy />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
