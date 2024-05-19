@@ -53,12 +53,13 @@ const LoginCopy = () => {
       </p>
     );
   }
+
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     navigate(from, { replace: true });
   };
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="h-screen mt-12 py-12">
@@ -145,14 +146,13 @@ const LoginCopy = () => {
                     </span>
                   )}
                 </label>
-                <div className="flex justify-between items-center w-full border border-red-600">
+                <div className="flex justify-between w-full ">
                   {/*==============================
                              password part
                   ================================*/}
                   <div className="w-[75%]">
                     {/* ========password field======== */}
-                    {/* <label className="border border-black px-3 py-2 rounded flex items-center mb-2"> */}
-                    <label className="border border-black px-3 py-2 rounded flex items-center mb-2">
+                    <label className="border border-black px-3 py-2 rounded flex items-center">
                       <FontAwesomeIcon
                         className="w-6 h-6 opacity-60 mr-2"
                         icon={faKey}
@@ -175,7 +175,7 @@ const LoginCopy = () => {
                         })}
                       />
                     </label>
-                    <label>
+                    <label className="border">
                       {errors.password?.type === "required" && (
                         <span className="label-text-alt text-red-700">
                           {errors.password.message}
@@ -193,13 +193,13 @@ const LoginCopy = () => {
                   ================================*/}
                   <div className="w-[20%]">
                     {/* ========img field======== */}
-                    <div className="form-control py-2">
+                    <div className="form-control">
                       <label
                         htmlFor="image"
-                        className="btn btn-outline btn-accent"
+                        className="btn btn-outline border-black hover:border-green-600"
                       >
                         <FontAwesomeIcon
-                          className="w-6 h-6 opacity-60 mr-2"
+                          className="w-6 h-6 text-black"
                           icon={faImage}
                         />
                       </label>
@@ -229,7 +229,7 @@ const LoginCopy = () => {
                 {errorElement}
 
                 <input
-                  className="border shadow-lg bg-green-600 hover:bg-black py-[10px] rounded font-semibold w-full mt-4 mb-1 text-white hover:text-orange-500"
+                  className="border shadow-lg bg-green-600 hover:bg-black py-[10px] rounded font-semibold w-full mb-1 text-white hover:text-orange-500"
                   type="submit"
                   value="Register"
                 />
