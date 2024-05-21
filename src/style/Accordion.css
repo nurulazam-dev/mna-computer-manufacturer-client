@@ -1,40 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-.containerBox {
-  width: 100%;
-  max-width: 530px;
-  margin: auto;
-  padding: 0px 10px;
-}
-.accordion {
-  /* width: 100%; */
-  width: 535px;
-  /* max-width: 480px; */
-  margin: 5px auto;
-  color: black;
-}
-.accordionHeading {
-  background: #090216;
-  padding: 14px 0;
-  color: white;
-}
-.accordionHeading .containerBox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 15px;
-}
-.accordionHeading p {
-  letter-spacing: 1.2px;
-  font-weight: 400;
-}
-.accordionHeading span {
-  cursor: pointer;
-}
 .accordionContent {
   background-image: linear-gradient(
     to right,
@@ -51,14 +14,4 @@
 .accordionContent.show {
   height: 135px;
   opacity: 1;
-}
-.accordionContent p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-@media (max-width: 767px) {
-  .accordion {
-    width: 460px;
-  }
 }

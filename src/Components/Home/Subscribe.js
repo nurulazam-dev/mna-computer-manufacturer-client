@@ -6,7 +6,7 @@ const Subscribe = () => {
       style={{ backgroundColor: "#130342", backgroundSize: "cover" }}
       className="p-10 mb-12 text-white "
     >
-      <div className="w-full flex_block">
+      <div className="w-full lg:flex justify-around items-center">
         <div>
           <h3 className="text-3xl font-semibold mb-2">
             Sign Up For Newsletters

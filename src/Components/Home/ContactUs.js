@@ -1,7 +1,7 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import contactImg from "../../assets/contact-us.png";
+import contactImg from "../../assets/contact-us.jpg";
 
 const ContactUs = () => {
   return (
@@ -9,7 +9,7 @@ const ContactUs = () => {
       <div className="text-center mb-6">
         <h2 className="text-4xl mb-2 text-green-600 font-bold">Contact Us</h2>
       </div>
-      <div className="w-full flex_block gap-4">
+      <div className="w-full lg:flex justify-around items-center gap-4">
         <div className="w-full md:w-2/5 lg:w-4/6">
           <img src={contactImg} alt="" className="" />
         </div>
