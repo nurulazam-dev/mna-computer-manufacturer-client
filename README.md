@@ -21,10 +21,10 @@
 ### Use Technology:
 
 - Frond-End:
-  `React.JS`, `React Router Dom`, `Tailwind CSS`, `DaisyUI`, `React fontawesome`, `React Icons`, `Google Firebase`, `React firebase hooks`, `React hook form`, `React Toastify`, `Stripe.js`, `Google Maps React`, `React Day Picker`, `Google Map`, `React ChartJs-2`, `Swiper`, `React Query`, `Date FNS`, `React Helmet Async`,`react-countdown` .
+  `React.JS`, `React Router Dom`, `Tailwind CSS`, `DaisyUI`, `React fontawesome`, `React Icons`, `Google Firebase`, `React firebase hooks`, `React hook form`, `React Toastify`, `Stripe.js`, `Google Maps React`, `React Day Picker`, `Google Map`, `React ChartJs-2`, `Swiper`, `React Query`, `Date FNS`, `React Helmet Async`,`react-countup`, `react-scroll-trigger` .
 
 - Back-End:
-  `Express.JS`, `MongoDB`, `Node.JS`, `Json Web Token (JWT)`, `Cors`, `Dotenv`.
+  `Express.JS`, `MongoDB`, `Node.JS`, `Json Web Token (JWT)`, `Cors`, `Dotenv`,`Stripe`.
 
 ## Login
 
