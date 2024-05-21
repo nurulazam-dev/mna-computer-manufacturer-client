@@ -29,7 +29,7 @@ const InfoFooter = () => {
         </p>
         <p className="text-base">
           <FontAwesomeIcon className="mx-2" icon={faEnvelope}></FontAwesomeIcon>
-          mnaofficialbd@gmail.com
+          nurulazam.dev@gmail.com
         </p>
         <p className="text-base">
           <FontAwesomeIcon className="mx-2" icon={faPhone}></FontAwesomeIcon>
@@ -43,8 +43,15 @@ const InfoFooter = () => {
       <div>
         <span className="font-bold text-xl mb-3"> OPEN HOURS :</span>
         <p className="text-base">
+          <FontAwesomeIcon
+            className="mx-2"
+            icon={faShopSlash}
+          ></FontAwesomeIcon>
+          Monday - Saturday
+        </p>
+        <p className="text-base">
           <FontAwesomeIcon className="mx-2" icon={faClock}></FontAwesomeIcon>
-          Mon-Sat : 8:00am - 5:00pm
+          8:00am - 5:00pm
         </p>
         <p className="text-base">
           <FontAwesomeIcon
@@ -56,7 +63,7 @@ const InfoFooter = () => {
       </div>
       <div>
         <span className="font-bold text-xl mb-3"> FOLLOW US :</span>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-1">
           <a href="https://www.facebook.com/nurulazam.dev">
             <img
               className="mx-3"
@@ -83,7 +90,7 @@ const InfoFooter = () => {
           </a>
         </div>
 
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-1">
           <a href="https://nurulazam-dev.web.app/">
             <img
               className="mx-3"
