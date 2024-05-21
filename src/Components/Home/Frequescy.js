@@ -6,8 +6,10 @@ const Frequency = () => {
   const [active, setActive] = useState(1);
   return (
     <section className="">
-      <div className="text-center mb-6">
-        <h2 className="text-4xl mb-2 text-green-600 font-bold">Frequency</h2>
+      <div className="text-center mb-2">
+        <h2 className="text-4xl text-green-600 font-bold">
+          Frequently Asked Questions
+        </h2>
       </div>
       <div className="lg:flex justify-around items-center">
         {/* video-frame part */}
