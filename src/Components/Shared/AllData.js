@@ -30,10 +30,10 @@ const faqsData = [
 // export default faqsData;
 
 const summaryData = [
-  { id: 1, icon: faUsers, count: "2634", title: "Happy Clients" },
-  { id: 2, icon: faSackDollar, count: "150M", title: "Annual Revenue" },
-  { id: 3, icon: faAward, count: "27", title: "Awards Winning" },
-  { id: 4, icon: faComments, count: "982", title: "Reviews" },
+  { id: 1, icon: faUsers, count: "26345", title: "Happy Clients" },
+  { id: 2, icon: faSackDollar, count: "10316200", title: "Annual Revenue" },
+  { id: 3, icon: faAward, count: "103", title: "Awards Winning" },
+  { id: 4, icon: faComments, count: "1982", title: "Reviews" },
 ];
 const blogData = [
   {

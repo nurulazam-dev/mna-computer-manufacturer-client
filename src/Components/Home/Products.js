@@ -28,10 +28,10 @@ const Products = () => {
       </div>
       <div className="card-actions justify-center mt-5">
         <button
-          className="btn btn-outline border-green-700 text-xl text-green-800 w-full max-w-md my-2 hover:border-black hover:bg-orange-500 hover:text-black"
+          className="btn btn-outline border-green-700 text-xl text-green-800 max-w-sm my-2 hover:border-black hover:bg-orange-500 hover:text-black capitalize"
           onClick={() => navigate("products")}
         >
-          All Products...
+          All Products
           <FontAwesomeIcon
             className="mx-4"
             icon={faArrowUpRightFromSquare}

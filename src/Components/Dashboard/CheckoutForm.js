@@ -93,9 +93,7 @@ const CheckoutForm = ({ payForProduct }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success(
-          "Transaction successful. Your order status has been updated. Visit my orders page"
-        );
+        toast.success("Transaction successful");
         setProcessing(false);
       });
   };

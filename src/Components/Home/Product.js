@@ -16,7 +16,7 @@ const Product = ({ product }) => {
       </figure>
       <div className="card-body mt-0 py-1">
         <h2 className="text-[18px] text-center font-semibold text-slate-800">
-          {name}
+          {name.length < 23 ? name : name.slice(0, 22) + "..."}
         </h2>
 
         <p className="text-sm leading-none">

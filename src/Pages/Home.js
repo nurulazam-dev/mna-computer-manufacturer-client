@@ -18,6 +18,7 @@ const Home = () => {
     <div className="mt-8 pt-8">
       <PageTitle title="Home"></PageTitle>
       <Banner />
+      {/* <LoginCopy /> */}
       <Products />
       <BusinessSummary />
       <Review />

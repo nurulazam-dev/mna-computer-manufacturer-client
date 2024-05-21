@@ -29,7 +29,7 @@ const MyOrders = () => {
         },
       }
     )
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((res) => {
         if (res.status === 403 || res.status === 401) {
           signOut(auth);
@@ -37,7 +37,7 @@ const MyOrders = () => {
           navigate("/");
           toast.error("Access Token expire");
         }
-        return res;
+        return res.json();
       })
   );
   // console.log(orders);
@@ -62,7 +62,7 @@ const MyOrders = () => {
               <th>Quantity</th>
               <th>Price/per</th>
               <th>Total Price</th>
-              <th>TransactionId</th>
+              <th>Status/TXNId</th>
               <th>Delete</th>
             </tr>
           </thead>

@@ -25,7 +25,6 @@ const Review = () => {
           Reviews
         </h2>
       </div>
-      {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-8'> */}
       <Swiper
         navigation={true}
         pagination={true}
@@ -88,8 +87,9 @@ const Review = () => {
                   </p>
                   <hr />
                   <p className="mx-2 pt-2">
-                    {review.review.slice(0, 125)}
-                    <span className="font-bold">...</span>{" "}
+                    {review.review.length < 90
+                      ? review.review
+                      : review.review.slice(0, 90) + " . . ."}
                   </p>
                 </div>
               </div>
