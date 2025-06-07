@@ -118,94 +118,99 @@ const ProductDetails = () => {
         </div>
 
         {/* Order Form Card */}
-        <div className="flex-1 bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-          <h3 className="text-xl font-bold text-green-700 mb-6 text-center">
+        <div className="flex-1 bg-white rounded-2xl shadow-xl border border-gray-200 p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-extrabold text-green-700 mb-8 text-center tracking-tight">
             Order This Product
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Name
-              </label>
+            <div className="relative">
               <input
                 type="text"
                 name="name"
                 defaultValue={displayName}
                 disabled
-                className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 text-gray-700"
+                className="peer w-full bg-gray-100 border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                placeholder=" "
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Name
+              </label>
             </div>
             {/* Email */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Email
-              </label>
+            <div className="relative">
               <input
                 type="email"
                 name="email"
                 defaultValue={email}
                 disabled
-                className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 text-gray-700"
+                className="peer w-full bg-gray-100 border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                placeholder=" "
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Email
+              </label>
             </div>
             {/* Product Name */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Product Name
-              </label>
+            <div className="relative">
               <input
                 type="text"
                 name="productName"
                 defaultValue={name}
                 disabled
-                className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 text-gray-700"
+                className="peer w-full bg-gray-100 border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                placeholder=" "
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Product Name
+              </label>
             </div>
             {/* Address */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Address
-              </label>
+            <div className="relative">
               <input
                 type="text"
                 name="address"
-                placeholder="Your Address"
+                placeholder=" "
                 required
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2"
+                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Address
+              </label>
             </div>
             {/* Contact */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Contact
-              </label>
+            <div className="relative">
               <input
                 type="number"
                 name="contact"
-                placeholder="Your Contact Number"
+                placeholder=" "
                 required
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2"
+                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Contact
+              </label>
             </div>
             {/* Quantity */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Quantity
-              </label>
+            <div className="relative">
               <input
                 type="number"
                 name="quantity"
-                placeholder="Order Quantity"
+                placeholder=" "
                 defaultValue={minOrderQuantity}
                 required
                 min={minOrderQuantity}
                 max={availQuantity}
                 onChange={(e) => setQuantity(e.target.value)}
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2"
+                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
               />
+              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                Quantity
+              </label>
               {errorElement && (
-                <span className="text-red-500 text-sm">{errorElement}</span>
+                <span className="text-red-500 text-sm absolute left-0 -bottom-5">
+                  {errorElement}
+                </span>
               )}
             </div>
             <button
