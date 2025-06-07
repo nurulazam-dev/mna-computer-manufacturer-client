@@ -75,7 +75,7 @@ const ProductDetails = () => {
         .then((data) => {
           if (data.acknowledged) {
             toast.success(
-              `You have ordered ${quantity} pieces. Please go to My orders page to complete the payment`
+              `Successfully ordered ${quantity} pcs of ${name}. Please pay ${order.shouldPay} to confirm your order.`
             );
             event.target.reset();
           }
@@ -151,68 +151,75 @@ const ProductDetails = () => {
                 Email
               </label>
             </div>
-            {/* Product Name */}
-            <div className="relative">
-              <input
-                type="text"
-                name="productName"
-                defaultValue={name}
-                disabled
-                className="peer w-full bg-gray-100 border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
-                placeholder=" "
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
-                Product Name
-              </label>
+            {/* Product Name & Quantity */}
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Product Name */}
+              <div className="relative w-full md:w-1/2">
+                <input
+                  type="text"
+                  name="productName"
+                  defaultValue={name}
+                  disabled
+                  className="peer w-full bg-gray-100 border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                  placeholder=" "
+                />
+                <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                  Product Name
+                </label>
+              </div>
+              {/* Quantity */}
+              <div className="relative w-full md:w-1/2">
+                <input
+                  type="number"
+                  name="quantity"
+                  placeholder=" "
+                  defaultValue={minOrderQuantity}
+                  required
+                  min={minOrderQuantity}
+                  max={availQuantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                />
+                <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                  Quantity
+                </label>
+                {errorElement && (
+                  <span className="text-red-500 text-sm absolute left-0 -bottom-5">
+                    {errorElement}
+                  </span>
+                )}
+              </div>
             </div>
-            {/* Address */}
-            <div className="relative">
-              <input
-                type="text"
-                name="address"
-                placeholder=" "
-                required
-                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
-                Address
-              </label>
+            {/* Address & Contact */}
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Address */}
+              <div className="relative w-full md:w-1/2">
+                <input
+                  type="text"
+                  name="address"
+                  placeholder=" "
+                  required
+                  className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                />
+                <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                  Address
+                </label>
+              </div>
+              {/* Contact */}
+              <div className="relative w-full md:w-1/2">
+                <input
+                  type="number"
+                  name="contact"
+                  placeholder=" "
+                  required
+                  className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+                />
+                <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
+                  Contact
+                </label>
+              </div>
             </div>
-            {/* Contact */}
-            <div className="relative">
-              <input
-                type="number"
-                name="contact"
-                placeholder=" "
-                required
-                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
-                Contact
-              </label>
-            </div>
-            {/* Quantity */}
-            <div className="relative">
-              <input
-                type="number"
-                name="quantity"
-                placeholder=" "
-                defaultValue={minOrderQuantity}
-                required
-                min={minOrderQuantity}
-                max={availQuantity}
-                onChange={(e) => setQuantity(e.target.value)}
-                className="peer w-full bg-white border border-gray-300 rounded-lg px-4 pt-6 pb-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs">
-                Quantity
-              </label>
-              {errorElement && (
-                <span className="text-red-500 text-sm absolute left-0 -bottom-5">
-                  {errorElement}
-                </span>
-              )}
-            </div>
+
             <button
               type="submit"
               className="w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-lg shadow hover:from-green-600 hover:to-green-700 transition-all duration-200 disabled:opacity-50"
