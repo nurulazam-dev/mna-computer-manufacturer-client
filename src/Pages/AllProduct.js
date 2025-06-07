@@ -21,7 +21,7 @@ const AllProduct = () => {
         Manufacturer Parts / Products
       </h2>
       <hr />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-7 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-7 gap-5">
         {products.map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}
