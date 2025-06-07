@@ -69,7 +69,7 @@ const MyOrders = () => {
 
           <tbody className="text-sm">
             {orders?.map((o, index) => (
-              <tr key={index} className="text-[16px]">
+              <tr key={o?._id || index} className="text-[16px]">
                 <th className="bg-white">{index + 1}</th>
                 <td className="bg-white">{o?.productName}</td>
                 <td className="bg-white">{o?.quantity}</td>
@@ -97,8 +97,7 @@ const MyOrders = () => {
                         data-tip="Transaction Id"
                       >
                         <p className="text-gray-700 font-semibold">
-                          {" "}
-                          {o?.transactionId}{" "}
+                          {o?.transactionId}
                         </p>
                       </div>
                     </>
@@ -110,17 +109,13 @@ const MyOrders = () => {
                       className="tooltip tooltip-error"
                       data-tip="Cancel This Order"
                     >
-                      <label
-                        htmlFor="delete-my-order-modal"
-                        className="btn modal-button btn-error btn-sm text-white "
+                      <button
+                        className="btn btn-error btn-sm text-white"
                         onClick={() => setDeleteOrder(o)}
                       >
-                        <FontAwesomeIcon
-                          className="mr-2"
-                          icon={faTrashAlt}
-                        ></FontAwesomeIcon>
-                        Delete{" "}
-                      </label>
+                        <FontAwesomeIcon className="mr-2" icon={faTrashAlt} />
+                        Delete
+                      </button>
                     </div>
                   ) : (
                     <div
@@ -141,7 +136,7 @@ const MyOrders = () => {
           deleteOrder={deleteOrder}
           setDeleteOrder={setDeleteOrder}
           refetch={refetch}
-        ></OrderDeleteModal>
+        />
       )}
     </section>
   );

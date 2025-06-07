@@ -3,9 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 
-const AdminDeleteOrderModal = ({ adminOrderDelete, refetch }) => {
+const AdminDeleteOrderModal = ({ onClose, adminOrderDelete, refetch }) => {
   const [user] = useAuthState(auth);
-  const { _id, customerName, productName } = adminOrderDelete || "";
+  const { _id, customerName, productName } = adminOrderDelete || {};
 
   const handleConfirm = () => {
     fetch(`https://mna-computer-manufacturer.onrender.com/order/${_id}`, {
@@ -16,48 +16,39 @@ const AdminDeleteOrderModal = ({ adminOrderDelete, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           toast.success("Order delete successful");
         }
         refetch();
+        onClose();
       });
   };
 
+  if (!adminOrderDelete) return null;
+
   return (
-    <div>
-      <input
-        type="checkbox"
-        id="admin-delete-single-order"
-        className="modal-toggle"
-      />
-      <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box bg-white">
-          <h3 className="font-bold text-success text-lg">
-            {" "}
-            Hello! Admin {user?.displayName}{" "}
-          </h3>
-          <p className="font-semibold text-red-500 pt-4">
-            {" "}
-            Customer Name : {customerName}{" "}
-          </p>
-          <p>Are You sure you want to delete {productName} product?</p>
-          <div className="modal-action">
-            <label
-              htmlFor="admin-delete-single-order"
-              className="btn hover:bg-red-600 border-0"
-              onClick={handleConfirm}
-            >
-              Confirm
-            </label>
-            <label
-              htmlFor="admin-delete-single-order"
-              className="btn"
-              onClick={() => window.location.reload()}
-            >
-              Cancel
-            </label>
-          </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+        <h3 className="font-bold text-success text-lg mb-2">
+          Hello! Admin {user?.displayName}
+        </h3>
+        <p className="font-semibold text-red-500 pt-2">
+          Customer Name: {customerName}
+        </p>
+        <p className="mb-6">
+          Are you sure you want to delete{" "}
+          <span className="font-bold">{productName}</span> product?
+        </p>
+        <div className="flex justify-end gap-3">
+          <button
+            className="btn bg-red-500 text-white hover:bg-red-600 border-0"
+            onClick={handleConfirm}
+          >
+            Confirm
+          </button>
+          <button className="btn" onClick={onClose}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>

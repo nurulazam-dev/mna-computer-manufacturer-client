@@ -29,6 +29,26 @@ const AdminPanel = ({ user, index, refetch }) => {
       });
   };
 
+  const handleDelete = () => {
+    if (window.confirm(`Are you sure you want to delete user ${name}?`)) {
+      fetch(`https://mna-computer-manufacturer.onrender.com/users/${_id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            toast.success("User deleted successfully");
+            refetch();
+          } else {
+            toast.error("Failed to delete user");
+          }
+        });
+    }
+  };
+
   return (
     <tr className="text-[16px]" key={_id}>
       <th className="bg-white">{index + 1}</th>
@@ -47,10 +67,7 @@ const AdminPanel = ({ user, index, refetch }) => {
         )}
       </td>
       <td className="bg-white text-center">
-        <button
-          // onClick={() => handleDelete(product._id)}
-          className="btn bg-red-600 border-0"
-        >
+        <button onClick={handleDelete} className="btn bg-red-600 border-0">
           <FontAwesomeIcon
             className="text-white"
             icon={faTrashAlt}

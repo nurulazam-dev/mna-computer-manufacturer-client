@@ -6,8 +6,15 @@ import AdminDeleteOrderModal from "./AdminDeleteOrderModal";
 
 const ManageAllOrdersRow = ({ order, index, refetch }) => {
   const [adminOrderDelete, setAdminOrderDelete] = useState(null);
-  const { _id, customer, customerName, productName, paid, shipment } =
-    order || "";
+  const {
+    _id,
+    customer,
+    customerName,
+    productName,
+    shouldPay,
+    shipment,
+    paid,
+  } = order || {};
 
   const handlePending = () => {
     fetch(`https://mna-computer-manufacturer.onrender.com/order/${_id}`, {
@@ -25,6 +32,8 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
       });
   };
 
+  const isPaid = paid || shouldPay > 0;
+
   return (
     <tr className="text-[16px]">
       <th className="bg-white">{index + 1}</th>
@@ -32,10 +41,8 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
       <td className="bg-white">{customer}</td>
       <td className="bg-white">{productName}</td>
       <td className="bg-white">
-        {paid ? (
-          <>
-            <span className="text-success font-semibold">Paid</span>
-          </>
+        {isPaid ? (
+          <span className="text-success font-semibold">Paid</span>
         ) : (
           <div
             className="tooltip tooltip-primary"
@@ -45,58 +52,44 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
           </div>
         )}
       </td>
-
       <td className="bg-white">
-        {paid ? (
-          <>
-            {!shipment ? (
-              <div
-                className="tooltip tooltip-secondary"
-                data-tip="Place for shipment"
-              >
-                <button
-                  className="btn btn-sm btn-secondary text-white"
-                  onClick={handlePending}
-                >
-                  Pending
-                </button>
-              </div>
-            ) : (
-              <>
-                <div
-                  className="tooltip tooltip-success"
-                  data-tip="Shipment placed"
-                >
-                  <span className="text-success font-semibold">Shipped</span>
-                </div>
-              </>
-            )}
-          </>
-        ) : (
-          <>
+        {isPaid ? (
+          !shipment ? (
             <div
-              className="tooltip tooltip-warning"
-              data-tip="Delete customer's order"
+              className="tooltip tooltip-success"
+              data-tip="Place for shipment"
             >
-              <label
-                htmlFor="admin-delete-single-order"
-                className="btn btn-sm btn-warning modal-button"
-                onClick={() => setAdminOrderDelete(order)}
+              <button
+                className="btn btn-sm btn-success text-white"
+                onClick={handlePending}
               >
-                Cancel{" "}
-                <FontAwesomeIcon
-                  className=""
-                  icon={faTrashAlt}
-                ></FontAwesomeIcon>
-              </label>
+                Pending
+              </button>
             </div>
-          </>
+          ) : (
+            <div className="tooltip tooltip-success" data-tip="Shipment placed">
+              <span className="text-success font-semibold">Shipped</span>
+            </div>
+          )
+        ) : (
+          <div
+            className="tooltip tooltip-warning"
+            data-tip="Delete customer's order"
+          >
+            <button
+              className="btn btn-sm btn-warning"
+              onClick={() => setAdminOrderDelete(order)}
+            >
+              Cancel <FontAwesomeIcon icon={faTrashAlt} />
+            </button>
+          </div>
         )}
         {adminOrderDelete && (
           <AdminDeleteOrderModal
             adminOrderDelete={adminOrderDelete}
             refetch={refetch}
-          ></AdminDeleteOrderModal>
+            onClose={() => setAdminOrderDelete(null)}
+          />
         )}
       </td>
     </tr>

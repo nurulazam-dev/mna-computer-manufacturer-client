@@ -26,33 +26,42 @@ const Payment = () => {
         }
       ).then((res) => res.json())
   );
+
   if (isLoading) {
     return <Loading />;
   }
 
+  if (!payForProduct) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <p className="text-red-500 font-semibold text-lg">
+          Order not found or failed to load.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <section className="border border-green-600 rounded mx-4">
+    <section className="border border-green-600 rounded mx-4 my-8">
       <div className="bg-green-600">
         <h2 className="text-white text-center p-1 text-2xl font-semibold">
           Payment Details
         </h2>
       </div>
 
-      <div className="flex justify-around">
-        <div className="order-details">
-          <PurchaseDetail
-            key={payForProduct._id}
-            payForProduct={payForProduct}
-          ></PurchaseDetail>
+      <div className="flex flex-col lg:flex-row gap-8 justify-center items-start p-6">
+        {/* Order Details */}
+        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+          <PurchaseDetail payForProduct={payForProduct} />
         </div>
-        <div className="payment-stripe mt-5 pb-12 w-[360px]">
-          <div className="border border-green-600 rounded">
+        {/* Stripe Payment */}
+        <div className="w-full max-w-md">
+          <div className="border border-green-600 rounded mb-6">
             <div className="bg-green-600">
               <h2 className="text-white text-center p-1 text-[17px] font-semibold">
                 Give your info in Card for Pay
               </h2>
             </div>
-
             <div className="card bg-white border shadow-xl rounded-none">
               <div className="card-body">
                 <Elements stripe={stripePromise}>
@@ -61,7 +70,7 @@ const Payment = () => {
               </div>
             </div>
           </div>
-
+          {/* Demo Card Info */}
           <div className="mt-6 border border-orange-600 rounded">
             <p className="bg-slate-800 text-center text-white py-1">
               Pay Demo Card Details
