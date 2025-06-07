@@ -23,14 +23,14 @@ const Dashboard = () => {
   return (
     <div className="my-10 pl-5 flex w-full">
       <PageTitle title="Dashboard"></PageTitle>
-
+      {/* dashboard Outlet part */}
       <div className="drawer-content pt-8 pr-5 lg:w-4/5 md:w-4/6 w-10/12">
         <h2 className="text-3xl font-bold text-center text-green-600 my-2 py-2">
           Dashboard
         </h2>
         <Outlet />
       </div>
-
+      {/* side bar part */}
       <div className="border-l bg-slate-50 pt-4 lg:w-1/5 md:w-1/6 w-1/12 h-screen">
         <ul className="menu p-4 text-black text-[18px]">
           <div className="lg:block md:block hidden">
