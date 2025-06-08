@@ -56,7 +56,6 @@ const MyProfile = () => {
         } else {
           toast.error("We are sorry. Some error occurred. Please try again");
         }
-        console.log(data);
         refetch();
       });
   };
@@ -250,7 +249,7 @@ const MyProfile = () => {
                     placeholder="Portfolio Website Link"
                     required
                     className="bg-white input text-[16px] border border-black w-full"
-                    defaultValue={portfolio}
+                    defaultValue={portfolio || ""}
                   />
                 </div>
                 {/* linkedIn field */}

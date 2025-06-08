@@ -25,9 +25,6 @@ const Dashboard = () => {
       <PageTitle title="Dashboard"></PageTitle>
       {/* dashboard Outlet part */}
       <div className="drawer-content pt-8 pr-5 lg:w-4/5 md:w-4/6 w-10/12">
-        <h2 className="text-3xl font-bold text-center text-green-600 my-2 py-2">
-          Dashboard
-        </h2>
         <Outlet />
       </div>
       {/* side bar part */}
