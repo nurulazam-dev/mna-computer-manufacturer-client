@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Loading from "../../Components/Shared/Loading";
+import { LOCAL_BASE_URL } from "../../config";
 
 const AddAProduct = () => {
   const {
@@ -12,9 +13,7 @@ const AddAProduct = () => {
     reset,
   } = useForm();
   const { isLoading } = useQuery("products", () => {
-    fetch("https://mna-computer-manufacturer.onrender.com/products").then(
-      (res) => res.json()
-    );
+    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json());
   });
 
   const imgStorageKey = process.env.REACT_APP_IMGSTORE_API;
@@ -41,7 +40,7 @@ const AddAProduct = () => {
             img: img,
           };
           // send data to database
-          fetch("https://mna-computer-manufacturer.onrender.com/products", {
+          fetch(`${LOCAL_BASE_URL}/products`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

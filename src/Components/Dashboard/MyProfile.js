@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
+import { LOCAL_BASE_URL } from "../../config";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
@@ -16,7 +17,7 @@ const MyProfile = () => {
     isLoading,
     refetch,
   } = useQuery(["user", email], () =>
-    fetch(`https://mna-computer-manufacturer.onrender.com/users/${email}`, {
+    fetch(`${LOCAL_BASE_URL}/users/${email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -40,7 +41,7 @@ const MyProfile = () => {
       portfolio: event.target.portfolio.value,
     };
 
-    fetch(`https://mna-computer-manufacturer.onrender.com/users/${email}`, {
+    fetch(`${LOCAL_BASE_URL}/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

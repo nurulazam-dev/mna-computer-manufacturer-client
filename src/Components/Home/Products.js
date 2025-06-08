@@ -5,13 +5,12 @@ import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import Product from "./Product";
+import { LOCAL_BASE_URL } from "../../config";
 
 const Products = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useQuery("products", () =>
-    fetch(`https://mna-computer-manufacturer.onrender.com/products`).then(
-      (res) => res.json()
-    )
+    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

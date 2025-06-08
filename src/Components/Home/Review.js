@@ -8,12 +8,11 @@ import { useQuery } from "react-query";
 import { FreeMode, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Loading from "../Shared/Loading";
+import { LOCAL_BASE_URL } from "../../config";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("https://mna-computer-manufacturer.onrender.com/reviews").then(
-      (res) => res.json()
-    )
+    fetch(`${LOCAL_BASE_URL}/reviews`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

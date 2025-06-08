@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
 import React, { useState, useMemo } from "react";
+import { LOCAL_BASE_URL } from "../../config";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -13,9 +14,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("https://mna-computer-manufacturer.onrender.com/products").then(
-      (res) => res.json()
-    )
+    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json())
   );
 
   const [filter, setFilter] = useState("");
@@ -37,7 +36,7 @@ const ManageProducts = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to Delete this product?");
     if (proceed) {
-      const url = `https://mna-computer-manufacturer.onrender.com/products/${_id}`;
+      const url = `${LOCAL_BASE_URL}/products/${_id}`;
       fetch(url, {
         method: "DELETE",
         headers: {

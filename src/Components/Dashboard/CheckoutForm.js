@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { LOCAL_BASE_URL } from "../../config";
 
 const CheckoutForm = ({ payForProduct }) => {
   const stripe = useStripe();
@@ -14,17 +15,14 @@ const CheckoutForm = ({ payForProduct }) => {
   const { _id, shouldPay, customerName, customer } = payForProduct || "";
 
   useEffect(() => {
-    fetch(
-      "https://mna-computer-manufacturer.onrender.com/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify({ shouldPay }),
-      }
-    )
+    fetch(`${LOCAL_BASE_URL}/create-payment-intent`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify({ shouldPay }),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {

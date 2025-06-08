@@ -2,13 +2,14 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
+import { LOCAL_BASE_URL } from "../../config";
 
 const AdminDeleteOrderModal = ({ onClose, adminOrderDelete, refetch }) => {
   const [user] = useAuthState(auth);
   const { _id, customerName, productName } = adminOrderDelete || {};
 
   const handleConfirm = () => {
-    fetch(`https://mna-computer-manufacturer.onrender.com/order/${_id}`, {
+    fetch(`${LOCAL_BASE_URL}/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

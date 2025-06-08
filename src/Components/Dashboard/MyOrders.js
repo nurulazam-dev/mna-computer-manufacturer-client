@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
 import OrderDeleteModal from "./OrderDeleteModal";
+import { LOCAL_BASE_URL } from "../../config";
 
 const MyOrders = () => {
   const navigate = useNavigate();
@@ -20,15 +21,12 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["order", user?.email], () =>
-    fetch(
-      `https://mna-computer-manufacturer.onrender.com/order?customer=${user?.email}`,
-      {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`${LOCAL_BASE_URL}/order?customer=${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       // .then((res) => res.json())
       .then((res) => {
         if (res.status === 403 || res.status === 401) {

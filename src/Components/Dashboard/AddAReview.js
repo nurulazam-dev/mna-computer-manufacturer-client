@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
+import { LOCAL_BASE_URL } from "../../config";
 
 const AddAReview = () => {
   const [user] = useAuthState(auth);
@@ -21,9 +22,7 @@ const AddAReview = () => {
   } = useForm({ value });
 
   const { isLoading } = useQuery("reviews", () => {
-    fetch("https://mna-computer-manufacturer.onrender.com/reviews").then(
-      (res) => res.json()
-    );
+    fetch(`${LOCAL_BASE_URL}/reviews`).then((res) => res.json());
   });
 
   const imgStorageKey = "b81832e42347a65fbc19c2064f308dd5";
@@ -48,7 +47,7 @@ const AddAReview = () => {
             img: img,
           };
           // send data to database
-          fetch("https://mna-computer-manufacturer.onrender.com/reviews", {
+          fetch(`${LOCAL_BASE_URL}/reviews`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

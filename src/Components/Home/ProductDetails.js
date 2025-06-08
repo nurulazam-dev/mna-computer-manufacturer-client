@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
+import { LOCAL_BASE_URL } from "../../config";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(0);
@@ -12,14 +13,11 @@ const ProductDetails = () => {
   let errorElement;
 
   const { data: product } = useQuery(["product", purchaseId], () =>
-    fetch(
-      `https://mna-computer-manufacturer.onrender.com/product/purchase/${purchaseId}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    ).then((res) => res.json())
+    fetch(`${LOCAL_BASE_URL}/product/purchase/${purchaseId}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   const { displayName, email } = user || "";
   const {
@@ -63,7 +61,7 @@ const ProductDetails = () => {
       quantity > parseInt(minOrderQuantity) &&
       quantity <= parseInt(availQuantity)
     ) {
-      fetch(`https://mna-computer-manufacturer.onrender.com/order`, {
+      fetch(`${LOCAL_BASE_URL}/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

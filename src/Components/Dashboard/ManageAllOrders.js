@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import ManageAllOrdersRow from "./ManageAllOrdersRow";
+import { LOCAL_BASE_URL } from "../../config";
 
 const ManageAllOrders = () => {
   const {
@@ -9,7 +10,7 @@ const ManageAllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("https://mna-computer-manufacturer.onrender.com/orders", {
+    fetch(`${LOCAL_BASE_URL}/orders`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

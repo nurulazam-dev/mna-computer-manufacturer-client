@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import AdminDeleteOrderModal from "./AdminDeleteOrderModal";
+import { LOCAL_BASE_URL } from "../../config";
 
 const ManageAllOrdersRow = ({ order, index, refetch }) => {
   const [adminOrderDelete, setAdminOrderDelete] = useState(null);
@@ -17,7 +18,7 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
   } = order || {};
 
   const handlePending = () => {
-    fetch(`https://mna-computer-manufacturer.onrender.com/order/${_id}`, {
+    fetch(`${LOCAL_BASE_URL}/order/${_id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

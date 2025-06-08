@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Components/Shared/Loading";
 import AdminPanel from "./AdminPanel";
+import { LOCAL_BASE_URL } from "../../config";
 
 const MakeAdminPanel = () => {
   const {
@@ -9,7 +10,7 @@ const MakeAdminPanel = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://mna-computer-manufacturer.onrender.com/users", {
+    fetch(`${LOCAL_BASE_URL}/users`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
