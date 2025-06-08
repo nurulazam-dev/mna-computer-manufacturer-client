@@ -34,10 +34,10 @@ const ManageProducts = () => {
     return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredProducts, currentPage]);
 
-  const handleDelete = (id) => {
+  const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to Delete this product?");
     if (proceed) {
-      const url = `https://mna-computer-manufacturer.onrender.com/products/${id}`;
+      const url = `https://mna-computer-manufacturer.onrender.com/products/${_id}`;
       fetch(url, {
         method: "DELETE",
         headers: {
