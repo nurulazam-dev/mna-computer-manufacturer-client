@@ -5,15 +5,17 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const AddAReview = () => {
   const [user] = useAuthState(auth);
+
   const value = {
     defaultValues: {
       name: user?.name,
     },
   };
+
   const {
     register,
     formState: { errors },
@@ -22,13 +24,13 @@ const AddAReview = () => {
   } = useForm({ value });
 
   const { isLoading } = useQuery("reviews", () => {
-    fetch(`${LOCAL_BASE_URL}/reviews`).then((res) => res.json());
+    fetch(`${BASE_URL}/reviews`).then((res) => res.json());
   });
 
   const imgStorageKey = "b81832e42347a65fbc19c2064f308dd5";
 
   const onSubmit = async (data, user) => {
-    const image = data.image[0];
+    const image = data?.image[0];
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
@@ -38,16 +40,18 @@ const AddAReview = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result.success) {
-          const img = result.data.url;
+        if (result?.success) {
+          const img = result?.data?.url;
+
           const reviewData = {
-            name: data.name,
-            ratings: data.ratings,
-            review: data.review,
+            name: data?.name,
+            ratings: data?.ratings,
+            review: data?.review,
             img: img,
           };
+
           // send data to database
-          fetch(`${LOCAL_BASE_URL}/reviews`, {
+          fetch(`${BASE_URL}/reviews`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

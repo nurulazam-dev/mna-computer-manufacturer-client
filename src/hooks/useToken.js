@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LOCAL_BASE_URL } from "../config";
+import { BASE_URL } from "../config";
 
 const useToken = (user) => {
   const [token, setToken] = useState("");
@@ -9,7 +9,7 @@ const useToken = (user) => {
     const currentUser = { email: email };
 
     if (email) {
-      fetch(`${LOCAL_BASE_URL}/users?email=${email}`, {
+      fetch(`${BASE_URL}/users?email=${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

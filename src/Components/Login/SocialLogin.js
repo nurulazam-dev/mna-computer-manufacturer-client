@@ -12,16 +12,22 @@ import Loading from "../Shared/Loading";
 const SocialLogin = ({ children }) => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
+
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
   let errorElement;
+
   const [token] = useToken(googleUser, githubUser);
+
   if (googleUser || githubUser) {
     navigate(from, { replace: true });
   }
+
   if (googleLoading || githubLoading) {
     <Loading />;
   }

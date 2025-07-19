@@ -8,14 +8,15 @@ import { useQuery } from "react-query";
 import { FreeMode, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Loading from "../Shared/Loading";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch(`${LOCAL_BASE_URL}/reviews`).then((res) => res.json())
+    fetch(`${BASE_URL}/reviews`).then((res) => res.json())
   );
+
   if (isLoading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
   return (
     <section className="my-8 mx-2">
@@ -39,12 +40,12 @@ const Review = () => {
       >
         <div>
           {reviews?.map((review) => (
-            <SwiperSlide key={review._id} className="pb-5 px-10 lg:px-4">
+            <SwiperSlide key={review?._id} className="pb-5 px-10 lg:px-4">
               <div className="card h-80 max-w-md lg:max-w-lg my-5 bg-white shadow-xl">
                 <div className="flex justify-between px-5 items-center my-2">
                   <div className="avatar">
                     <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                      <img src={review.img} alt="" />
+                      <img src={review?.img} alt="" />
                     </div>
                   </div>
                   <div>
@@ -55,7 +56,7 @@ const Review = () => {
                   </div>
                 </div>
                 <div className="mx-3 pb-3 text-[16px]">
-                  <h2 className="text-xl mx-2 font-semibold">{review.name}</h2>
+                  <h2 className="text-xl mx-2 font-semibold">{review?.name}</h2>
 
                   <p className="mb-2">
                     <small className="text-yellow-500 mx-2">
@@ -81,14 +82,14 @@ const Review = () => {
                       ></FontAwesomeIcon>
                     </small>
                     <span className="mx-2 text-blue-500">
-                      {review.ratings} stars
+                      {review?.ratings} stars
                     </span>
                   </p>
                   <hr />
                   <p className="mx-2 pt-2">
-                    {review.review.length < 90
-                      ? review.review
-                      : review.review.slice(0, 90) + " . . ."}
+                    {review?.review?.length < 90
+                      ? review?.review
+                      : review?.review?.slice(0, 90) + " . . ."}
                   </p>
                 </div>
               </div>

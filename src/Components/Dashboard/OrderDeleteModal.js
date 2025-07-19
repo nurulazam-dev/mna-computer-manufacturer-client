@@ -1,12 +1,12 @@
 import React from "react";
 import { toast } from "react-toastify";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const OrderDeleteModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
   const { _id, customerName, productName } = deleteOrder || "";
 
   const handleConfirm = () => {
-    fetch(`${LOCAL_BASE_URL}/order/${_id}`, {
+    fetch(`${BASE_URL}/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

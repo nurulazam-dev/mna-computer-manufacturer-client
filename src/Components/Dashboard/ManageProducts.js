@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
 import React, { useState, useMemo } from "react";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -14,7 +14,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json())
+    fetch(`${BASE_URL}/products`).then((res) => res.json())
   );
 
   const [filter, setFilter] = useState("");
@@ -36,7 +36,7 @@ const ManageProducts = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to Delete this product?");
     if (proceed) {
-      const url = `${LOCAL_BASE_URL}/products/${_id}`;
+      const url = `${BASE_URL}/products/${_id}`;
       fetch(url, {
         method: "DELETE",
         headers: {
@@ -110,15 +110,15 @@ const ManageProducts = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-100">
-            {paginatedProducts.length === 0 ? (
+            {paginatedProducts?.length === 0 ? (
               <tr>
                 <td colSpan={7} className="text-center py-8 text-gray-500">
                   No products found.
                 </td>
               </tr>
             ) : (
-              paginatedProducts.map((product, index) => (
-                <tr key={product._id} className="hover:bg-green-50 transition">
+              paginatedProducts?.map((product, index) => (
+                <tr key={product?._id} className="hover:bg-green-50 transition">
                   <td className="px-4">
                     {(currentPage - 1) * ITEMS_PER_PAGE + index + 1}
                   </td>
@@ -126,22 +126,22 @@ const ManageProducts = () => {
                     <div className="avatar">
                       <div className="w-10 h-10 rounded-xl border border-green-200 shadow">
                         <img
-                          src={product.img}
-                          alt={product.name}
+                          src={product?.img}
+                          alt={product?.name}
                           className="object-contain w-full h-full"
                         />
                       </div>
                     </div>
                   </td>
                   <td className="px-4 text-gray-800 truncate max-w-xs">
-                    {product.name.slice(0, 30)}
+                    {product?.name?.slice(0, 30)}
                   </td>
-                  <td className="px-4">{product.minOrderQuantity}</td>
-                  <td className="px-4">{product.availQuantity}</td>
-                  <td className="px-4">${product.price}</td>
+                  <td className="px-4">{product?.minOrderQuantity}</td>
+                  <td className="px-4">{product?.availQuantity}</td>
+                  <td className="px-4">${product?.price}</td>
                   <td className="px-4 text-center">
                     <button
-                      onClick={() => handleDelete(product._id)}
+                      onClick={() => handleDelete(product?._id)}
                       className="btn btn-sm bg-red-600 hover:bg-red-700 text-white rounded shadow transition"
                       title="Delete Product"
                     >

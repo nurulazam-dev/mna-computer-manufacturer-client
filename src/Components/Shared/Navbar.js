@@ -8,11 +8,14 @@ import Loading from "../Shared/Loading";
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
+
   let [open, setOpen] = useState(false);
+
   const handleSignOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
   };
+
   if (loading) {
     return <Loading />;
   }

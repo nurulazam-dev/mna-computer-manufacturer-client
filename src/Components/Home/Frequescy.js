@@ -4,6 +4,7 @@ import Accordion from "./Accordion";
 
 const Frequency = () => {
   const [active, setActive] = useState(1);
+
   return (
     <section className="">
       <div className="text-center mb-2">
@@ -22,17 +23,17 @@ const Frequency = () => {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         {/* FAQ part */}
         <div className="">
-          {faqsData.map((faq) => (
+          {faqsData?.map((faq) => (
             <Accordion
-              key={faq.id}
-              id={faq.id}
-              title={faq.title}
-              ans={faq.ans}
+              key={faq?.id}
+              id={faq?.id}
+              title={faq?.title}
+              ans={faq?.ans}
               active={active}
               setActive={setActive}
             />

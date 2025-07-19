@@ -8,16 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading";
-import { LOCAL_BASE_URL } from "../../../config";
+import { BASE_URL } from "../../../config";
 
 const AnalysisCards = () => {
   // products
   const { data: products, isLoading } = useQuery("products", () =>
-    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json())
+    fetch(`${BASE_URL}/products`).then((res) => res.json())
   );
   //   order
   const { data: orders } = useQuery("orders", () =>
-    fetch(`${LOCAL_BASE_URL}/orders`, {
+    fetch(`${BASE_URL}/orders`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -26,12 +26,12 @@ const AnalysisCards = () => {
 
   //   review
   const { data: reviews } = useQuery("reviews", () =>
-    fetch(`${LOCAL_BASE_URL}/reviews`).then((res) => res.json())
+    fetch(`${BASE_URL}/reviews`).then((res) => res.json())
   );
 
   //   user
   const { data: users } = useQuery("users", () =>
-    fetch(`${LOCAL_BASE_URL}/users`, {
+    fetch(`${BASE_URL}/users`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

@@ -4,22 +4,26 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(0);
+
   const { purchaseId } = useParams();
   const [user] = useAuthState(auth);
+
   let errorElement;
 
   const { data: product } = useQuery(["product", purchaseId], () =>
-    fetch(`${LOCAL_BASE_URL}/product/purchase/${purchaseId}`, {
+    fetch(`${BASE_URL}/product/purchase/${purchaseId}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())
   );
+
   const { displayName, email } = user || "";
+
   const {
     _id,
     img,
@@ -57,11 +61,12 @@ const ProductDetails = () => {
       price: parseInt(price),
       shouldPay: parseInt(price) * parseInt(quantity),
     };
+
     if (
       quantity > parseInt(minOrderQuantity) &&
       quantity <= parseInt(availQuantity)
     ) {
-      fetch(`${LOCAL_BASE_URL}/order`, {
+      fetch(`${BASE_URL}/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

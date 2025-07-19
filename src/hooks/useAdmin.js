@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LOCAL_BASE_URL } from "../config";
+import { BASE_URL } from "../config";
 
 const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
@@ -9,7 +9,7 @@ const useAdmin = (user) => {
     const email = user?.email;
 
     if (email) {
-      fetch(`${LOCAL_BASE_URL}/users/admin/${email}`, {
+      fetch(`${BASE_URL}/users/admin/${email}`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

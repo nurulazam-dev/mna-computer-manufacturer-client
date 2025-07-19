@@ -1,6 +1,5 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import contactImg from "../../assets/contact-us.jpg";
 
 const ContactUs = () => {

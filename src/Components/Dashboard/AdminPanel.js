@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { toast } from "react-toastify";
 import useAdmin from "../../hooks/useAdmin";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const AdminPanel = ({ user, index, refetch }) => {
   const { _id, email, name } = user;
   const [admin] = useAdmin(user);
 
   const handleAdmin = () => {
-    fetch(`${LOCAL_BASE_URL}/users/admin/${_id}`, {
+    fetch(`${BASE_URL}/users/admin/${_id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,7 +32,7 @@ const AdminPanel = ({ user, index, refetch }) => {
 
   const handleDelete = () => {
     if (window.confirm(`Are you sure you want to delete user ${name}?`)) {
-      fetch(`${LOCAL_BASE_URL}/users/${_id}`, {
+      fetch(`${BASE_URL}/users/${_id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

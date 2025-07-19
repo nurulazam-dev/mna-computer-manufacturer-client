@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const CheckoutForm = ({ payForProduct }) => {
   const stripe = useStripe();
@@ -15,7 +15,7 @@ const CheckoutForm = ({ payForProduct }) => {
   const { _id, shouldPay, customerName, customer } = payForProduct || "";
 
   useEffect(() => {
-    fetch(`${LOCAL_BASE_URL}/create-payment-intent`, {
+    fetch(`${BASE_URL}/create-payment-intent`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const CheckoutForm = ({ payForProduct }) => {
       customerName: customerName,
     };
 
-    fetch(`https://alpha-steelwork-backend.onrender.com/orders/${_id}`, {
+    fetch(`${BASE_URL}/orders/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -149,8 +149,8 @@ const InfoFooter = () => {
             Pay With
           </h3>
           <img
-            className="h-24 w-auto mt-4 rounded-lg shadow-lg"
-            src="https://i.ibb.co/cYd6mBQ/paymentmethod.png"
+            className="h-36 w-full mt-4 rounded-md shadow-lg"
+            src="https://www.eit.com.bd/public/images/paymeent.jpg"
             alt="Payment Methods"
           />
         </div>

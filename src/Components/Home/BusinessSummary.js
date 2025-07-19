@@ -6,6 +6,7 @@ import { summaryData } from "../Shared/AllData";
 
 const BusinessSummary = () => {
   const [counterState, setCounterState] = useState(false);
+
   return (
     <section className="my-8">
       <ScrollTrigger

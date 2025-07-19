@@ -3,11 +3,11 @@ import { useQuery } from "react-query";
 import Product from "../Components/Home/Product";
 import Loading from "../Components/Shared/Loading";
 import PageTitle from "../Components/Shared/PageTitle";
-import { LOCAL_BASE_URL } from "../config";
+import { BASE_URL } from "../config";
 
 const AllProduct = () => {
   const { data: products, isLoading } = useQuery("products", () =>
-    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json())
+    fetch(`${BASE_URL}/products`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

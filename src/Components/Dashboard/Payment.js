@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import CheckoutForm from "./CheckoutForm";
 import PurchaseDetail from "./PurchaseDetail";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const stripePromise = loadStripe(
   "pk_test_51L0gmsA8JMkzEy5gARbixx2IqJphAPSG7j1WtedZf4nJeX6LDmsJiR8o39InC5xCl5BKw0D31X3EWzXqrHjGmn5X005rJGKBT9"
@@ -18,7 +18,7 @@ const Payment = () => {
   const { data: payForProduct, isLoading } = useQuery(
     ["payForProduct", payForId],
     () =>
-      fetch(`${LOCAL_BASE_URL}/order/${payForId}`, {
+      fetch(`${BASE_URL}/order/${payForId}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

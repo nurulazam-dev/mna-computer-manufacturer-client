@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Loading from "../../Components/Shared/Loading";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const AddAProduct = () => {
   const {
@@ -12,35 +12,40 @@ const AddAProduct = () => {
     handleSubmit,
     reset,
   } = useForm();
+
   const { isLoading } = useQuery("products", () => {
-    fetch(`${LOCAL_BASE_URL}/products`).then((res) => res.json());
+    fetch(`${BASE_URL}/products`).then((res) => res.json());
   });
 
   const imgStorageKey = process.env.REACT_APP_IMGSTORE_API;
 
   const onSubmit = async (data) => {
-    const image = data.img[0]; // <-- fixed here
+    const image = data?.img[0];
     const formData = new FormData();
+
     formData.append("image", image);
+
     const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result.success) {
-          const img = result.data.url;
+        if (result?.success) {
+          const img = result?.data?.url;
           const product = {
-            name: data.name,
-            description: data.description,
-            minOrderQuantity: data.minOrderQuantity,
-            availQuantity: data.availQuantity,
-            price: data.price,
+            name: data?.name,
+            description: data?.description,
+            minOrderQuantity: data?.minOrderQuantity,
+            availQuantity: data?.availQuantity,
+            price: data?.price,
             img: img,
           };
+
           // send data to database
-          fetch(`${LOCAL_BASE_URL}/products`, {
+          fetch(`${BASE_URL}/products`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

@@ -9,10 +9,11 @@ import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
 import OrderDeleteModal from "./OrderDeleteModal";
-import { LOCAL_BASE_URL } from "../../config";
+import { BASE_URL } from "../../config";
 
 const MyOrders = () => {
   const navigate = useNavigate();
+
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
 
@@ -21,7 +22,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["order", user?.email], () =>
-    fetch(`${LOCAL_BASE_URL}/order?customer=${user?.email}`, {
+    fetch(`${BASE_URL}/order?customer=${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
