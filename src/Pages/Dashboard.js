@@ -14,7 +14,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import PageTitle from "../Components/Shared/PageTitle";
 import auth from "../Firebase/firebase.init";
-import brandLogo from "../assets/brandLogo.png";
+import brandLogo from "../assets/mna-computer-manufacturer-logo.webp";
 import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
@@ -31,14 +31,14 @@ const Dashboard = () => {
       <div className="border-l bg-slate-50 pt-4 lg:w-1/5 md:w-1/6 w-1/12 h-screen">
         <ul className="menu p-4 text-black text-[18px]">
           <div className="lg:block md:block hidden">
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center items-center">
               <img
                 src={brandLogo}
                 alt=""
-                className="lg:w-[180px] md:w-[130px] w-[100px]"
+                className="lg:w-[90px] md:w-[85px] w-[80px]"
               />
             </div>
-            <hr className="mb-2" />
+            <hr className="" />
           </div>
           <li>
             <Link to="/dashboard">

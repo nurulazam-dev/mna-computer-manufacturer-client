@@ -12,7 +12,7 @@ import SocialLogin from "../Components/Login/SocialLogin";
 import Loading from "../Components/Shared/Loading";
 import PageTitle from "../Components/Shared/PageTitle";
 import auth from "../Firebase/firebase.init";
-import brandLogo from "../assets/brandLogo.png";
+import brandLogo from "../assets/mna-computer-manufacturer-logo.webp";
 import useToken from "../hooks/useToken";
 
 const Register = () => {

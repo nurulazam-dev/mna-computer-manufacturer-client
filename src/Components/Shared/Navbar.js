@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
-import brandLogo from "../../assets/brandLogo.png";
+import brandLogo from "../../assets/mna-computer-manufacturer-logo.webp";
 import Loading from "../Shared/Loading";
 
 const Navbar = () => {
@@ -56,8 +56,8 @@ const Navbar = () => {
         <img
           src={brandLogo}
           alt="Brand_Logo"
-          width="200"
-          height="200"
+          width="70"
+          height="70"
           className="ml-7"
         />
       </Link>

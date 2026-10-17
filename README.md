@@ -109,6 +109,21 @@
 
 ---
 
+## Using Guideline:
+
+```bash
+# run the project locally
+npm start
+
+# build the project
+npm run build
+
+# deploy the project in firebase
+firebase deploy
+```
+
+---
+
 ## 📢 Contribution & Feedback
 
 Feel free to fork, contribute, or open issues for suggestions and improvements.  
