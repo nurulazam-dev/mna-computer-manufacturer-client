@@ -1,18 +1,18 @@
 # Project Use Guidelines
 
-## Run the project locally:
+### Run the project locally:
 
 ```bash
 npm start
 ```
 
-## Build the project
+### Build the project
 
 ```bash
 npm run build
 ```
 
-## Deploy the project in firebase
+### Deploy the project in firebase
 
 ```bash
 firebase deploy
@@ -31,3 +31,14 @@ firebase deploy
   Password: `Web123`
 
 ---
+
+## Branch management:
+
+```bash
+# 1. Switch to your <development-branch> branch:
+git checkout <development-branch>
+
+# 2. Create and switch to your new development-branch
+git checkout -b <development-branch>
+
+```
