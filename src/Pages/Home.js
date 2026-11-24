@@ -12,11 +12,13 @@ import Review from "../Components/Home/Review";
 import Subscribe from "../Components/Home/Subscribe";
 import WhyChooseUs from "../Components/Home/WhyChooseUs";
 import PageTitle from "../Components/Shared/PageTitle";
+// import Hero from "../Components/Home/Hero";
 
 const Home = () => {
   return (
-    <div className="mt-8 pt-8">
+    <div className="mt-7 pt-6">
       <PageTitle title="Home"></PageTitle>
+      {/* <Hero /> */}
       <Banner />
       {/* <LoginCopy /> */}
       <Products />

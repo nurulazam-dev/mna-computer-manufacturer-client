@@ -13,7 +13,7 @@ import { BASE_URL } from "../../../config";
 const AnalysisCards = () => {
   // products
   const { data: products, isLoading } = useQuery("products", () =>
-    fetch(`${BASE_URL}/products`).then((res) => res.json())
+    fetch(`${BASE_URL}/products`).then((res) => res.json()),
   );
   //   order
   const { data: orders } = useQuery("orders", () =>
@@ -21,12 +21,12 @@ const AnalysisCards = () => {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-    }).then((res) => res.json())
+    }).then((res) => res.json()),
   );
 
   //   review
   const { data: reviews } = useQuery("reviews", () =>
-    fetch(`${BASE_URL}/reviews`).then((res) => res.json())
+    fetch(`${BASE_URL}/reviews`).then((res) => res.json()),
   );
 
   //   user
@@ -35,7 +35,7 @@ const AnalysisCards = () => {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-    }).then((res) => res.json())
+    }).then((res) => res.json()),
   );
 
   if (isLoading) {
@@ -51,7 +51,7 @@ const AnalysisCards = () => {
             <h4 className="text-[20px]">Total Products</h4>
             <FontAwesomeIcon icon={faComputer} />
           </div>
-          <h3 className="font-bold text-[24px]">{products?.length} +</h3>
+          <h3 className="font-bold text-[24px]">{products?.meta?.total} +</h3>
         </div>
         {/* card-2 */}
         <div className="border rounded bg-orange-600 text-white px-3 py-4">
@@ -59,7 +59,7 @@ const AnalysisCards = () => {
             <h4 className="text-[20px]">Registered Users</h4>
             <FontAwesomeIcon icon={faUsers} />
           </div>
-          <h3 className="font-bold text-[24px]">{users?.length} +</h3>
+          <h3 className="font-bold text-[24px]">{users?.meta?.total} +</h3>
         </div>
         {/* card-3 */}
         <div className="border rounded bg-violet-600 text-white px-3 py-4">
@@ -67,7 +67,7 @@ const AnalysisCards = () => {
             <h4 className="text-[20px]">Total Orders</h4>
             <FontAwesomeIcon icon={faClipboardUser} />
           </div>
-          <h3 className="font-bold text-[24px]">{orders?.length} +</h3>
+          <h3 className="font-bold text-[24px]">{orders?.meta?.total} +</h3>
         </div>
         {/* card-4 */}
         <div className="border rounded bg-sky-700 text-white px-3 py-4">
@@ -75,7 +75,7 @@ const AnalysisCards = () => {
             <h4 className="text-[20px]">Total Reviews</h4>
             <FontAwesomeIcon icon={faComments} />
           </div>
-          <h3 className="font-bold text-[24px]">{reviews?.length} +</h3>
+          <h3 className="font-bold text-[24px]">{reviews?.meta?.total} +</h3>
         </div>
       </div>
     </section>

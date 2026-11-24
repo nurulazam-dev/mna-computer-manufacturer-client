@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group overflow-hidden">
+    <div className="relative bg-slate-950 rounded-2xl shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 group overflow-hidden">
       <div className="absolute top-4 right-4 z-10">
         <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">
           ${price} /unit
@@ -21,16 +21,16 @@ const Product = ({ product }) => {
         <img
           src={img}
           alt={name}
-          className="object-contain h-44 w-full transition-transform duration-300 group-hover:scale-105"
+          className="object-contain h-44 w-full transition-transform duration-300 group-hover:scale-105 bg-white"
         />
       </figure>
       <div className="flex flex-col gap-1 p-2">
-        <h2 className="text-lg font-bold text-gray-800 text-center truncate">
+        <h2 className="text-lg font-bold text-gray-300 text-center truncate">
           {name}
         </h2>
-        <p className="text-sm text-gray-500 text-center">
+        <p className="text-sm text-center">
           Minimum Order:{" "}
-          <span className="font-semibold text-gray-700">
+          <span className="font-semibold text-gray-200">
             {minOrderQuantity}
           </span>{" "}
           pcs

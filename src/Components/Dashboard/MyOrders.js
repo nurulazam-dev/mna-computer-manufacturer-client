@@ -37,7 +37,7 @@ const MyOrders = () => {
           toast.error("Access Token expire");
         }
         return res.json();
-      })
+      }),
   );
   // console.log(orders);
 
@@ -67,7 +67,7 @@ const MyOrders = () => {
           </thead>
 
           <tbody className="text-sm">
-            {orders?.map((o, index) => (
+            {orders?.data?.map((o, index) => (
               <tr key={o?._id || index} className="text-[16px]">
                 <th className="bg-white">{index + 1}</th>
                 <td className="bg-white">{o?.productName}</td>

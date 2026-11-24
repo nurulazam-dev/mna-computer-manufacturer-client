@@ -6,7 +6,6 @@ import {
   LinearScale,
   Tooltip,
 } from "chart.js";
-import React from "react";
 import { Bar } from "react-chartjs-2";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);

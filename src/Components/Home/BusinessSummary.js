@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import { summaryData } from "../Shared/AllData";
+import { summaryData } from "../../assets/data/AllData";
 
 const BusinessSummary = () => {
   const [counterState, setCounterState] = useState(false);
