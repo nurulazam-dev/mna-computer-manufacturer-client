@@ -15,7 +15,7 @@ import PageTitle from "../Components/Shared/PageTitle";
 
 const Home = () => {
   return (
-    <div className="mt-8 pt-8">
+    <div className="mt-7 pt-8">
       <PageTitle title="Home"></PageTitle>
       <Banner />
       {/* <LoginCopy /> */}

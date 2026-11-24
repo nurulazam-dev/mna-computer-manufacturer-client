@@ -24,7 +24,7 @@ const Navbar = () => {
   const navLinkClass = `text-white cursor-pointer font-Barlow font-normal text-sm inline-block my-3  border-b-2 border-transparent hover:border-pink-700 duration-300`;
 
   return (
-    <nav className="bg-[#19223a] top-0 py-2 fixed w-full z-50 flex items-center justify-between">
+    <nav className="bg-[#19223a] top-0 py-1 fixed w-full z-50 flex items-center justify-between">
       <div
         className="md:hidden fixed right-5 cursor-pointer z-50"
         style={{ color: "white" }}
@@ -57,8 +57,8 @@ const Navbar = () => {
           src={brandLogo}
           alt="Brand_Logo"
           width="70"
-          height="70"
-          className="ml-7"
+          height="50"
+          className="ml-7 bg-slate-300 rounded-md"
         />
       </Link>
       <ul
