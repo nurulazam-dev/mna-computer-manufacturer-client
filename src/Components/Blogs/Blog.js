@@ -1,7 +1,7 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { blogData } from "../Shared/AllData";
+import { blogData } from "../../assets/data/AllData";
 
 const Blog = () => {
   return (

@@ -12,7 +12,7 @@ import { BASE_URL } from "../../config";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch(`${BASE_URL}/reviews`).then((res) => res.json())
+    fetch(`${BASE_URL}/reviews`).then((res) => res.json()),
   );
 
   if (isLoading) {
@@ -39,7 +39,7 @@ const Review = () => {
         }}
       >
         <div>
-          {reviews?.map((review) => (
+          {reviews?.data?.map((review) => (
             <SwiperSlide key={review?._id} className="pb-5 px-10 lg:px-4">
               <div className="card h-80 max-w-md lg:max-w-lg my-5 bg-white shadow-xl">
                 <div className="flex justify-between px-5 items-center my-2">

@@ -1,4 +1,3 @@
-import React from "react";
 import "../../style/Accordion.css";
 
 const Accordion = ({ id, title, ans, active, setActive }) => {
