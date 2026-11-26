@@ -7,7 +7,7 @@ const Blog = () => {
   return (
     <section className="my-10 px-5 pt-8 container mx-auto ">
       <div className="mb-5">
-        <h2 className="text-3xl text-center text-green-600 font-bold">
+        <h2 className="text-3xl text-center text-slate-50 font-bold">
           Our Latest Blogs
         </h2>
       </div>
@@ -16,30 +16,36 @@ const Blog = () => {
         {blogData?.map((data) => (
           <div
             key={data?.id}
-            className="h-[350px] lg:max-w-lg bg-white border rounded-none shadow-xl"
+            className="h-[350px] lg:max-w-lg bg-slate-950 border rounded-lg shadow-xl"
           >
             <div className="">
               <div className="img">
-                <img src={data?.img} alt="" className="w-[420px] h-[220px]" />
+                <img
+                  src={data?.img}
+                  alt=""
+                  className="w-[420px] h-[220px] rounded-t-lg"
+                />
               </div>
-              <div className="p-5 pt-0">
-                <div className="flex justify-between mb-2 text-[16px] text-[#3c3e41]">
+              <div className="p-5 pt-1">
+                <div className="flex justify-between mb-2 text-[15px] text-slate-400">
                   <p>{data?.date}</p>
-                  <div className="flex text-[16px]">
+                  <div className="flex text-[15px]">
                     <i className="fas fa-user pt-1"></i>
-                    <p className="ms-[6px]">Admin</p>
+                    <p className="ms-[6px]">ADMIN</p>
                   </div>
                 </div>
                 <div className="">
                   <h2 className="text-[18px] font-semibold">{data?.title}</h2>
                 </div>
-                <button className="text-[13px] text-green-800 my-1 hover:text-black">
-                  Read more...
-                  <FontAwesomeIcon
-                    className="ml-1"
-                    icon={faArrowUpRightFromSquare}
-                  ></FontAwesomeIcon>
-                </button>
+                <div className="my-1 flex justify-end items-center">
+                  <button className="text-[13px] text-sky-500 hover:text-sky-400">
+                    Read more...
+                    <FontAwesomeIcon
+                      className="ml-1"
+                      icon={faArrowUpRightFromSquare}
+                    ></FontAwesomeIcon>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -3,7 +3,6 @@ import {
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { useQuery } from "react-query";
 import { FreeMode, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,7 +20,7 @@ const Review = () => {
   return (
     <section className="my-8 mx-2">
       <div className="mb-2">
-        <h2 className="text-4xl text-center text-green-600 font-bold">
+        <h2 className="text-4xl text-center text-slate-50 font-bold">
           Reviews
         </h2>
       </div>
@@ -41,7 +40,7 @@ const Review = () => {
         <div>
           {reviews?.data?.map((review) => (
             <SwiperSlide key={review?._id} className="pb-5 px-10 lg:px-4">
-              <div className="card h-80 max-w-md lg:max-w-lg my-5 bg-white shadow-xl">
+              <div className="card h-80 max-w-md lg:max-w-lg my-5 bg-slate-950 shadow-xl border border-slate-700">
                 <div className="flex justify-between px-5 items-center my-2">
                   <div className="avatar">
                     <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

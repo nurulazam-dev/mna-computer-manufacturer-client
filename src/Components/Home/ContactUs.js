@@ -6,7 +6,7 @@ const ContactUs = () => {
   return (
     <section className="my-8 px-10">
       <div className="text-center mb-6">
-        <h2 className="text-4xl mb-2 text-green-600 font-bold">Contact Us</h2>
+        <h2 className="text-4xl mb-2 text-slate-50 font-bold">Contact Us</h2>
       </div>
       <div className="w-full lg:flex justify-around items-center gap-4">
         <div className="w-full md:w-2/5 lg:w-4/6">
@@ -21,32 +21,32 @@ const ContactUs = () => {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="input w-full bg-white mb-2 input-bordered"
+                className="input w-full bg-slate-950 mb-2 input-bordered"
               />
             </div>
             <div>
               <input
                 type="email"
                 placeholder="Email Address"
-                className="input w-full mb-2 input-bordered bg-white"
+                className="input w-full mb-2 input-bordered bg-slate-950"
               />
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Subject"
-                className="input w-full mb-2 input-bordered bg-white"
+                className="input w-full mb-2 input-bordered bg-slate-950"
               />
             </div>
             <div>
               <textarea
-                className="textarea w-full mb-4 input-bordered bg-white"
+                className="textarea w-full mb-4 input-bordered bg-slate-950"
                 placeholder="Your message"
                 rows={4}
               ></textarea>
             </div>
             <div>
-              <button className="btn btn-outline border-green-700 text-green-700 text-xl hover:border-black hover:bg-orange-500">
+              <button className="btn btn-outline border-green-700 text-slate-100 text-xl hover:bg-sky-500">
                 Send Message{" "}
                 <FontAwesomeIcon className="mx-4" icon={faPaperPlane} />
               </button>
