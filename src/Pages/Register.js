@@ -59,9 +59,9 @@ const Register = () => {
     <div className="h-screen mt-12 py-12">
       <PageTitle title="Register"></PageTitle>
       <div className="flex justify-center items-center">
-        <div className="lg:flex justify-center items-center border border-green-600 p-5 rounded shadow-lg">
+        <div className="lg:flex justify-center items-center border bg-slate-950 border-green-600 p-5 rounded shadow-lg">
           {/* info side */}
-          <div className="hidden lg:block w-96 bg-white px-4 py-2">
+          <div className="hidden lg:block w-96 px-4 py-2">
             <div className="flex justify-center items-center mb-6">
               <img src={brandLogo} alt="" className="w-[200px]" />
             </div>
@@ -73,23 +73,23 @@ const Register = () => {
             </div>
           </div>
           {/* divider */}
-          <div className="hidden lg:block border w-[1px] mx-2 h-[400px]"></div>
+          <div className="hidden lg:block border border-slate-700 w-[1px] mx-2 h-[400px]"></div>
           {/* Register form side */}
-          <div className="w-96 bg-white px-4">
+          <div className="w-96 px-4">
             <div className="">
-              <h2 className=" text-green-600 text-4xl font-bold mb-4">
+              <h2 className=" text-slate-50 text-4xl font-bold mb-4">
                 Register
               </h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 {/* ========name field======== */}
-                <label className="border border-black px-3 py-2 rounded flex items-center mb-4">
+                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-4">
                   <FontAwesomeIcon
                     className="w-6 h-6 opacity-60 mr-2"
                     icon={faUser}
                   />
                   <input
                     type="text"
-                    className="bg-white outline-none text-black px-2 text-[17px]"
+                    className="bg-slate-950 outline-none px-2 text-[17px]"
                     placeholder="Full Name"
                     {...register("name", {
                       required: {
@@ -107,14 +107,14 @@ const Register = () => {
                   )}
                 </label>
                 {/* ========email field======== */}
-                <label className="border border-black px-3 py-2 rounded flex items-center mb-4">
+                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-4">
                   <FontAwesomeIcon
                     className="w-6 h-6 opacity-60 mr-2"
                     icon={faEnvelope}
                   />
                   <input
                     type="email"
-                    className="bg-white outline-none px-2 text-[17px]"
+                    className="bg-slate-950 outline-none px-2 text-[17px]"
                     placeholder="Email"
                     {...register("email", {
                       required: {
@@ -141,7 +141,7 @@ const Register = () => {
                   )}
                 </label>
                 {/* ========password field======== */}
-                <label className="border border-black px-3 py-2 rounded flex items-center mb-2">
+                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-2">
                   <FontAwesomeIcon
                     className="w-6 h-6 opacity-60 mr-2"
                     icon={faKey}
@@ -149,7 +149,7 @@ const Register = () => {
                   <input
                     type="password"
                     placeholder="Password"
-                    className="bg-white outline-none px-2 text-[17px]"
+                    className="bg-slate-950 outline-none px-2 text-[17px]"
                     {...register("password", {
                       required: {
                         value: true,
@@ -179,7 +179,7 @@ const Register = () => {
                 {errorElement}
 
                 <input
-                  className="border shadow-lg bg-green-600 hover:bg-black py-[10px] rounded font-semibold w-full mt-4 mb-1 text-white hover:text-orange-500"
+                  className="border border-slate-700 shadow-lg bg-green-600 hover:bg-black py-[10px] rounded font-semibold w-full mt-4 mb-1 text-white cursor-pointer hover:text-orange-500"
                   type="submit"
                   value="Register"
                 />

@@ -73,27 +73,27 @@ const blogData = [
   {
     id: 1,
     img: blog1,
-    date: "26 December, 2022",
+    date: "26 December, 2024",
     title: "Six reasons why you should learn React.js in 2023!",
   },
   {
     id: 2,
     img: blog2,
-    date: "22 December, 2022",
+    date: "22 December, 2024",
     title:
       "Will the demand for web development increase or decrease in the future?",
   },
   {
     id: 3,
     img: blog3,
-    date: "20 December, 2022",
+    date: "20 December, 2024",
     title:
       "What is the relationship between web development and software development?",
   },
   {
     id: 4,
     img: blog4,
-    date: "16 December, 2022",
+    date: "16 December, 2024",
     title:
       "Mobile Apps Development or Web Development!! Which should be learned?",
   },

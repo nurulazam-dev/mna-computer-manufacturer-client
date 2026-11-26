@@ -46,7 +46,7 @@ const ContactUs = () => {
               ></textarea>
             </div>
             <div>
-              <button className="btn btn-outline border-green-700 text-slate-100 text-xl hover:bg-sky-500">
+              <button className="btn btn-outline border-sky-500 text-slate-100 text-xl hover:bg-sky-500">
                 Send Message{" "}
                 <FontAwesomeIcon className="mx-4" icon={faPaperPlane} />
               </button>

@@ -48,9 +48,9 @@ const Login = () => {
     <div className="h-screen mt-12 py-12">
       <PageTitle title="Login"></PageTitle>
       <div className="flex justify-center items-center">
-        <div className="lg:flex justify-center items-center border border-green-600 p-5 rounded shadow-lg">
+        <div className="lg:flex justify-center items-center bg-slate-950 border border-green-600 p-5 rounded shadow-lg">
           {/* info side */}
-          <div className="hidden lg:block w-96 bg-white px-4 py-2">
+          <div className="hidden lg:block w-96 px-4 py-2">
             <div className="w-full mb-4">
               <img
                 src="https://i.ibb.co/dK4hBS7/app-login-security-4897468-4077880.webp"
@@ -58,7 +58,7 @@ const Login = () => {
               />
             </div>
             <div className="text-center border-2 border-green-600 rounded-lg">
-              <h6 className="text-black font-semibold text-[16px] mb-0 pb-0 bg-green-600 ">
+              <h6 className="text-black font-semibold text-[16px] mb-0 pb-0 bg-slate-50 rounded-t-md">
                 Admin Login
               </h6>
               <div className="flex justify-center">
@@ -72,13 +72,13 @@ const Login = () => {
             </div>
           </div>
           {/* divider */}
-          <div className="hidden lg:block border w-[1px] mx-2 h-[400px]"></div>
+          <div className="hidden lg:block border border-slate-700 w-[1px] mx-2 h-[400px]"></div>
           {/* login form side */}
-          <div className="w-96 bg-white p-4">
+          <div className="w-96 p-4">
             <div className="">
-              <h2 className=" text-green-600 text-4xl font-bold mb-4">Login</h2>
+              <h2 className=" text-slate-50 text-4xl font-bold mb-4">Login</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="border border-black px-3 py-2 rounded flex items-center mb-4">
+                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -90,7 +90,7 @@ const Login = () => {
                   </svg>
                   <input
                     type="text"
-                    className="bg-white outline-none px-2 text-[17px]"
+                    className="outline-none bg-slate-950 px-2 text-[17px]"
                     placeholder="Email"
                     {...register("email", {
                       required: {
@@ -117,7 +117,7 @@ const Login = () => {
                   )}
                 </label>
                 {/* ========password field======== */}
-                <label className="border border-black px-3 py-2 rounded flex items-center mb-2">
+                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -132,7 +132,8 @@ const Login = () => {
                   </svg>
                   <input
                     type="password"
-                    className="bg-white outline-none px-2 text-[17px]"
+                    className="bg-slate-950 outline-none px-2 text-[17px]"
+                    placeholder="Password"
                     {...register("password", {
                       required: {
                         value: true,
@@ -159,18 +160,16 @@ const Login = () => {
                     </span>
                   )}
                 </label>
-                <div className="flex justify-between items-center p-0">
+                <div className="flex justify-between items-center p-0 text-slate-400">
                   <div className="form-control">
                     <label className="p-0 label cursor-pointer">
                       <input type="checkbox" className="checkbox mr-2" />
-                      <span className="text-[13px] text-slate-600">
-                        Remember me
-                      </span>
+                      <span className="text-[13px]">Remember me</span>
                     </label>
                   </div>
 
                   <div className="flex items-center">
-                    <button className="label-text-alt link link-hover hover:text-blue-600 text-slate-600">
+                    <button className="label-text-alt link link-hover hover:text-blue-600 text-slate-400">
                       Forgot Password ?
                     </button>
                   </div>
@@ -182,7 +181,7 @@ const Login = () => {
                 {errorElement}
 
                 <input
-                  className="border shadow-lg bg-green-600 hover:bg-black py-[10px] rounded font-mono font-semibold w-full mt-4 mb-1 text-white hover:text-orange-500"
+                  className="shadow-lg transform border border-slate-700 cursor-pointer bg-green-600 hover:bg-black py-[10px] rounded font-mono font-semibold w-full mt-4 mb-1 text-white hover:text-orange-500"
                   type="submit"
                   value="Login"
                 />

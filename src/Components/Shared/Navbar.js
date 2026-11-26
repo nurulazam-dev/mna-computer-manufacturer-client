@@ -168,7 +168,7 @@ const Navbar = () => {
     "inline-flex items-center justify-center rounded-md border border-green-600 px-5 py-2 text-sm font-Barlow font-medium text-white transition-colors duration-200 hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-[#19223a] shadow-md">
+    <header className="fixed top-0 z-50 w-full bg-[#131d38] shadow-md">
       <nav
         className="mx-auto flex min-h-[54px] max-w-7xl items-center justify-between px-5 md:px-7"
         aria-label="Main navigation"
@@ -183,9 +183,9 @@ const Navbar = () => {
           <img
             src={brandLogo}
             alt="MNA Computer Manufacturer"
-            width="70"
-            height="35"
-            className="h-[35px] w-[70px] rounded-md bg-slate-200 object-contain"
+            width="85"
+            height="40"
+            className="h-[40px] w-[85px] rounded-md bg-slate-50 object-contain"
           />
         </Link>
 
