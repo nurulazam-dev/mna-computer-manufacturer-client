@@ -69,7 +69,7 @@ const AllProduct = () => {
     <section className="my-10 px-5 pt-8">
       <PageTitle title="Products" />
 
-      <h2 className="text-center text-4xl my-3 text-green-600 font-bold">
+      <h2 className="text-center text-4xl my-3 text-slate-50 font-bold">
         Manufacturer Parts / Products
       </h2>
 
@@ -82,13 +82,13 @@ const AllProduct = () => {
           value={search}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search products..."
-          className="input input-bordered bg-white text-slate-700 w-full md:max-w-md"
+          className="input input-bordered bg-slate-950 w-full md:max-w-md"
         />
 
         <select
           value={sortOrder}
           onChange={(e) => handleSort(e.target.value)}
-          className="select select-bordered w-full bg-white md:max-w-xs"
+          className="select select-bordered w-full bg-slate-950 md:max-w-xs"
         >
           <option value="desc">Newest First</option>
           <option value="asc">Oldest First</option>
@@ -97,7 +97,7 @@ const AllProduct = () => {
 
       {/* Products */}
       {isFetching && (
-        <p className="text-center text-sm text-gray-500 mt-4">
+        <p className="text-center text-sm text-gray-300 mt-4">
           Updating products...
         </p>
       )}
@@ -112,7 +112,7 @@ const AllProduct = () => {
             <Product key={product._id} product={product} />
           ))
         ) : (
-          <p className="col-span-full text-center text-gray-500 my-12">
+          <p className="col-span-full text-center text-gray-300 my-12">
             No products found.
           </p>
         )}
@@ -124,7 +124,7 @@ const AllProduct = () => {
           <button
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={page === 1 || isFetching}
-            className="btn btn-outline btn-sm text-slate-700"
+            className="btn btn-outline btn-sm text-slate-100"
           >
             Previous
           </button>
@@ -138,7 +138,7 @@ const AllProduct = () => {
                 className={`btn btn-sm ${
                   page === pageNumber
                     ? "btn-success text-white"
-                    : "btn-outline text-slate-700"
+                    : "btn-outline text-sky-500"
                 }`}
               >
                 {pageNumber}
@@ -149,7 +149,7 @@ const AllProduct = () => {
           <button
             onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={page === totalPages || isFetching}
-            className="btn btn-outline btn-sm text-slate-700"
+            className="btn btn-outline btn-sm text-slate-100"
           >
             Next
           </button>
@@ -158,7 +158,7 @@ const AllProduct = () => {
 
       {/* Pagination Information */}
       {meta && (
-        <p className="text-center text-sm text-gray-600 mt-4">
+        <p className="text-center text-sm text-gray-300 mt-4">
           Showing {productList.length} of {meta.total} products
           {" | "}
           Page {meta.page} of {meta.totalPages}
