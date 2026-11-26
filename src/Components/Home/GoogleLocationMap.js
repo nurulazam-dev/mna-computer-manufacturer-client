@@ -31,7 +31,7 @@ const GoogleLocationMap = () => {
   return (
     <section>
       <div className="text-center mb-6">
-        <h2 className="text-4xl mb-2 text-green-600 font-bold">Our Location</h2>
+        <h2 className="text-4xl mb-2 text-slate-50 font-bold">Our Location</h2>
       </div>
 
       {isLoaded ? (

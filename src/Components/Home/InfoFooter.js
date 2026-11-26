@@ -40,12 +40,7 @@ const socialLinks = [
 
 const InfoFooter = () => {
   return (
-    <footer
-      style={{
-        background: `linear-gradient(rgba(20,20,40,0.95),rgba(20,20,40,0.95)), url(https://i.ibb.co/MVHdJ1d/bg-2.png) center/cover no-repeat`,
-      }}
-      className="py-12 px-4 md:px-16 text-white"
-    >
+    <footer className="py-12 bg-slate-950 px-4 md:px-16 text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Contact Info */}
         <div>

@@ -14,7 +14,7 @@ import chooseImg from "../../assets/why_choose_us.webp";
 const WhyChooseUs = () => {
   return (
     <section className="mb-12">
-      <h2 className="text-center text-4xl mb-2 text-green-600 font-bold">
+      <h2 className="text-center text-4xl mb-2 text-slate-50 font-bold">
         Why We're Best?
       </h2>
       <div className="hero">
@@ -43,11 +43,11 @@ const WhyChooseUs = () => {
             </div>
             {/* card */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faTruckFast}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -56,11 +56,11 @@ const WhyChooseUs = () => {
                 </div>
               </div>
 
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faMoneyCheckDollar}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -69,11 +69,11 @@ const WhyChooseUs = () => {
                 </div>
               </div>
 
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faHeadset}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -81,11 +81,11 @@ const WhyChooseUs = () => {
                   <p className="text-[14px]">Call us anytime</p>
                 </div>
               </div>
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faShieldHalved}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -93,11 +93,11 @@ const WhyChooseUs = () => {
                   <p className="text-[14px]">High Property Security</p>
                 </div>
               </div>
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faAward}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -105,11 +105,11 @@ const WhyChooseUs = () => {
                   <p className="text-[14px]">Government Certified</p>
                 </div>
               </div>
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faHandHoldingDollar}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
@@ -118,11 +118,11 @@ const WhyChooseUs = () => {
                 </div>
               </div>
 
-              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3">
+              <div className="flex items-center shadow-2xl px-2 lg:px-5 py-3 border border-slate-700">
                 <div className="mr-3">
                   <FontAwesomeIcon
                     icon={faRotateRight}
-                    className="text-green-600 text-[32px]"
+                    className="text-sky-500 text-[32px]"
                   />
                 </div>
                 <div>
