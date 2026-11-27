@@ -1,198 +1,293 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {
+  faShield,
+  faUser,
+  faEye,
+  faEyeSlash,
+  faEnvelope,
+  faLock,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import SocialLogin from "../Components/Login/SocialLogin";
 import Loading from "../Components/Shared/Loading";
 import PageTitle from "../Components/Shared/PageTitle";
 import auth from "../Firebase/firebase.init";
 import useToken from "../hooks/useToken";
+import brandLogo from "../assets/mna-computer-manufacturer-logo.webp";
+
+const credentials = [
+  {
+    label: "Admin",
+    email: "admin@computermanufacturer.com",
+    pass: "Admin123",
+    icon: faShield,
+    description: "Full administrative access",
+  },
+  {
+    label: "User",
+    email: "user@computermanufacturer.com",
+    pass: "User123",
+    icon: faUser,
+    description: "Standard user access",
+  },
+];
 
 const Login = () => {
   const {
     register,
-    formState: { errors },
     handleSubmit,
+    setValue,
+    formState: { errors },
   } = useForm();
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  let errorElement;
-  let navigate = useNavigate();
-  let location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const [token] = useToken(user);
+
+  // Redirect after successful authentication
   useEffect(() => {
     if (token) {
       toast.success("Welcome to our Website");
       navigate(from, { replace: true });
     }
   }, [token, from, navigate]);
-  if (loading) {
-    <Loading />;
-  }
-  if (error) {
-    errorElement = (
-      <p className="text-yellow-600">
-        {" "}
-        <small>{error?.message}</small>{" "}
-      </p>
-    );
-  }
-  const onSubmit = async (data) => {
-    // console.log(data);
-    await signInWithEmailAndPassword(data.email, data.password);
+
+  // Auto-fill test credentials
+  const fillCredentials = (email, pass) => {
+    setValue("email", email, { shouldValidate: true });
+    setValue("password", pass, { shouldValidate: true });
+
+    toast.info("Test credentials filled successfully");
   };
 
+  // Login handler
+  const onSubmit = async (data) => {
+    try {
+      await signInWithEmailAndPassword(data.email.trim(), data.password);
+    } catch (err) {
+      toast.error(err.message || "Unable to login");
+    }
+  };
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="h-screen mt-12 py-12">
-      <PageTitle title="Login"></PageTitle>
-      <div className="flex justify-center items-center">
-        <div className="lg:flex justify-center items-center bg-slate-950 border border-green-600 p-5 rounded shadow-lg">
-          {/* info side */}
-          <div className="hidden lg:block w-96 px-4 py-2">
-            <div className="w-full mb-4">
-              <img
-                src="https://i.ibb.co/dK4hBS7/app-login-security-4897468-4077880.webp"
-                alt=""
-              />
-            </div>
-            <div className="text-center border-2 border-green-600 rounded-lg">
-              <h6 className="text-black font-semibold text-[16px] mb-0 pb-0 bg-slate-50 rounded-t-md">
-                Admin Login
-              </h6>
-              <div className="flex justify-center">
-                <p className="mx-2 text-[16px]">
-                  Email: <span className="text-blue-700">mna@admin.com</span>
-                </p>
-                <p className="text-[16px]">
-                  Password: <span className="text-blue-700">Admin92</span>
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 py-10 mt-12 sm:px-6 lg:py-12">
+      <PageTitle title="Login" />
+
+      <div className="relative z-10 mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-2xl shadow-black/40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 bg-gradient-to-r from-blue-600/10 via-slate-900 to-cyan-500/10">
+          {/* ======Login Form======= */}
+          <div className="flex items-center justify-center px-6 sm:px-10 lg:px-12">
+            <div className="w-full max-w-md">
+              <div className="mb-6 text-center">
+                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                  Login to Your Account
+                </h2>
+
+                <p className="mt-2 text-sm text-slate-400">
+                  Enter your credentials to access your account.
                 </p>
               </div>
-            </div>
-          </div>
-          {/* divider */}
-          <div className="hidden lg:block border border-slate-700 w-[1px] mx-2 h-[400px]"></div>
-          {/* login form side */}
-          <div className="w-96 p-4">
-            <div className="">
-              <h2 className=" text-slate-50 text-4xl font-bold mb-4">Login</h2>
+
               <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    className="w-7 h-7 opacity-70"
+                <div className="mb-4">
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-sm font-semibold text-slate-300"
                   >
-                    <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                    <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-                  </svg>
-                  <input
-                    type="text"
-                    className="outline-none bg-slate-950 px-2 text-[17px]"
-                    placeholder="Email"
-                    {...register("email", {
-                      required: {
-                        value: true,
-                        message: "Provide your email",
-                      },
-                      pattern: {
-                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                        message: "Provide a valid Email",
-                      },
-                    })}
-                  />
-                </label>
-                <label>
-                  {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-700">
-                      {errors.email.message}
-                    </span>
-                  )}
-                  {errors.email?.type === "pattern" && (
-                    <span className="label-text-alt text-red-700">
-                      {errors.email.message}
-                    </span>
-                  )}
-                </label>
-                {/* ========password field======== */}
-                <label className="border border-slate-700 px-3 py-2 rounded flex items-center mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    className="w-7 h-7 opacity-70"
+                    Email Address
+                  </label>
+
+                  <div
+                    className={`flex items-center rounded border bg-slate-950 px-4 transition-all duration-300 ${
+                      errors.email
+                        ? "border-red-500"
+                        : "border-slate-700 focus-within:border-sky-500 focus-within:ring-2 focus-within:ring-blue-500/10"
+                    }`}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                      clipRule="evenodd"
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="text-slate-500"
                     />
-                  </svg>
-                  <input
-                    type="password"
-                    className="bg-slate-950 outline-none px-2 text-[17px]"
-                    placeholder="Password"
-                    {...register("password", {
-                      required: {
-                        value: true,
-                        message: "Provide your password",
-                      },
-                      pattern: {
-                        value:
-                          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}$/,
-                        message:
-                          "Provide the 6 characters longer and Strong password",
-                      },
-                    })}
-                  />
-                </label>
-                <label>
-                  {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-700">
-                      {errors.password.message}
-                    </span>
-                  )}
-                  {errors.password?.type === "pattern" && (
-                    <span className="label-text-alt text-red-700">
-                      {errors.password.message}
-                    </span>
-                  )}
-                </label>
-                <div className="flex justify-between items-center p-0 text-slate-400">
-                  <div className="form-control">
-                    <label className="p-0 label cursor-pointer">
-                      <input type="checkbox" className="checkbox mr-2" />
-                      <span className="text-[13px]">Remember me</span>
-                    </label>
+
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      autoComplete="email"
+                      className="w-full bg-transparent px-3 py-4 text-sm text-white outline-none placeholder:text-slate-600"
+                      {...register("email", {
+                        required: "Please provide your email",
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Please provide a valid email",
+                        },
+                      })}
+                    />
                   </div>
 
-                  <div className="flex items-center">
-                    <button className="label-text-alt link link-hover hover:text-blue-600 text-slate-400">
-                      Forgot Password ?
-                    </button>
-                  </div>
+                  {errors.email && (
+                    <p className="mt-2 text-xs text-red-400">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
-                {/* <button className="text-[14px] text-blue-600 text-right">
-              Forget Password?
-            </button> */}
-                {errorElement}
+                <div className="mb-4">
+                  <label
+                    htmlFor="password"
+                    className="mb-2 block text-sm font-semibold text-slate-300"
+                  >
+                    Password
+                  </label>
 
-                <input
-                  className="shadow-lg transform border border-slate-700 cursor-pointer bg-green-600 hover:bg-black py-[10px] rounded font-mono font-semibold w-full mt-4 mb-1 text-white hover:text-orange-500"
+                  <div
+                    className={`flex items-center rounded border bg-slate-950 px-4 transition-all duration-300 ${
+                      errors.password
+                        ? "border-red-500"
+                        : "border-slate-700 focus-within:border-sky-500 focus-within:ring-2 focus-within:ring-blue-500/10"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={faLock} className="text-slate-500" />
+
+                    <input
+                      id="password"
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Enter your password"
+                      autoComplete="current-password"
+                      className="w-full bg-transparent px-3 py-4 text-sm text-white outline-none placeholder:text-slate-600"
+                      {...register("password", {
+                        required: "Please provide your password",
+                      })}
+                    />
+
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                      className="ml-2 text-slate-500 transition hover:text-blue-400"
+                      aria-label={
+                        showPassword ? "Hide password" : "Show password"
+                      }
+                    >
+                      <FontAwesomeIcon
+                        icon={showPassword ? faEyeSlash : faEye}
+                      />
+                    </button>
+                  </div>
+
+                  {errors.password && (
+                    <p className="mt-2 text-xs text-red-400">
+                      {errors.password.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="mb-5 flex justify-end">
+                  <Link
+                    to="/forgot-password"
+                    className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                  >
+                    Forgot Password?
+                  </Link>
+                </div>
+
+                {error && (
+                  <div className="mb-4 rounded-lg border border-red-500/20 bg-red-500/10 p-3">
+                    <p className="text-sm text-red-400">{error.message}</p>
+                  </div>
+                )}
+
+                <button
                   type="submit"
-                  value="Login"
-                />
+                  disabled={loading}
+                  className="group flex w-full items-center justify-center gap-3 rounded bg-sky-600 py-4 font-bold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-500 hover:shadow-blue-600/30 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {loading ? (
+                    <>
+                      <span className="loading loading-spinner loading-sm" />
+                      Signing in...
+                    </>
+                  ) : (
+                    <>
+                      Sign In
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="transition-transform group-hover:translate-x-1"
+                      />
+                    </>
+                  )}
+                </button>
               </form>
-              <p className="text-center text-[13px]">
-                New Here?{" "}
-                <Link className="text-blue-500" to="/register">
-                  Create account
+
+              <p className="mt-4 text-center text-sm text-slate-400">
+                Don't have an account?{" "}
+                <Link
+                  to="/register"
+                  className="font-semibold text-blue-400 transition hover:text-blue-300"
+                >
+                  Create Account
                 </Link>
               </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center gap-5 border-t border-slate-800 bg-slate-950/40 p-6 sm:p-10 lg:border-l-0 lg:border-t-0 lg:p-12">
+            <div className="lg:flex justify-center items-center hidden ">
+              <img src={brandLogo} alt="" className="w-[300px]" />
+            </div>
+            <div>
               <SocialLogin />
+            </div>
+
+            <div className="border-t border-slate-800 pt-3">
+              <div className="mb-5">
+                <h3 className="text-lg font-bold text-white">
+                  Quick Test Access
+                </h3>
+
+                <p className="mt-1 text-sm text-slate-400">
+                  Select an account to auto-fill your credentials.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                {credentials.map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => fillCredentials(item.email, item.pass)}
+                    className="group flex items-center gap-3 rounded border border-slate-700 bg-slate-900 px-3 py-2 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-600/10"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600/15 text-blue-400 transition group-hover:bg-blue-600 group-hover:text-white">
+                      <FontAwesomeIcon icon={item.icon} />
+                    </div>
+
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-white">{item.label}</h4>
+
+                      <p className="mt-1 truncate text-[11px] text-slate-500">
+                        {item.description}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
