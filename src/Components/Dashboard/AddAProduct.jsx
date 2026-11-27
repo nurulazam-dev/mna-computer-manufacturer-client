@@ -1,8 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
-import Loading from "../../Components/Shared/Loading";
+import Loading from "../Shared/Loading";
 import { BASE_URL } from "../../config";
 
 const AddAProduct = () => {

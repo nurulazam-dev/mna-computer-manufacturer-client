@@ -89,7 +89,7 @@ const Login = () => {
           <div className="flex items-center justify-center px-6 sm:px-10 lg:px-12">
             <div className="w-full max-w-md">
               <div className="mb-6 text-center">
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">
                   Login to Your Account
                 </h2>
 

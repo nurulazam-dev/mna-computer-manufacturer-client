@@ -54,10 +54,10 @@ const SocialLogin = ({ children }) => {
       <div className="divider my-2 mb-3 text-[14px] text-slate-400">
         Or Sign Up With
       </div>
-      <div className="flex justify-center gap-3 w-full">
+      <div className="block lg:flex justify-center lg:space-y-0 space-y-2 gap-3 w-full">
         <button
           onClick={() => signInWithGoogle()}
-          className="rounded px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
+          className="rounded w-full px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
         >
           <img
             className="w-[35px] h-[35px]"
@@ -70,7 +70,7 @@ const SocialLogin = ({ children }) => {
         {errorElement}
         <button
           onClick={() => signInWithGithub()}
-          className="rounded px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
+          className="rounded w-full px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
         >
           <img
             className="w-[35px] h-[35px]"

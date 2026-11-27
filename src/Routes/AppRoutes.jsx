@@ -13,21 +13,50 @@ import Payment from "../Components/Dashboard/Payment";
 import ProductDetails from "../Components/Home/ProductDetails";
 import AllProduct from "../Pages/AllProduct";
 import Blogs from "../Pages/Blogs";
-import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import NotFound from "../Pages/NotFound";
 import Register from "../Pages/Register";
+import AuthLayout from "../layouts/AuthLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/home" element={<Home />} />
+      <Route
+        path="/"
+        element={
+          <AuthLayout>
+            <Home />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="/home"
+        element={
+          <AuthLayout>
+            <Home />
+          </AuthLayout>
+        }
+      />
 
-      <Route path="/products" element={<AllProduct />} />
+      <Route
+        path="/products"
+        element={
+          <AuthLayout>
+            <AllProduct />
+          </AuthLayout>
+        }
+      />
 
-      <Route path="/blogs" element={<Blogs />} />
+      <Route
+        path="/blogs"
+        element={
+          <AuthLayout>
+            <Blogs />
+          </AuthLayout>
+        }
+      />
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -45,7 +74,7 @@ const AppRoutes = () => {
         path="/dashboard"
         element={
           <RequireAuth>
-            <Dashboard />
+            <DashboardLayout />
           </RequireAuth>
         }
       >
