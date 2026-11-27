@@ -15,7 +15,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SocialLogin from "../Components/Login/SocialLogin";
-import Loading from "../Components/Shared/Loading";
 import PageTitle from "../Components/Shared/PageTitle";
 import auth from "../Firebase/firebase.init";
 import useToken from "../hooks/useToken";
@@ -58,7 +57,6 @@ const Login = () => {
 
   const [token] = useToken(user);
 
-  // Redirect after successful authentication
   useEffect(() => {
     if (token) {
       toast.success("Welcome to our Website");
@@ -66,7 +64,6 @@ const Login = () => {
     }
   }, [token, from, navigate]);
 
-  // Auto-fill test credentials
   const fillCredentials = (email, pass) => {
     setValue("email", email, { shouldValidate: true });
     setValue("password", pass, { shouldValidate: true });
@@ -74,7 +71,6 @@ const Login = () => {
     toast.info("Test credentials filled successfully");
   };
 
-  // Login handler
   const onSubmit = async (data) => {
     try {
       await signInWithEmailAndPassword(data.email.trim(), data.password);
@@ -82,10 +78,6 @@ const Login = () => {
       toast.error(err.message || "Unable to login");
     }
   };
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 py-10 mt-12 sm:px-6 lg:py-12">
