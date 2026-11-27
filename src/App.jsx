@@ -1,21 +1,17 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-
-import Footer from "./Components/Shared/Footer";
-import Navbar from "./Components/Shared/Navbar";
 import AppRoutes from "./Routes/AppRoutes";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-slate-900 text-slate-300">
-      <Navbar />
-      <main>
+    <Router>
+      <div className="min-h-screen bg-slate-900 text-slate-300">
         <AppRoutes />
-      </main>
-      <Footer />
+      </div>
       <ToastContainer />
-    </div>
+    </Router>
   );
 }
 

@@ -31,7 +31,7 @@ const SocialLogin = ({ children }) => {
   if (googleLoading || githubLoading) {
     <Loading />;
   }
-  // console.log(googleUser || githubLoading);
+
   useEffect(() => {
     if (token) {
       toast.success("Social Login successful");
@@ -51,31 +51,33 @@ const SocialLogin = ({ children }) => {
 
   return (
     <div>
-      <div className="divider my-2 text-[14px] text-slate-400">
+      <div className="divider my-2 mb-3 text-[14px] text-slate-400">
         Or Sign Up With
       </div>
-      <div className="flex justify-center gap-3 w-full">
+      <div className="block lg:flex justify-center lg:space-y-0 space-y-2 gap-3 w-full">
         <button
           onClick={() => signInWithGoogle()}
-          className="rounded-full p-[5px] border border-green-600 hover:bg-orange-500 hover:border-black"
+          className="rounded w-full px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
         >
           <img
             className="w-[35px] h-[35px]"
             src="https://i.ibb.co/WsNgDYN/google-logo.png"
             alt=""
-          />
+          />{" "}
+          <span className="text-sm">Continue with Google</span>
           {children}
         </button>
         {errorElement}
         <button
           onClick={() => signInWithGithub()}
-          className="rounded-full p-[5px] border border-green-600 hover:bg-orange-500 hover:border-black"
+          className="rounded w-full px-2 py-1 border border-green-600 hover:bg-sky-500 hover:border-black flex items-center justify-center gap-1.5"
         >
           <img
             className="w-[35px] h-[35px]"
             src="https://i.ibb.co/1f1WyV3/git-Hub-logo.png"
             alt=""
-          />
+          />{" "}
+          <span className="text-sm">Continue with GitHub</span>
           {children}
         </button>
       </div>

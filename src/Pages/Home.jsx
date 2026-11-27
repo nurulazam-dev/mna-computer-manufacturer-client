@@ -3,15 +3,15 @@ import Blog from "../Components/Blogs/Blog";
 import Banner from "../Components/Home/Banner";
 import BusinessSummary from "../Components/Home/BusinessSummary";
 import ContactUs from "../Components/Home/ContactUs";
-import Frequency from "../Components/Home/Frequescy";
+import Frequency from "../Components/Home/Frequency";
 import GoogleLocationMap from "../Components/Home/GoogleLocationMap";
-import InfoFooter from "../Components/Home/InfoFooter";
 import OfferDateline from "../Components/Home/OfferDateline";
 import Products from "../Components/Home/Products";
 import Review from "../Components/Home/Review";
 import Subscribe from "../Components/Home/Subscribe";
 import WhyChooseUs from "../Components/Home/WhyChooseUs";
 import PageTitle from "../Components/Shared/PageTitle";
+import ScrollToTopButton from "../Components/Shared/ScrollToTopButton";
 // import Hero from "../Components/Home/Hero";
 
 const Home = () => {
@@ -31,7 +31,7 @@ const Home = () => {
       <Subscribe />
       <GoogleLocationMap />
       <ContactUs />
-      <InfoFooter />
+      <ScrollToTopButton />
     </div>
   );
 };

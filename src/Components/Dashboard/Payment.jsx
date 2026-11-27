@@ -1,6 +1,5 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../Shared/Loading";
@@ -9,7 +8,7 @@ import PurchaseDetail from "./PurchaseDetail";
 import { BASE_URL } from "../../config";
 
 const stripePromise = loadStripe(
-  "pk_test_51L0gmsA8JMkzEy5gARbixx2IqJphAPSG7j1WtedZf4nJeX6LDmsJiR8o39InC5xCl5BKw0D31X3EWzXqrHjGmn5X005rJGKBT9"
+  "pk_test_51L0gmsA8JMkzEy5gARbixx2IqJphAPSG7j1WtedZf4nJeX6LDmsJiR8o39InC5xCl5BKw0D31X3EWzXqrHjGmn5X005rJGKBT9",
 );
 
 const Payment = () => {
@@ -22,7 +21,7 @@ const Payment = () => {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-      }).then((res) => res.json())
+      }).then((res) => res.json()),
   );
 
   if (isLoading) {
